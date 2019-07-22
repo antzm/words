@@ -3,37 +3,59 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Learning Words</title>
-	<style>
-		.intro {
-			text-align: center;
-		}
-		.main-content {
-			text-align: center;
-		}
-	</style>
+
+<style>
+
+.intro {
+	text-align: center;
+}
+
+.main-content {
+	text-align: center;
+}
+
+</style>
+
 </head>
 <body>
 
 	<h1 class='intro'>Learning Words</h1>
 	<p class='main-content'>This page will help you to learn new words!</p>
 
-	<script>
-		 const myWords = [
+<script>
 
-		 ['word00', 'meaning00a'],
-		 ['word01', 'meaning01a', 'meaning01b'],
-		 ['word02', 'meaning02a', 'meaning02b', 'meaning02c'],
-		 ['word03', 'meaning03a', 'meaning03b', 'meaning03c', 'meaning03d'],
-		 ['word04', 'meaning04a', 'meaning04b', 'meaning04c', 'meaning04d', 'meaning04e'],
-		 ['word05', 'meaning05a'],
-		 ['word06', 'meaning06a', 'meaning06b'],
-		 ['word07', 'meaning07a', 'meaning07b', 'meaning07c'],
-		 ['word08', 'meaning08a', 'meaning08b', 'meaning08c', 'meaning08d'],
-		 ['word09', 'meaning09a', 'meaning09b', 'meaning09c', 'meaning09d', 'meaning09e']
+const myWords = [
+	['word00', 'meaning00a'],
+	['word01', 'meaning01a', 'meaning01b'],
+	['word02', 'meaning02a', 'meaning02b', 'meaning02c'],
+	['word03', 'meaning03a', 'meaning03b', 'meaning03c', 'meaning03d'],
+	['word04', 'meaning04a', 'meaning04b', 'meaning04c', 'meaning04d', 'meaning04e'],
+	['word05', 'meaning05a'],
+	['word06', 'meaning06a', 'meaning06b'],
+	['word07', 'meaning07a', 'meaning07b', 'meaning07c'],
+	['word08', 'meaning08a', 'meaning08b', 'meaning08c', 'meaning08d'],
+	['word09', 'meaning09a', 'meaning09b', 'meaning09c', 'meaning09d', 'meaning09e']
+];
 
-	 ]
-	</script>
+let randomWords = randomizeArray(myWords);
+console.log(randomWords);
+
+function randomizeArray(randArray) {
+	let firstElement = 0;
+	for (let i = 0; i < randArray.length; i++) {
+		firstElement = randArray[0];
+		randArray.splice(0,1);
+		randArray.splice(randomNum(randArray.length), 0, firstElement);
+	}
+	return randArray;
+}
+
+function randomNum(max) {
+	let randNum = Math.floor(Math.random()*(max+1));
+	return randNum;
+}
+
+</script>
+
 </body>
 </html>
-
-fgsfSASDFHHJHJHJSD
