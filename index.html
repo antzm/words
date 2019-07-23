@@ -24,6 +24,12 @@
 
 <script>
 
+// the array myWords contains multiple arrays.
+// Each one of those arrays, contains an english word, 
+// as the first element of the array,
+// and the meaning or meanings of the english word.
+// There can be only one engish word in each array,
+// but there is no limit on how many meaning can be included.
 const myWords = [
 	['word00', 'meaning00a'],
 	['word01', 'meaning01a', 'meaning01b'],
@@ -40,6 +46,12 @@ const myWords = [
 let randomWords = randomizeArray(myWords);
 console.log(randomWords);
 
+
+// randomizeArray(randArray) randomizes an array
+// by taking out the first element and then
+// placing it back at a random position
+// inside the array. This process is repeated
+// for every element of the array.
 function randomizeArray(randArray) {
 	let firstElement = 0;
 	for (let i = 0; i < randArray.length; i++) {
@@ -50,12 +62,22 @@ function randomizeArray(randArray) {
 	return randArray;
 }
 
-function randomNum(max) {
+// randomNumber(max) returns a random integer
+// between 0 and max (including 0 and max)
+function randomNumber(max) {
 	let randNum = Math.floor(Math.random()*(max+1));
 	return randNum;
+}
+
+// randomNaturalNumber(max) returns a random integer
+// between 1 and max (including 1 and max)
+function randomNaturalNumber(max) {
+	let randNatNum = Math.ceil(Math.random()*max);
+	return randNatNum;
 }
 
 </script>
 
 </body>
 </html>
+
