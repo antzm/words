@@ -43,9 +43,7 @@ const myWords = [
 	['word09', 'meaning09a', 'meaning09b', 'meaning09c', 'meaning09d', 'meaning09e']
 ];
 
-let randomWords = randomizeArray(myWords);
-console.log(randomWords);
-
+displayCompleteWords()
 
 // randomizeArray(randArray) randomizes an array
 // by taking out the first element and then
@@ -57,7 +55,7 @@ function randomizeArray(randArray) {
 	for (let i = 0; i < randArray.length; i++) {
 		firstElement = randArray[0];
 		randArray.splice(0,1);
-		randArray.splice(randomNum(randArray.length), 0, firstElement);
+		randArray.splice(randomNumber(randArray.length), 0, firstElement);
 	}
 	return randArray;
 }
@@ -74,6 +72,13 @@ function randomNumber(max) {
 function randomNaturalNumber(max) {
 	let randNatNum = Math.ceil(Math.random()*max);
 	return randNatNum;
+}
+
+function displayCompleteWords() {
+	let randomWords = randomizeArray(myWords);
+	for (i = 0; i < 10; i++) {
+		console.log(randomWords[i]);
+	}
 }
 
 </script>
