@@ -43,7 +43,9 @@ const myWords = [
 	['word09', 'meaning09a', 'meaning09b', 'meaning09c', 'meaning09d', 'meaning09e']
 ];
 
+displayMainWords()
 displayCompleteWords()
+displayWordsMeanings()
 
 // randomizeArray(randArray) randomizes an array
 // by taking out the first element and then
@@ -78,6 +80,22 @@ function displayCompleteWords() {
 	let randomWords = randomizeArray(myWords);
 	for (i = 0; i < 10; i++) {
 		console.log(randomWords[i]);
+	}
+}
+
+function displayMainWords() {
+	let randomWords = randomizeArray(myWords);
+	for (i = 0; i < randomWords.length; i++) {
+		console.log(randomWords[i][0]);
+	}
+}
+
+function displayWordsMeanings() {
+	let randomWords = randomizeArray(myWords);
+	for (i = 0; i < randomWords.length; i++) {
+		for (j=1; j<randomWords[i].length; j++) {
+			console.log(randomWords[i][j]);
+		}
 	}
 }
 
