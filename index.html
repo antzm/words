@@ -16,6 +16,31 @@
 
 .buttons {
 	text-align: center;
+	display: inline-block;
+	background-color: #3d94f6;
+	text-align: center;
+	border: 1px solid #337fed;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	margin: 3px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #1570cd;
+	border-radius: 4px;
+}
+
+.buttons:hover {
+	background-color: #00008b;
+}
+
+.button-group {
+	list-style-type: none;
+	margin: auto;
+ 	display: flex;
+  	flex-direction: row;
+  	justify-content: center;
 }
 
 </style>
@@ -26,10 +51,12 @@
 	<h1 class='intro'>Learning Words</h1>
 	<p class='main-content'>This page will help you to learn new words!</p>
 
-	<ul class='buttons'>
-		<li><button>Option 1</button></li>
-		<li><button>Option 2</button></li>
-		<li><button>Option 3</button></li>
+	<ul class='button-group'>
+		<li><button class='buttons' type='button'>Level 1</button></li>
+		<li><button class='buttons' type='button'>Level 2</button></li>
+		<li><button class='buttons' type='button'>Level 3</button></li>
+		<li><button class='buttons' type='button'>Level 4</button></li>
+		<li><button class='buttons' type='button'>Level 5</button></li>
 	</ul>
 
 <script>
@@ -113,4 +140,3 @@ function displayWordsMeanings() {
 
 </body>
 </html>
-
