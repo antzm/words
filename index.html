@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-	<meta charset="UTF-8">
+	<meta charset='UTF-8'>
 	<title>Learning Words</title>
 
 <style>
@@ -43,6 +43,11 @@
   	justify-content: center;
 }
 
+.answer-form {
+	text-align: center;
+	margin-top: 36px;
+}
+
 </style>
 
 </head>
@@ -59,7 +64,19 @@
 		<li><button class='buttons button-5' type='button'>Level 5</button></li>
 	</ul>
 
+<form action='javascript:handleForm()' method='post' class='answer-form'>
+	<label for='writeAnswer'>Answer:</label>
+	<input type='text' name='write-answer' id='writeAnswer'>
+	<input type='submit' value='Submit answer'>
+	<input type="reset" value="Reset">
+</form>
+
 <script>
+
+function handleForm() {
+	let inputAnswer = document.getElementById('writeAnswer').value;
+	console.log(inputAnswer);
+}
 
 // the array myWords contains multiple arrays.
 // Each one of those arrays, contains an english word, 
@@ -108,6 +125,7 @@ function activateButtons(evt) {
 		console.log('button 5 clicked');
 	}	
 }
+
 
 // randomizeArray(randArray) randomizes an array
 // by taking out the first element and then
