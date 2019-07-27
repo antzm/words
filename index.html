@@ -52,11 +52,11 @@
 	<p class='main-content'>This page will help you to learn new words!</p>
 
 	<ul class='button-group'>
-		<li><button class='buttons' type='button'>Level 1</button></li>
-		<li><button class='buttons' type='button'>Level 2</button></li>
-		<li><button class='buttons' type='button'>Level 3</button></li>
-		<li><button class='buttons' type='button'>Level 4</button></li>
-		<li><button class='buttons' type='button'>Level 5</button></li>
+		<li><button class='buttons button-1' type='button'>Level 1</button></li>
+		<li><button class='buttons button-2' type='button'>Level 2</button></li>
+		<li><button class='buttons button-3' type='button'>Level 3</button></li>
+		<li><button class='buttons button-4' type='button'>Level 4</button></li>
+		<li><button class='buttons button-5' type='button'>Level 5</button></li>
 	</ul>
 
 <script>
@@ -80,9 +80,34 @@ const myWords = [
 	['word09', 'meaning09a', 'meaning09b', 'meaning09c', 'meaning09d', 'meaning09e']
 ];
 
-displayMainWords()
-displayCompleteWords()
-displayWordsMeanings()
+// displayMainWords()
+// displayCompleteWords()
+// displayWordsMeanings()
+
+enableListeners()
+
+function enableListeners() {
+	const buttonList = document.querySelector('.button-group');
+	buttonList.addEventListener('click', activateButtons);
+}
+
+function activateButtons(evt) {
+	if (evt.target.classList.contains('button-1')) {
+		console.log('button 1 clicked');
+	}
+	if (evt.target.classList.contains('button-2')) {
+		console.log('button 2 clicked');
+	}
+	if (evt.target.classList.contains('button-3')) {
+		console.log('button 3 clicked');
+	}
+	if (evt.target.classList.contains('button-4')) {
+		console.log('button 4 clicked');
+	}
+	if (evt.target.classList.contains('button-5')) {
+		console.log('button 5 clicked');
+	}	
+}
 
 // randomizeArray(randArray) randomizes an array
 // by taking out the first element and then
