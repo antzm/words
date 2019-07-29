@@ -217,8 +217,9 @@ function activateButtons(evt) {
 function randomizeArray(randArray) {
 	let firstElement = 0;
 	for (let i = 0; i < randArray.length; i++) {
-		firstElement = randArray[0];
-		randArray.splice(0,1);
+		firstElement = randArray.shift();
+		// firstElement = randArray[0];
+		// randArray.splice(0,1);
 		randArray.splice(randomNumber(randArray.length), 0, firstElement);
 	}
 	return randArray;
