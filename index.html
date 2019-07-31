@@ -149,6 +149,10 @@ const myWordsSet01 = [
 
 let wordQuiz;
 
+let randomWordQuiz;
+
+let index;
+
 // the array myWords contains multiple arrays.
 // Each one of those arrays, contains an english word, 
 // as the first element of the array,
@@ -236,22 +240,22 @@ function enableListeners() {
 
 function activateButtons(evt) {
 	if (evt.target.classList.contains('button-1')) {
-		console.log('button 1 clicked');
 		wordQuiz = myWordsSet01;
-		console.log(myWordsSet01[0][0]);
+		index = 0;
 		startQuiz();
+		questWord();
 	}
 	if (evt.target.classList.contains('button-2')) {
-		console.log('button 2 clicked');
 		wordQuiz = myWordsSet02;
-		console.log(myWordsSet02[0][0]);
+		index = 0;
 		startQuiz();
+		questWord();
 	}
 	if (evt.target.classList.contains('button-3')) {
-		console.log('button 3 clicked');
 		wordQuiz = myWordsSet03;
-		console.log(myWordsSet03[0][0]);
+		index = 0;
 		startQuiz();
+		questWord();		
 	}
 	if (evt.target.classList.contains('button-4')) {
 		console.log('button 4 clicked');
@@ -266,13 +270,25 @@ function activateButtons(evt) {
 		startQuiz();
 	}
 	if (evt.target.classList.contains('button-6')) {
-		console.log('button 6 clicked');
+		index--;
+		if (index >= 0) {
+			questWord();
+		} else {
+			index = 0;
+			levelStart();
+		}
 	}
 	if (evt.target.classList.contains('button-7')) {
 		console.log('button 7 clicked');
 	}
 	if (evt.target.classList.contains('button-8')) {
-		console.log('button 8 clicked');
+		index++;
+		if (index < randomWordQuiz.length) {
+			questWord();
+		} else {
+			index = randomWordQuiz.length-1;
+			levelComplete();
+		}
 	}
 }
 
@@ -335,16 +351,27 @@ function startQuiz() {
 		displayStatus.className = 'display-option display-yes';
 	}
 
-	let randomWordQuiz = randomizeArray(wordQuiz);
+	randomWordQuiz = randomizeArray(wordQuiz);
 	for (i=0; i<randomWordQuiz.length; i++) {
 		console.log(randomWordQuiz[i]);
 	}
-
-	const newWord = document.querySelector('.question-word');
-	console.log(newWord.innerHTML);
-	newWord.innerHTML = 'Hello';
-
 }
+
+function questWord() {
+	const newWord = document.querySelector('.question-word');
+	newWord.innerHTML = randomWordQuiz[index][0];
+}
+
+function levelStart() {
+	const displayMessage = document.querySelector('.question-word');
+	displayMessage.innerHTML = 'Game Start!';
+}
+
+function levelComplete() {
+	const displayMessage = document.querySelector('.question-word');
+	displayMessage.innerHTML = 'Game Complete!';
+}
+
 
 function handleForm() {
 	let inputAnswer = document.getElementById('writeAnswer').value;
