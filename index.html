@@ -42,20 +42,24 @@ const myWordsSet01 = [
 	text-align: center;
 }
 
+.main-content-info {
+	font-size: 12px;
+	font-style: italic;
+}
+
 .buttons {
 	text-align: center;
 	display: inline-block;
 	background-color: #3d94f6;
-	text-align: center;
 	border: 1px solid #337fed;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 6px 24px;
 	margin: 3px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #1570cd;
+	text-shadow: 0px 1px 0px #1570cd;
 	border-radius: 4px;
 }
 
@@ -78,6 +82,19 @@ const myWordsSet01 = [
 	margin-bottom: 36px;
 }
 
+.display-words {
+	text-align: center;
+}
+
+.message-word {
+	font-style: italic;
+}
+
+.unknown-word {
+	font-size: 18px;
+	font-weight: bold;
+}
+
 </style>
 
 </head>
@@ -85,6 +102,7 @@ const myWordsSet01 = [
 
 	<h1 class='intro'>Learning Words</h1>
 	<p class='main-content'>This page will help you to learn new words!</p>
+	<p class='main-content main-content-info'>But first, choose a level!</p>
 
 	<ul class='button-group-upper'>
 		<li><button class='buttons button-1' type='button'>Level 1</button></li>
@@ -94,12 +112,19 @@ const myWordsSet01 = [
 		<li><button class='buttons button-5' type='button'>Level 5</button></li>
 	</ul>
 
-<form action='javascript:handleForm()' class='answer-form'>
-	<label for='writeAnswer'>Answer:</label>
-	<input type='text' name='write-answer' id='writeAnswer' autocomplete='off'>
-	<input type='submit' value='Submit answer'>
-	<input type="reset" value="Reset">
-</form>
+	<div class="display-words">
+		<p class="message-word">Please, write the meaning of this word:</p>
+		<p class="unknown-word">English Word</p>
+		
+
+	</div>
+
+	<form action='javascript:handleForm()' class='answer-form'>
+		<label for='writeAnswer'>Answer:</label>
+		<input type='text' name='write-answer' id='writeAnswer' autocomplete='off'>
+		<input type='submit' value='Submit answer'>
+		<input type="reset" value="Reset">
+	</form>
 
 	<ul class='button-group-lower'>
 		<li><button class='buttons button-6' type='button'>Previous Question</button></li>
@@ -244,9 +269,9 @@ function activateButtons(evt) {
 // inside the array. This process is repeated
 // for every element of the array.
 function randomizeArray(randArray) {
-	let firstElement = 0;
+	// let firstElement = 0;
 	for (let i = 0; i < randArray.length; i++) {
-		firstElement = randArray.shift();
+		let firstElement = randArray.shift();
 		// firstElement = randArray[0];
 		// randArray.splice(0,1);
 		randArray.splice(randomNumber(randArray.length), 0, firstElement);
@@ -293,6 +318,11 @@ function displayWordsMeanings() {
 
 function startQuiz() {
 	console.log('Quiz starts');
+	let randomWordQuiz = randomizeArray(wordQuiz);
+	for (i=0; i<randomWordQuiz.length; i++) {
+		console.log(randomWordQuiz[i]);
+	}
+	// console.log(randomWordQuiz);
 }
 
 function handleForm() {
