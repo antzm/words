@@ -323,6 +323,9 @@ function startQuiz() {
 	for (i=0; i<randomWordQuiz.length; i++) {
 		console.log(randomWordQuiz[i]);
 	}
+	const newWord = document.querySelector('.question-word');
+	console.log(newWord.innerHTML);
+	newWord.innerHTML = 'Hello';
 	// console.log(randomWordQuiz);
 }
 
