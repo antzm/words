@@ -96,6 +96,14 @@ const myWordsSet01 = [
 	font-weight: bold;
 }
 
+.display-no {
+	display: none;
+}
+
+.display-yes {
+	display: block;
+}
+
 </style>
 
 </head>
@@ -112,6 +120,8 @@ const myWordsSet01 = [
 		<li><button class='buttons button-4' type='button'>Level 4</button></li>
 		<li><button class='buttons button-5' type='button'>Level 5</button></li>
 	</ul>
+
+<div class='display-option display-no'>
 
 	<div class="display-words">
 		<p class="message-word">...and now, please, write the meaning of the word:</p>
@@ -132,6 +142,8 @@ const myWordsSet01 = [
 		<li><button class='buttons button-7' type='button'>Repeat Question</button></li>
 		<li><button class='buttons button-8' type='button'>Next Question </button></li>
 	</ul>
+
+</div>
 
 <script>
 
@@ -318,15 +330,20 @@ function displayWordsMeanings() {
 }
 
 function startQuiz() {
-	console.log('Quiz starts');
+	const displayStatus = document.querySelector('.display-option');
+	if (displayStatus.className === 'display-option display-no') {
+		displayStatus.className = 'display-option display-yes';
+	}
+
 	let randomWordQuiz = randomizeArray(wordQuiz);
 	for (i=0; i<randomWordQuiz.length; i++) {
 		console.log(randomWordQuiz[i]);
 	}
+
 	const newWord = document.querySelector('.question-word');
 	console.log(newWord.innerHTML);
 	newWord.innerHTML = 'Hello';
-	// console.log(randomWordQuiz);
+
 }
 
 function handleForm() {
