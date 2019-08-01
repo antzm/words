@@ -130,12 +130,20 @@ const myWordsSet01 = [
 
 	</div>
 
-	<form action='javascript:handleForm()' class='answer-form'>
+<!-- 	<form action='javascript:handleForm()' class='answer-form'>
 		<label for='writeAnswer'>Answer:</label>
 		<input type='text' name='write-answer' id='writeAnswer' autocomplete='off'>
 		<input type='submit' value='Submit answer'>
 		<input type="reset" value="Reset">
+	</form> -->
+
+
+	<form class='answer-form'>
+		<label for='writeAnswer'>Answer:</label>
+		<input type='text' name='write-answer' id='writeAnswer' autocomplete='off'>
+		<input type="reset" value="Reset">
 	</form>
+
 
 	<ul class='button-group-lower'>
 		<li><button class='buttons button-6' type='button'>Previous Question</button></li>
@@ -242,18 +250,21 @@ function activateButtons(evt) {
 	if (evt.target.classList.contains('button-1')) {
 		wordQuiz = myWordsSet01;
 		index = 0;
+		clearForm()
 		startQuiz();
 		questWord();
 	}
 	if (evt.target.classList.contains('button-2')) {
 		wordQuiz = myWordsSet02;
 		index = 0;
+		clearForm()
 		startQuiz();
 		questWord();
 	}
 	if (evt.target.classList.contains('button-3')) {
 		wordQuiz = myWordsSet03;
 		index = 0;
+		clearForm()
 		startQuiz();
 		questWord();		
 	}
@@ -270,23 +281,26 @@ function activateButtons(evt) {
 		startQuiz();
 	}
 	if (evt.target.classList.contains('button-6')) {
+		clearForm()
 		index--;
 		if (index >= 0) {
 			questWord();
 		} else {
-			index = 0;
+			index = -1;
 			levelStart();
 		}
 	}
 	if (evt.target.classList.contains('button-7')) {
 		console.log('button 7 clicked');
+		checkAnswer();
 	}
 	if (evt.target.classList.contains('button-8')) {
+		clearForm()
 		index++;
 		if (index < randomWordQuiz.length) {
 			questWord();
 		} else {
-			index = randomWordQuiz.length-1;
+			index = randomWordQuiz.length;
 			levelComplete();
 		}
 	}
@@ -372,6 +386,35 @@ function levelComplete() {
 	displayMessage.innerHTML = 'Game Complete!';
 }
 
+function checkAnswer() {
+	let answerStatus = [];
+	let inputAnswer = document.getElementById('writeAnswer').value;
+
+	for (i=1; i<randomWordQuiz[index].length; i++) {
+		if (inputAnswer === randomWordQuiz[index][i]) {
+			answerStatus.push(true);
+			console.log("correct answer!");			
+		} else {
+			answerStatus.push(false);
+			console.log('wrong answer');
+		}
+	}
+
+	console.log(answerStatus);
+
+	let answerSum = 0;
+
+	for (i = 0;  i<answerStatus.length; i++) {
+		console.log(answerStatus[i]);
+		answerSum += answerStatus[i];
+	}
+
+	console.log('answer sum = ', answerSum);
+}
+
+function clearForm() {
+	document.getElementById('writeAnswer').value = null;
+}
 
 function handleForm() {
 	let inputAnswer = document.getElementById('writeAnswer').value;
