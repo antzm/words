@@ -104,17 +104,45 @@ const myWordsSet01 = [
 	display: block;
 }
 
-.question-result {
+.display-answer-result {
 	margin-top: 36px;
 	margin-bottom: 36px;
 }
 
-.display-result {
+.status-hide-result {
+	visibility: hidden;
+}
+
+.status-show-result {
+	visibility: show;	
+}
+
+.answer-result {
 	text-align: center;
 	font-size: 23px;
+	font-weight: bold;
 	margin-top: 18px;
-	margin-bottom: 28px;
+	margin-bottom: 8px;
+	
+}
+
+.display-correct-answer {
+
+}
+
+.status-hide-answer {
 	visibility: hidden;
+}
+
+.status-show-answer {
+	visibility: show;
+}
+
+.correct-answer {
+	text-align: center;
+	font-size: 23px;
+	margin-top: 3px;
+	margin-bottom: 28px;
 }
 
 </style>
@@ -157,8 +185,24 @@ const myWordsSet01 = [
 		<input type="reset" value="Reset">
 	</form>
 
-<div claess='question-result'>
-	<p class='display-result'>Correct answer!</p>
+<!-- 
+	Displays either "Correct answer!" or "The correct answer is:".
+	The text is hidden and appears as soon as we subit an answer.
+	Classes "status-show-result" and "status-hide-result" allow to show or hide this text.
+	The functions "correctAnswer()" and "notCorrectAnswer()" control this behavior.
+-->
+<div class='display-answer-result status-show-result'>
+	<p class='answer-result'>Display Message for Correct or Not Correct Answer</p>
+</div>
+
+<!--
+	If the answer is not correct, it displays the correct word or the correct words.
+	This text is hidden and appears only whenever an answer is not correct.
+ 	Classes "status-show-answer" and "status-hide-answer" allow to show or hide this text.
+ 	The functions ... control this behavior.
+-->
+<div class='display-correct-answer status-show-answer'>
+	<p class='correct-answer'>If answer not correct then Display Correct Answer</p>
 </div>
 
 	<ul class='button-group-lower'>
@@ -428,6 +472,16 @@ function checkAnswer() {
 	console.log('answer sum = ', answerSum);
 }
 
+function correctAnswer() {
+	let evalText = document.querySelector('.answer-result');
+	evalText = 'Correct answer!'
+}
+
+function notCorrectAnswer() {
+	let evalText = document.querySelector('.answer-result');
+	evalText = 'The correct answer is: '
+}
+
 function clearForm() {
 	document.getElementById('writeAnswer').value = null;
 }
@@ -441,4 +495,3 @@ function handleForm() {
 
 </body>
 </html>
-
