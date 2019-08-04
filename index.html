@@ -6,6 +6,13 @@
 
 <script>
 
+// the array myWords contains multiple arrays.
+// Each one of those arrays, contains an english word, 
+// as the first element of the array,
+// and the meaning or meanings of the english word.
+// There can be only one engish word in each array,
+// but there is no limit on how many meaning can be included.
+
 // English words to Greek words
 	
 const myWordsSet01 = [
@@ -28,6 +35,58 @@ const myWordsSet01 = [
 ['look', 'κοιτάω', 'κοιτάζω', 'κοιτώ'],
 ['watch', 'παρατηρώ', 'ρολόι']
 
+];
+
+const myWordsSet02 = [
+	['s2word00', 'meaning00a'],
+	['s2word01', 'meaning01a', 'meaning01b'],
+	['s2word02', 'meaning02a', 'meaning02b', 'meaning02c'],
+	['s2word03', 'meaning03a', 'meaning03b', 'meaning03c', 'meaning03d'],
+	['s2word04', 'meaning04a', 'meaning04b', 'meaning04c', 'meaning04d', 'meaning04e'],
+	['s2word05', 'meaning05a'],
+	['s2word06', 'meaning06a', 'meaning06b'],
+	['s2word07', 'meaning07a', 'meaning07b', 'meaning07c'],
+	['s2word08', 'meaning08a', 'meaning08b', 'meaning08c', 'meaning08d'],
+	['s2word09', 'meaning09a', 'meaning09b', 'meaning09c', 'meaning09d', 'meaning09e']
+];
+
+const myWordsSet03 = [
+	['s3word00', 'meaning00a'],
+	['s3word01', 'meaning01a', 'meaning01b'],
+	['s3word02', 'meaning02a', 'meaning02b', 'meaning02c'],
+	['s3word03', 'meaning03a', 'meaning03b', 'meaning03c', 'meaning03d'],
+	['s3word04', 'meaning04a', 'meaning04b', 'meaning04c', 'meaning04d', 'meaning04e'],
+	['s3word05', 'meaning05a'],
+	['s3word06', 'meaning06a', 'meaning06b'],
+	['s3word07', 'meaning07a', 'meaning07b', 'meaning07c'],
+	['s3word08', 'meaning08a', 'meaning08b', 'meaning08c', 'meaning08d'],
+	['s3word09', 'meaning09a', 'meaning09b', 'meaning09c', 'meaning09d', 'meaning09e']
+];
+
+const myWordsSet04 = [
+	['s4word00', 'meaning00a'],
+	['s4word01', 'meaning01a', 'meaning01b'],
+	['s4word02', 'meaning02a', 'meaning02b', 'meaning02c'],
+	['s4word03', 'meaning03a', 'meaning03b', 'meaning03c', 'meaning03d'],
+	['s4word04', 'meaning04a', 'meaning04b', 'meaning04c', 'meaning04d', 'meaning04e'],
+	['s4word05', 'meaning05a'],
+	['s4word06', 'meaning06a', 'meaning06b'],
+	['s4word07', 'meaning07a', 'meaning07b', 'meaning07c'],
+	['s4word08', 'meaning08a', 'meaning08b', 'meaning08c', 'meaning08d'],
+	['s4word09', 'meaning09a', 'meaning09b', 'meaning09c', 'meaning09d', 'meaning09e']
+];
+
+const myWordsSet05 = [
+	['s5word00', 'meaning00a'],
+	['s5word01', 'meaning01a', 'meaning01b'],
+	['s5word02', 'meaning02a', 'meaning02b', 'meaning02c'],
+	['s5word03', 'meaning03a', 'meaning03b', 'meaning03c', 'meaning03d'],
+	['s5word04', 'meaning04a', 'meaning04b', 'meaning04c', 'meaning04d', 'meaning04e'],
+	['s5word05', 'meaning05a'],
+	['s5word06', 'meaning06a', 'meaning06b'],
+	['s5word07', 'meaning07a', 'meaning07b', 'meaning07c'],
+	['s5word08', 'meaning08a', 'meaning08b', 'meaning08c', 'meaning08d'],
+	['s5word09', 'meaning09a', 'meaning09b', 'meaning09c', 'meaning09d', 'meaning09e']
 ];
 
 </script>
@@ -221,78 +280,6 @@ let randomWordQuiz;
 
 let index;
 
-// the array myWords contains multiple arrays.
-// Each one of those arrays, contains an english word, 
-// as the first element of the array,
-// and the meaning or meanings of the english word.
-// There can be only one engish word in each array,
-// but there is no limit on how many meaning can be included.
-
-// const myWordsSet01 = [
-// 	['s1word00', 'meaning00a'],
-// 	['s1word01', 'meaning01a', 'meaning01b'],
-// 	['s1word02', 'meaning02a', 'meaning02b', 'meaning02c'],
-// 	['s1word03', 'meaning03a', 'meaning03b', 'meaning03c', 'meaning03d'],
-// 	['s1word04', 'meaning04a', 'meaning04b', 'meaning04c', 'meaning04d', 'meaning04e'],
-// 	['s1word05', 'meaning05a'],
-// 	['s1word06', 'meaning06a', 'meaning06b'],
-// 	['s1word07', 'meaning07a', 'meaning07b', 'meaning07c'],
-// 	['s1word08', 'meaning08a', 'meaning08b', 'meaning08c', 'meaning08d'],
-// 	['s1word09', 'meaning09a', 'meaning09b', 'meaning09c', 'meaning09d', 'meaning09e']
-// ];
-
-const myWordsSet02 = [
-	['s2word00', 'meaning00a'],
-	['s2word01', 'meaning01a', 'meaning01b'],
-	['s2word02', 'meaning02a', 'meaning02b', 'meaning02c'],
-	['s2word03', 'meaning03a', 'meaning03b', 'meaning03c', 'meaning03d'],
-	['s2word04', 'meaning04a', 'meaning04b', 'meaning04c', 'meaning04d', 'meaning04e'],
-	['s2word05', 'meaning05a'],
-	['s2word06', 'meaning06a', 'meaning06b'],
-	['s2word07', 'meaning07a', 'meaning07b', 'meaning07c'],
-	['s2word08', 'meaning08a', 'meaning08b', 'meaning08c', 'meaning08d'],
-	['s2word09', 'meaning09a', 'meaning09b', 'meaning09c', 'meaning09d', 'meaning09e']
-];
-
-const myWordsSet03 = [
-	['s3word00', 'meaning00a'],
-	['s3word01', 'meaning01a', 'meaning01b'],
-	['s3word02', 'meaning02a', 'meaning02b', 'meaning02c'],
-	['s3word03', 'meaning03a', 'meaning03b', 'meaning03c', 'meaning03d'],
-	['s3word04', 'meaning04a', 'meaning04b', 'meaning04c', 'meaning04d', 'meaning04e'],
-	['s3word05', 'meaning05a'],
-	['s3word06', 'meaning06a', 'meaning06b'],
-	['s3word07', 'meaning07a', 'meaning07b', 'meaning07c'],
-	['s3word08', 'meaning08a', 'meaning08b', 'meaning08c', 'meaning08d'],
-	['s3word09', 'meaning09a', 'meaning09b', 'meaning09c', 'meaning09d', 'meaning09e']
-];
-
-const myWordsSet04 = [
-	['s4word00', 'meaning00a'],
-	['s4word01', 'meaning01a', 'meaning01b'],
-	['s4word02', 'meaning02a', 'meaning02b', 'meaning02c'],
-	['s4word03', 'meaning03a', 'meaning03b', 'meaning03c', 'meaning03d'],
-	['s4word04', 'meaning04a', 'meaning04b', 'meaning04c', 'meaning04d', 'meaning04e'],
-	['s4word05', 'meaning05a'],
-	['s4word06', 'meaning06a', 'meaning06b'],
-	['s4word07', 'meaning07a', 'meaning07b', 'meaning07c'],
-	['s4word08', 'meaning08a', 'meaning08b', 'meaning08c', 'meaning08d'],
-	['s4word09', 'meaning09a', 'meaning09b', 'meaning09c', 'meaning09d', 'meaning09e']
-];
-
-const myWordsSet05 = [
-	['s5word00', 'meaning00a'],
-	['s5word01', 'meaning01a', 'meaning01b'],
-	['s5word02', 'meaning02a', 'meaning02b', 'meaning02c'],
-	['s5word03', 'meaning03a', 'meaning03b', 'meaning03c', 'meaning03d'],
-	['s5word04', 'meaning04a', 'meaning04b', 'meaning04c', 'meaning04d', 'meaning04e'],
-	['s5word05', 'meaning05a'],
-	['s5word06', 'meaning06a', 'meaning06b'],
-	['s5word07', 'meaning07a', 'meaning07b', 'meaning07c'],
-	['s5word08', 'meaning08a', 'meaning08b', 'meaning08c', 'meaning08d'],
-	['s5word09', 'meaning09a', 'meaning09b', 'meaning09c', 'meaning09d', 'meaning09e']
-];
-
 // displayMainWords()
 // displayCompleteWords()
 // displayWordsMeanings()
@@ -473,13 +460,17 @@ function checkAnswer() {
 }
 
 function correctAnswer() {
-	let evalText = document.querySelector('.answer-result');
-	evalText = 'Correct answer!'
+	let displayText = document.querySelector('.answer-result');
+	displayText.innerHTML = 'Correct answer!'
 }
 
 function notCorrectAnswer() {
-	let evalText = document.querySelector('.answer-result');
-	evalText = 'The correct answer is: '
+	let displayText = document.querySelector('.answer-result');
+	let displayMessage = '';
+	for (i=1; i<randomWordQuiz.length; i++) {
+		displayMessage += randomWordQuiz[index][i];
+	}
+	displayText.innerHTML = displayMessage;
 }
 
 function clearForm() {
