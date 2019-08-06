@@ -479,11 +479,24 @@ function notCorrectAnswer() {
 
 function dispalyAllMeanings() {
 	let displayText = document.querySelector('.correct-answer');
-	let displayMessage = '';
-	for (i=1; i<randomWordQuiz[index].length; i++) {
-		displayMessage += (randomWordQuiz[index][i]);
-	}
-	displayText.innerHTML = displayMessage;
+	// let displayMessage = '';
+
+	let translationsArray = randomWordQuiz[index]
+
+	console.log(translationsArray);
+
+	// let translationsArray = randomWordQuiz[index].splice(0,1);
+
+	console.log(translationsArray);
+
+	let joinedWords = translationsArray.join(' / ');
+
+	displayText.innerHTML = joinedWords;
+
+	// for (i=1; i<randomWordQuiz[index].length; i++) {
+	// 	displayMessage += (randomWordQuiz[index][i]);
+	// }
+	// displayText.innerHTML = displayMessage;
 }
 
 function clearForm() {
