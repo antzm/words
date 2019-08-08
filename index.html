@@ -213,6 +213,22 @@ const myWordsSet05 = [
 	color: #f00;
 }
 
+.display-results {
+
+}
+
+.show-results {
+	visibility: show;
+}
+
+.hide-results {
+	visibility: hidden;
+}
+
+
+
+
+
 </style>
 
 </head>
@@ -234,7 +250,7 @@ const myWordsSet05 = [
 
 	<div class="display-words">
 		<p class="message-word">...and now, please, write the meaning of the word:</p>
-		<p class="question-word">English Word</p>
+		<p class="question-word">English or Greek Word</p>
 		
 
 	</div>
@@ -259,18 +275,23 @@ const myWordsSet05 = [
 	Classes "status-show-result" and "status-hide-result" allow to show or hide this text.
 	The functions "correctAnswer()" and "notCorrectAnswer()" control this behavior.
 -->
-<div class='display-answer-result status-show-result'>
-	<p class='answer-result correct-answer'>Display answer correct or not correct</p>
-</div>
 
-<!--
-	If the answer is not correct, it displays the correct word or the correct words.
-	This text is hidden and appears only whenever an answer is not correct.
- 	Classes "status-show-answer" and "status-hide-answer" allow to show or hide this text.
- 	The functions ... control this behavior.
--->
-<div class='display-correct-answer status-show-answer'>
-	<p class='correct-answer'>After check, always display the complete answer</p>
+<div class='display-results show-results'>
+
+	<div class='display-answer-result status-show-result'>
+		<p class='answer-result'>Display answer correct or not correct</p>
+	</div>
+
+	<!--
+		If the answer is not correct, it displays the correct word or the correct words.
+		This text is hidden and appears only whenever an answer is not correct.
+	 	Classes "status-show-answer" and "status-hide-answer" allow to show or hide this text.
+	 	The functions ... control this behavior.
+	-->
+	<div class='display-correct-answer status-show-answer'>
+		<p class='correct-answer'>After check, always display the complete answer</p>
+	</div>
+
 </div>
 
 	<ul class='button-group-lower'>
@@ -337,7 +358,8 @@ function activateButtons(evt) {
 		startQuiz();
 	}
 	if (evt.target.classList.contains('button-6')) {
-		clearForm()
+		clearForm();
+		hideResults();
 		index--;
 		if (index >= 0) {
 			questWord();
@@ -349,11 +371,13 @@ function activateButtons(evt) {
 	if (evt.target.classList.contains('button-7')) {
 		if (index >= 0 && index < randomWordQuiz.length) {
 			checkAnswer();
+			showResults();
 		}
 		
 	}
 	if (evt.target.classList.contains('button-8')) {
-		clearForm()
+		clearForm();
+		hideResults();
 		index++;
 		if (index < randomWordQuiz.length) {
 			questWord();
@@ -471,6 +495,16 @@ function checkAnswer() {
 	} else {
 		notCorrectAnswer();
 	}
+}
+
+function showResults() {
+	const displayOptions = document.querySelector('.display-results');
+	displayOptions.className = 'display-results show-results';
+}
+
+function hideResults() {
+	const displayOptions = document.querySelector('.display-results');
+	displayOptions.className = 'display-results hide-results';
 }
 
 function correctAnswer() {
