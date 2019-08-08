@@ -202,6 +202,15 @@ const myWordsSet05 = [
 	font-size: 23px;
 	margin-top: 3px;
 	margin-bottom: 28px;
+	color: #00f;
+}
+
+.not-correct-answer {
+	text-align: center;
+	font-size: 23px;
+	margin-top: 3px;
+	margin-bottom: 28px;
+	color: #f00;
 }
 
 </style>
@@ -251,7 +260,7 @@ const myWordsSet05 = [
 	The functions "correctAnswer()" and "notCorrectAnswer()" control this behavior.
 -->
 <div class='display-answer-result status-show-result'>
-	<p class='answer-result'>Display Message for Correct or Not Correct Answer</p>
+	<p class='answer-result correct-answer'>Display answer correct or not correct</p>
 </div>
 
 <!--
@@ -261,18 +270,20 @@ const myWordsSet05 = [
  	The functions ... control this behavior.
 -->
 <div class='display-correct-answer status-show-answer'>
-	<p class='correct-answer'>If answer not correct then Display Correct Answer</p>
+	<p class='correct-answer'>After check, always display the complete answer</p>
 </div>
 
 	<ul class='button-group-lower'>
 		<li><button class='buttons button-6' type='button'>Previous Question</button></li>
-		<li><button class='buttons button-7' type='button'>Repeat Question</button></li>
+		<li><button class='buttons button-7' type='button'>Check Answer</button></li>
 		<li><button class='buttons button-8' type='button'>Next Question </button></li>
 	</ul>
 
 </div>
 
 <script>
+
+let englishWords = true;
 
 let wordQuiz;
 
@@ -420,7 +431,9 @@ function startQuiz() {
 
 function questWord() {
 	const newWord = document.querySelector('.question-word');
-	newWord.innerHTML = randomWordQuiz[index][0];
+	if (englishWords) {
+			newWord.innerHTML = randomWordQuiz[index][0];
+	}
 }
 
 function levelStart() {
@@ -437,11 +450,13 @@ function checkAnswer() {
 	let answerStatus = [];
 	let inputAnswer = document.getElementById('writeAnswer').value;
 
-	for (i=1; i<randomWordQuiz[index].length; i++) {
-		if (inputAnswer === randomWordQuiz[index][i]) {
-			answerStatus.push(true);
-		} else {
-			answerStatus.push(false);
+	if (englishWords) {
+			for (i=1; i<randomWordQuiz[index].length; i++) {
+				if (inputAnswer === randomWordQuiz[index][i]) {
+					answerStatus.push(true);
+			} else {
+				answerStatus.push(false);
+			}
 		}
 	}
 
