@@ -168,13 +168,13 @@ const myWordsSet05 = [
 	margin-bottom: 36px;
 }
 
-.status-hide-result {
+/*.status-hide-result {
 	visibility: hidden;
 }
 
 .status-show-result {
 	visibility: show;	
-}
+}*/
 
 .answer-result {
 	text-align: center;
@@ -182,22 +182,21 @@ const myWordsSet05 = [
 	font-weight: bold;
 	margin-top: 18px;
 	margin-bottom: 8px;
-	
 }
 
-.display-correct-answer {
+.display-complete-answer {
 
 }
 
-.status-hide-answer {
+/*.status-hide-answer {
 	visibility: hidden;
 }
 
 .status-show-answer {
 	visibility: show;
-}
+}*/
 
-.correct-answer {
+.complete-answer {
 	text-align: center;
 	font-size: 23px;
 	margin-top: 3px;
@@ -225,10 +224,6 @@ const myWordsSet05 = [
 	visibility: hidden;
 }
 
-
-
-
-
 </style>
 
 </head>
@@ -236,7 +231,7 @@ const myWordsSet05 = [
 
 	<h1 class='intro'>Learning Words</h1>
 	<p class='main-content'>This page will help you to learn new words!</p>
-	<p class='main-content main-content-info'>to start, choose a level...</p>
+	<p class='main-content main-content-info'>to start, choose language and a level...</p>
 
 	<ul class='button-group-upper'>
 		<li><button class='buttons button-1' type='button'>Level 1</button></li>
@@ -251,8 +246,7 @@ const myWordsSet05 = [
 	<div class="display-words">
 		<p class="message-word">...and now, please, write the meaning of the word:</p>
 		<p class="question-word">English or Greek Word</p>
-		
-
+	
 	</div>
 
 <!-- 	<form action='javascript:handleForm()' class='answer-form'>
@@ -276,9 +270,9 @@ const myWordsSet05 = [
 	The functions "correctAnswer()" and "notCorrectAnswer()" control this behavior.
 -->
 
-<div class='display-results show-results'>
+<section class='display-results show-results'>
 
-	<div class='display-answer-result status-show-result'>
+	<div class='display-answer-result'>
 		<p class='answer-result'>Display answer correct or not correct</p>
 	</div>
 
@@ -288,11 +282,11 @@ const myWordsSet05 = [
 	 	Classes "status-show-answer" and "status-hide-answer" allow to show or hide this text.
 	 	The functions ... control this behavior.
 	-->
-	<div class='display-correct-answer status-show-answer'>
-		<p class='correct-answer'>After check, always display the complete answer</p>
+	<div class='display-complete-answer'>
+		<p class='complete-answer'>After check, always display the complete answer</p>
 	</div>
 
-</div>
+</section>
 
 	<ul class='button-group-lower'>
 		<li><button class='buttons button-6' type='button'>Previous Question</button></li>
@@ -521,7 +515,7 @@ function notCorrectAnswer() {
 }
 
 function dispalyAllMeanings() {
-	let displayText = document.querySelector('.correct-answer');
+	let displayText = document.querySelector('.complete-answer');
 	let translationsArray = randomWordQuiz[index]
 
 	console.log(translationsArray);
