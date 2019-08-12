@@ -249,7 +249,6 @@ const myWordsSet05 = [
 
 </diV>
 
-
 	<ul class='button-group-upper'>
 		<li><button class='buttons button-1' type='button'>Level 1</button></li>
 		<li><button class='buttons button-2' type='button'>Level 2</button></li>
@@ -315,7 +314,16 @@ const myWordsSet05 = [
 
 <script>
 
-let englishWords = true;
+function englishWords() {
+	let englishWordsCheck = document.getElementById('lang-en').checked;
+	return englishWordsCheck;
+}
+
+if (englishWords()) {
+	console.log("t r u e");
+} else {
+	console.log("f a l s e");
+}
 
 let wordQuiz;
 
@@ -400,8 +408,8 @@ function activateButtons(evt) {
 }
 
 function checkLanguage() {
-	let checkLanguage = document.getElementById('lang-en').value;
-	console.log(checkLanguage);
+	let englishWords = document.getElementById('lang-en').checked;
+	// console.log(checkLanguage);
 }
 
 // randomizeArray(randArray) randomizes an array
@@ -472,7 +480,7 @@ function startQuiz() {
 
 function questWord() {
 	const newWord = document.querySelector('.question-word');
-	if (englishWords) {
+	if (englishWords()) {
 			newWord.innerHTML = randomWordQuiz[index][0];
 	}
 }
@@ -491,7 +499,7 @@ function checkAnswer() {
 	let answerStatus = [];
 	let inputAnswer = document.getElementById('writeAnswer').value;
 
-	if (englishWords) {
+	if (englishWords()) {
 			for (i=1; i<randomWordQuiz[index].length; i++) {
 				if (inputAnswer === randomWordQuiz[index][i]) {
 					answerStatus.push(true);
