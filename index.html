@@ -181,6 +181,8 @@ const myWordsSet05 = [
 	visibility: show;	
 }*/
 
+
+
 .answer-result {
 	text-align: center;
 	font-size: 23px;
@@ -188,6 +190,22 @@ const myWordsSet05 = [
 	margin-top: 18px;
 	margin-bottom: 8px;
 }
+.correct-answer {
+	text-align: center;
+	font-size: 23px;
+	margin-top: 3px;
+	margin-bottom: 28px;
+	color: #00f;
+}
+.not-correct-answer {
+	text-align: center;
+	font-size: 23px;
+	margin-top: 3px;
+	margin-bottom: 28px;
+	color: #f00;
+}
+
+
 
 .display-complete-answer {
 
@@ -206,15 +224,6 @@ const myWordsSet05 = [
 	font-size: 23px;
 	margin-top: 3px;
 	margin-bottom: 28px;
-	color: #00f;
-}
-
-.not-correct-answer {
-	text-align: center;
-	font-size: 23px;
-	margin-top: 3px;
-	margin-bottom: 28px;
-	color: #f00;
 }
 
 .display-results {
@@ -556,14 +565,21 @@ function hideResults() {
 
 function correctAnswer() {
 	let displayText = document.querySelector('.answer-result');
+	displayText.className = 'answer-result correct-answer';
 	displayText.innerHTML = 'Congratulations! Correct answer!'
+	let displayWords = document.querySelector('.complete-answer');
+	displayWords.className = 'complete-answer correct-answer';
 	displayAllMeanings()
 }
 
 function notCorrectAnswer() {
 	let displayText = document.querySelector('.answer-result');
+	displayText.className = 'answer-result not-correct-answer';
 	displayText.innerHTML = 'The correct answer is:'
+	let displayWords = document.querySelector('.complete-answer');
+	displayWords.className = 'complete-answer not-correct-answer';
 	displayAllMeanings()
+
 }
 
 function displayAllMeanings() {
