@@ -205,8 +205,6 @@ const myWordsSet05 = [
 	color: #f00;
 }
 
-
-
 .display-complete-answer {
 
 }
@@ -227,13 +225,10 @@ const myWordsSet05 = [
 }
 
 .display-results {
-
 }
-
 .show-results {
 	visibility: show;
 }
-
 .hide-results {
 	visibility: hidden;
 }
@@ -325,6 +320,12 @@ const myWordsSet05 = [
 
 <script>
 
+let wordQuiz;
+let randomWordQuiz;
+let index;
+
+enableListeners()	
+
 function englishWords() {
 	let englishWordsCheck = document.getElementById('lang-en').checked;
 	console.log("Start En: " + englishWordsCheck);
@@ -336,24 +337,6 @@ function englishWords() {
 	console.log("Gr: " + greekWordsCheck);
 	return englishWordsCheck;
 }
-
-if (englishWords()) {
-	console.log("t r u e");
-} else {
-	console.log("f a l s e");
-}
-
-let wordQuiz;
-
-let randomWordQuiz;
-
-let index;
-
-// displayMainWords()
-// displayCompleteWords()
-// displayWordsMeanings()
-
-enableListeners()
 
 function enableListeners() {
 	const buttonListUpper = document.querySelector('.button-group-upper');
@@ -457,28 +440,28 @@ function randomNaturalNumber(max) {
 	return randNatNum;
 }
 
-function displayCompleteWords() {
-	let randomWords = randomizeArray(myWords);
-	for (i = 0; i < 10; i++) {
-		console.log(randomWords[i]);
-	}
-}
-
-function displayMainWords() {
-	let randomWords = randomizeArray(myWords);
-	for (i = 0; i < randomWords.length; i++) {
-		console.log(randomWords[i][0]);
-	}
-}
-
-function displayWordsMeanings() {
-	let randomWords = randomizeArray(myWords);
-	for (i = 0; i < randomWords.length; i++) {
-		for (j=1; j<randomWords[i].length; j++) {
-			console.log(randomWords[i][j]);
+		function displayCompleteWords() {
+			let randomWords = randomizeArray(myWords);
+			for (i = 0; i < 10; i++) {
+				console.log(randomWords[i]);
+			}
 		}
-	}
-}
+
+		function displayMainWords() {
+			let randomWords = randomizeArray(myWords);
+			for (i = 0; i < randomWords.length; i++) {
+				console.log(randomWords[i][0]);
+			}
+		}
+
+		function displayWordsMeanings() {
+			let randomWords = randomizeArray(myWords);
+			for (i = 0; i < randomWords.length; i++) {
+				for (j=1; j<randomWords[i].length; j++) {
+					console.log(randomWords[i][j]);
+				}
+			}
+		}
 
 function startQuiz() {
 	const displayStatus = document.querySelector('.display-option');
@@ -579,37 +562,23 @@ function notCorrectAnswer() {
 	let displayWords = document.querySelector('.complete-answer');
 	displayWords.className = 'complete-answer not-correct-answer';
 	displayAllMeanings()
-
 }
 
 function displayAllMeanings() {
 	let displayText = document.querySelector('.complete-answer');
-	let translationsArray = randomWordQuiz[index]
-
-	console.log(translationsArray);
-
-	// let translationsArray = randomWordQuiz[index].splice(0,1);
-
-	console.log(translationsArray);
-
+	let translationsArray = randomWordQuiz[index];
 	let joinedWords = translationsArray.join(' / ');
-
 	displayText.innerHTML = joinedWords;
-
-	// for (i=1; i<randomWordQuiz[index].length; i++) {
-	// 	displayMessage += (randomWordQuiz[index][i]);
-	// }
-	// displayText.innerHTML = displayMessage;
 }
 
 function clearForm() {
 	document.getElementById('writeAnswer').value = null;
 }
 
-function handleForm() {
-	let inputAnswer = document.getElementById('writeAnswer').value;
-	console.log(inputAnswer);
-}
+		function handleForm() {
+			let inputAnswer = document.getElementById('writeAnswer').value;
+			console.log(inputAnswer);
+		}
 
 </script>
 
