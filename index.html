@@ -241,11 +241,13 @@ const myWordsSet05 = [
 <diV class='language-select'>
 
 <form>
-	<input type="radio" name="select-language" id="lang-en" value="englishWords" checked="checked">
+	<input type="radio" name="select-language" id="lang-en" value="en-words" checked="checked">
 	<label for="lang-en">English words</label>
-	<input type="radio" name="select-language" id="lang-gr" value="greekWords">
+	<input type="radio" name="select-language" id="lang-gr" value="gr-words">
 	<label for="lang-gr">Greek words</label>	
 </form>
+
+<!-- checked="checked" -->
 
 </diV>
 
@@ -316,6 +318,13 @@ const myWordsSet05 = [
 
 function englishWords() {
 	let englishWordsCheck = document.getElementById('lang-en').checked;
+	console.log("Start En: " + englishWordsCheck);
+	let greekWordsCheck = document.getElementById('lang-gr').checked;
+	if (!englishWordsCheck && !greekWordsCheck) {
+		englishWordsCheck = true;
+	}
+	console.log("En: " + englishWordsCheck);
+	console.log("Gr: " + greekWordsCheck);
 	return englishWordsCheck;
 }
 
@@ -407,10 +416,10 @@ function activateButtons(evt) {
 	}
 }
 
-function checkLanguage() {
-	let englishWords = document.getElementById('lang-en').checked;
-	// console.log(checkLanguage);
-}
+// function checkLanguage() {
+// 	let englishWords = document.getElementById('lang-en').checked;
+// 	// console.log(checkLanguage);
+// }
 
 // randomizeArray(randArray) randomizes an array
 // by taking out the first element and then
@@ -418,11 +427,8 @@ function checkLanguage() {
 // inside the array. This process is repeated
 // for every element of the array.
 function randomizeArray(randArray) {
-	// let firstElement = 0;
 	for (let i = 0; i < randArray.length; i++) {
 		let firstElement = randArray.shift();
-		// firstElement = randArray[0];
-		// randArray.splice(0,1);
 		randArray.splice(randomNumber(randArray.length), 0, firstElement);
 	}
 	return randArray;
@@ -472,7 +478,7 @@ function startQuiz() {
 	}
 
 	randomWordQuiz = randomizeArray(wordQuiz);
-	for (i=0; i<randomWordQuiz.length; i++) {
+	for (i = 0; i < randomWordQuiz.length; i++) {
 		console.log(randomWordQuiz[i]);
 	}
 	hideResults();
@@ -482,6 +488,14 @@ function questWord() {
 	const newWord = document.querySelector('.question-word');
 	if (englishWords()) {
 			newWord.innerHTML = randomWordQuiz[index][0];
+	} else {
+		let wordsLength = randomWordQuiz[index].length;
+		let position = randomNaturalNumber(wordsLength-1);
+		let greekWord = randomWordQuiz[index][position];
+		newWord.innerHTML = greekWord;
+		console.log("wordsLength", wordsLength);
+		console.log("position", position);
+		console.log("greekWord", greekWord);
 	}
 }
 
@@ -496,22 +510,30 @@ function levelComplete() {
 }
 
 function checkAnswer() {
-	let answerStatus = [];
+
 	let inputAnswer = document.getElementById('writeAnswer').value;
 
+	let answerStatus = [];	
+
 	if (englishWords()) {
-			for (i=1; i<randomWordQuiz[index].length; i++) {
+			for (i = 1; i < randomWordQuiz[index].length; i++) {
 				if (inputAnswer === randomWordQuiz[index][i]) {
 					answerStatus.push(true);
 			} else {
 				answerStatus.push(false);
 			}
 		}
+	} else {
+		if (inputAnswer === randomWordQuiz[index][0]) {
+			answerStatus.push(true);
+		} else {
+			answerStatus.push(false);
+		}
 	}
 
 	let answerSum = 0;
 
-	for (i = 0;  i<answerStatus.length; i++) {
+	for (i = 0;  i < answerStatus.length; i++) {
 		answerSum += answerStatus[i];
 	}
 
@@ -535,16 +557,16 @@ function hideResults() {
 function correctAnswer() {
 	let displayText = document.querySelector('.answer-result');
 	displayText.innerHTML = 'Congratulations! Correct answer!'
-	dispalyAllMeanings()
+	displayAllMeanings()
 }
 
 function notCorrectAnswer() {
 	let displayText = document.querySelector('.answer-result');
 	displayText.innerHTML = 'The correct answer is:'
-	dispalyAllMeanings()
+	displayAllMeanings()
 }
 
-function dispalyAllMeanings() {
+function displayAllMeanings() {
 	let displayText = document.querySelector('.complete-answer');
 	let translationsArray = randomWordQuiz[index]
 
