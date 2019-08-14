@@ -138,6 +138,7 @@ const myWordsSet05 = [
  	display: flex;
   	flex-direction: row;
   	justify-content: center;
+  	flex-wrap: wrap;
 }
 
 .answer-form {
@@ -440,28 +441,28 @@ function randomNaturalNumber(max) {
 	return randNatNum;
 }
 
-		function displayCompleteWords() {
-			let randomWords = randomizeArray(myWords);
-			for (i = 0; i < 10; i++) {
-				console.log(randomWords[i]);
-			}
-		}
+		// function displayCompleteWords() {
+		// 	let randomWords = randomizeArray(myWords);
+		// 	for (i = 0; i < 10; i++) {
+		// 		console.log(randomWords[i]);
+		// 	}
+		// }
 
-		function displayMainWords() {
-			let randomWords = randomizeArray(myWords);
-			for (i = 0; i < randomWords.length; i++) {
-				console.log(randomWords[i][0]);
-			}
-		}
+		// function displayMainWords() {
+		// 	let randomWords = randomizeArray(myWords);
+		// 	for (i = 0; i < randomWords.length; i++) {
+		// 		console.log(randomWords[i][0]);
+		// 	}
+		// }
 
-		function displayWordsMeanings() {
-			let randomWords = randomizeArray(myWords);
-			for (i = 0; i < randomWords.length; i++) {
-				for (j=1; j<randomWords[i].length; j++) {
-					console.log(randomWords[i][j]);
-				}
-			}
-		}
+		// function displayWordsMeanings() {
+		// 	let randomWords = randomizeArray(myWords);
+		// 	for (i = 0; i < randomWords.length; i++) {
+		// 		for (j=1; j<randomWords[i].length; j++) {
+		// 			console.log(randomWords[i][j]);
+		// 		}
+		// 	}
+		// }
 
 function startQuiz() {
 	const displayStatus = document.querySelector('.display-option');
@@ -575,10 +576,10 @@ function clearForm() {
 	document.getElementById('writeAnswer').value = null;
 }
 
-		function handleForm() {
-			let inputAnswer = document.getElementById('writeAnswer').value;
-			console.log(inputAnswer);
-		}
+		// function handleForm() {
+		// 	let inputAnswer = document.getElementById('writeAnswer').value;
+		// 	console.log(inputAnswer);
+		// }
 
 </script>
 
