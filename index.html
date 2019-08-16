@@ -298,10 +298,6 @@ const myWordsSet05 = [
 		<input type="reset" value="Reset">
 	</form>
 
-	<div class='check-answer'>
-		<button class='buttons button-9' type='button'>Check Answer</button>
-	<div>
-
 <!-- 
 	Displays either "Correct answer!" or "The correct answer is:".
 	The text is hidden and appears as soon as we subit an answer.
@@ -520,6 +516,22 @@ function levelComplete() {
 	displayMessage.innerHTML = 'Level Completed!';
 }
 
+// checkAnswer() checks if the answer is correct or not.
+// It checks every meaning of the english word and if the
+// answer matches at least one of the meanings, then
+// the answer is correct. For every meaning checked,
+// a boolena value of true or false is added in the
+// array called 'answerStaus'. In the end, the sum
+// of all the elements in the array is calcualted.
+// The result can be either 0 or 1 as the array
+// contains only boolean values of true(1) and false(0).
+// Each time, only one true can be included in the array
+// and thus, the sum of the array can only be 1 or 0.
+// If the sum is 1, then the answer was correct,
+// otherwise, if the sum is 0, then the answer was not correct.
+// For simplicity, the exact same logic is used when 
+// comparing an Engish answer to a Greek word, although
+// only one English answer can be correct in this case.
 function checkAnswer() {
 
 	let inputAnswer = document.getElementById('writeAnswer').value;
