@@ -366,13 +366,17 @@ function activateButtons(evt) {
 	}
 	if (evt.target.classList.contains('button-4')) {
 		wordQuiz = myWordsSet04;
-		console.log(myWordsSet04[0][0]);
+		index = 0;
+		clearForm()
 		startQuiz();
+		questWord();
 	}
 	if (evt.target.classList.contains('button-5')) {
 		wordQuiz = myWordsSet05;
-		console.log(myWordsSet05[0][0]);
+		index = 0;
+		clearForm()
 		startQuiz();
+		questWord();
 	}
 	if (evt.target.classList.contains('button-6')) {
 		clearForm();
