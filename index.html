@@ -325,13 +325,13 @@ enableListeners()
 
 function englishWords() {
 	let englishWordsCheck = document.getElementById('lang-en').checked;
-	console.log("Start En: " + englishWordsCheck);
+	// console.log("Start En: " + englishWordsCheck);
 	let greekWordsCheck = document.getElementById('lang-gr').checked;
 	if (!englishWordsCheck && !greekWordsCheck) {
 		englishWordsCheck = true;
 	}
-	console.log("En: " + englishWordsCheck);
-	console.log("Gr: " + greekWordsCheck);
+	// console.log("En: " + englishWordsCheck);
+	// console.log("Gr: " + greekWordsCheck);
 	return englishWordsCheck;
 }
 
@@ -471,9 +471,9 @@ function startQuiz() {
 	}
 
 	randomWordQuiz = randomizeArray(wordQuiz);
-	for (i = 0; i < randomWordQuiz.length; i++) {
-		console.log(randomWordQuiz[i]);
-	}
+	// for (i = 0; i < randomWordQuiz.length; i++) {
+	// 	console.log(randomWordQuiz[i]);
+	// }
 	hideResults();
 }
 
@@ -486,9 +486,9 @@ function questWord() {
 		let position = randomNaturalNumber(wordsLength-1);
 		let greekWord = randomWordQuiz[index][position];
 		newWord.innerHTML = greekWord;
-		console.log("wordsLength", wordsLength);
-		console.log("position", position);
-		console.log("greekWord", greekWord);
+		// console.log("wordsLength", wordsLength);
+		// console.log("position", position);
+		// console.log("greekWord", greekWord);
 	}
 }
 
