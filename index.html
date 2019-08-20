@@ -93,6 +93,10 @@ const myWordsSet05 = [
 
 <style>
 
+body {
+	font-family: Arial;
+}
+
 .intro {
 	text-align: center;
 }
@@ -345,38 +349,23 @@ function enableListeners() {
 function activateButtons(evt) {
 	if (evt.target.classList.contains('button-1')) {
 		wordQuiz = myWordsSet01;
-		index = 0;
-		clearForm()
-		startQuiz();
-		questWord();
+		initializeGame()
 	}
 	if (evt.target.classList.contains('button-2')) {
 		wordQuiz = myWordsSet02;
-		index = 0;
-		clearForm()
-		startQuiz();
-		questWord();
+		initializeGame()
 	}
 	if (evt.target.classList.contains('button-3')) {
 		wordQuiz = myWordsSet03;
-		index = 0;
-		clearForm()
-		startQuiz();
-		questWord();		
+		initializeGame()		
 	}
 	if (evt.target.classList.contains('button-4')) {
 		wordQuiz = myWordsSet04;
-		index = 0;
-		clearForm()
-		startQuiz();
-		questWord();
+		initializeGame()
 	}
 	if (evt.target.classList.contains('button-5')) {
 		wordQuiz = myWordsSet05;
-		index = 0;
-		clearForm()
-		startQuiz();
-		questWord();
+		initializeGame()
 	}
 	if (evt.target.classList.contains('button-6')) {
 		clearForm();
@@ -407,6 +396,13 @@ function activateButtons(evt) {
 			levelComplete();
 		}
 	}
+}
+
+function initializeGame() {
+	index = 0;
+	clearForm()
+	startQuiz();
+	questWord();
 }
 
 // function checkLanguage() {
