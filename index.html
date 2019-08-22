@@ -107,12 +107,16 @@ body {
 }
 
 .main-content-info {
+	font-size: 16px;
 	font-style: italic;
+
 }
 
 .language-select {
 	text-align: center;
+	font-size: 14px;
 	margin-bottom: 15px;
+
 }
 
 .buttons {
@@ -341,23 +345,23 @@ function enableListeners() {
 function activateButtons(evt) {
 	if (evt.target.classList.contains('button-1')) {
 		wordQuiz = myWordsSet01;
-		initializeGame()
+		initializeGame();
 	}
 	if (evt.target.classList.contains('button-2')) {
 		wordQuiz = myWordsSet02;
-		initializeGame()
+		initializeGame();
 	}
 	if (evt.target.classList.contains('button-3')) {
 		wordQuiz = myWordsSet03;
-		initializeGame()		
+		initializeGame();	
 	}
 	if (evt.target.classList.contains('button-4')) {
 		wordQuiz = myWordsSet04;
-		initializeGame()
+		initializeGame();
 	}
 	if (evt.target.classList.contains('button-5')) {
 		wordQuiz = myWordsSet05;
-		initializeGame()
+		initializeGame();
 	}
 	if (evt.target.classList.contains('button-6')) {
 		clearForm();
@@ -392,7 +396,7 @@ function activateButtons(evt) {
 
 function initializeGame() {
 	index = 0;
-	clearForm()
+	clearForm();
 	startQuiz();
 	questWord();
 }
@@ -507,12 +511,12 @@ function checkAnswer() {
 	let answerStatus = [];	
 
 	if (englishWords()) {
-			for (i = 1; i < randomWordQuiz[index].length; i++) {
-				if (inputAnswer === randomWordQuiz[index][i]) {
-					answerStatus.push(true);
+		for (i = 1; i < randomWordQuiz[index].length; i++) {
+			if (inputAnswer === randomWordQuiz[index][i]) {
+				answerStatus.push(true);
 			} else {
 				answerStatus.push(false);
-			}
+			}	
 		}
 	} else {
 		if (inputAnswer === randomWordQuiz[index][0]) {
@@ -548,19 +552,19 @@ function hideResults() {
 function correctAnswer() {
 	let displayText = document.querySelector('.answer-result');
 	displayText.className = 'answer-result correct-answer';
-	displayText.innerHTML = 'Congratulations! Correct answer!'
+	displayText.innerHTML = 'Congratulations! Correct answer!';
 	let displayWords = document.querySelector('.complete-answer');
 	displayWords.className = 'complete-answer correct-answer';
-	displayAllMeanings()
+	displayAllMeanings();
 }
 
 function notCorrectAnswer() {
 	let displayText = document.querySelector('.answer-result');
 	displayText.className = 'answer-result not-correct-answer';
-	displayText.innerHTML = 'The correct answer is:'
+	displayText.innerHTML = 'The correct answer is:';
 	let displayWords = document.querySelector('.complete-answer');
 	displayWords.className = 'complete-answer not-correct-answer';
-	displayAllMeanings()
+	displayAllMeanings();
 }
 
 function displayAllMeanings() {
