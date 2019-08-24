@@ -279,7 +279,7 @@ body {
 		<input type="reset" value="Reset">
 	</form> -->
 
-	<form class='answer-form'>
+	<form class='answer-form' action='javascript:handleForm()'>
 		<label for='writeAnswer'>Answer:</label>
 		<input type='text' name='write-answer' id='writeAnswer' autocomplete='off'>
 		<input type="reset" value="Reset">
@@ -582,6 +582,14 @@ function clearForm() {
 		// 	let inputAnswer = document.getElementById('writeAnswer').value;
 		// 	console.log(inputAnswer);
 		// }
+
+function handleForm() {
+	if (index >= 0 && index < randomWordQuiz.length) {
+		checkAnswer();
+		showResults();
+	}
+}
+
 
 </script>
 
