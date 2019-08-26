@@ -329,7 +329,7 @@ let wordQuiz;
 let randomWordQuiz;
 let index;
 
-enableListeners()	
+enableListeners();
 
 function englishWords() {
 	let englishWordsCheck = document.getElementById('lang-en').checked;
@@ -468,6 +468,7 @@ function startQuiz() {
 	}
 
 	randomWordQuiz = randomizeArray(wordQuiz);
+	arrowButtonListeners();
 	hideResults();
 }
 
@@ -589,6 +590,46 @@ function handleForm() {
 		showResults();
 	}
 }
+
+function arrowButtonListeners() {
+
+	document.addEventListener('keyup', function(evt) {
+    let keyPressed = evt.key;
+
+    if (keyPressed == 'ArrowLeft') {
+
+    	// console.log('ArrowLeft');
+
+		clearForm();
+		hideResults();
+		index--;
+		if (index >= 0) {
+			questWord();
+		} else {
+			index = -1;
+			levelStart();
+		}
+    }
+
+    if (keyPressed == 'ArrowRight') {
+
+        // console.log('ArrowRight');
+
+		clearForm();
+		hideResults();
+		index++;
+		if (index < randomWordQuiz.length) {
+			questWord();
+		} else {
+			index = randomWordQuiz.length;
+			levelComplete();
+		}
+    }
+
+});
+
+}
+
 
 </script>
 
