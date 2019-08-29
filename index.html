@@ -109,14 +109,12 @@ body {
 .main-content-info {
 	font-size: 16px;
 	font-style: italic;
-
 }
 
 .language-select {
 	text-align: center;
 	font-size: 14px;
 	margin-bottom: 15px;
-
 }
 
 .buttons {
@@ -159,7 +157,7 @@ body {
 #writeAnswer {
 	font-size: 16px;
 	padding: 5px;
-	border: 2px solid #337fed; 
+	border: 2px solid #1e90ff;
 }
 
 .display-words {
@@ -223,7 +221,9 @@ body {
 }
 
 .display-results {
+
 }
+
 .show-results {
 	visibility: show;
 }
@@ -236,7 +236,7 @@ body {
 }
 
 .button-group-lower {
-	
+	text-align: center;
 }
 
 .button-7 {
@@ -558,25 +558,25 @@ function hideResults() {
 }
 
 function correctAnswer() {
-	let displayText = document.querySelector('.answer-result');
+	const displayText = document.querySelector('.answer-result');
 	displayText.className = 'answer-result correct-answer';
 	displayText.innerHTML = 'Congratulations! Correct answer!';
-	let displayWords = document.querySelector('.complete-answer');
+	const displayWords = document.querySelector('.complete-answer');
 	displayWords.className = 'complete-answer correct-answer';
 	displayAllMeanings();
 }
 
 function notCorrectAnswer() {
-	let displayText = document.querySelector('.answer-result');
+	const displayText = document.querySelector('.answer-result');
 	displayText.className = 'answer-result not-correct-answer';
 	displayText.innerHTML = 'The correct answer is:';
-	let displayWords = document.querySelector('.complete-answer');
+	const displayWords = document.querySelector('.complete-answer');
 	displayWords.className = 'complete-answer not-correct-answer';
 	displayAllMeanings();
 }
 
 function displayAllMeanings() {
-	let displayText = document.querySelector('.complete-answer');
+	const displayText = document.querySelector('.complete-answer');
 	let translationsArray = randomWordQuiz[index];
 	let joinedWords = translationsArray.join(' / ');
 	displayText.innerHTML = joinedWords;
