@@ -371,15 +371,16 @@ function activateButtons(evt) {
 		initializeGame();
 	}
 	if (evt.target.classList.contains('button-6')) {
-		clearForm();
-		hideResults();
-		index--;
-		if (index >= 0) {
-			questWord();
-		} else {
-			index = -1;
-			levelStart();
-		}
+		previousQuestion();
+		// clearForm();
+		// hideResults();
+		// index--;
+		// if (index >= 0) {
+		// 	questWord();
+		// } else {
+		// 	index = -1;
+		// 	levelStart();
+		// }
 	}
 	if (evt.target.classList.contains('button-7')) {
 		if (index >= 0 && index < randomWordQuiz.length) {
@@ -389,15 +390,16 @@ function activateButtons(evt) {
 		
 	}
 	if (evt.target.classList.contains('button-8')) {
-		clearForm();
-		hideResults();
-		index++;
-		if (index < randomWordQuiz.length) {
-			questWord();
-		} else {
-			index = randomWordQuiz.length;
-			levelComplete();
-		}
+		nextQuestion();
+		// clearForm();
+		// hideResults();
+		// index++;
+		// if (index < randomWordQuiz.length) {
+		// 	questWord();
+		// } else {
+		// 	index = randomWordQuiz.length;
+		// 	levelComplete();
+		// }
 	}
 }
 
@@ -407,11 +409,6 @@ function initializeGame() {
 	startQuiz();
 	questWord();
 }
-
-// function checkLanguage() {
-// 	let englishWords = document.getElementById('lang-en').checked;
-// 	// console.log(checkLanguage);
-// }
 
 // randomizeArray(randArray) randomizes an array
 // by taking out the first element and then
@@ -500,7 +497,7 @@ function levelComplete() {
 // It checks every meaning of the english word and if the
 // answer matches at least one of the meanings, then
 // the answer is correct. For every meaning checked,
-// a boolena value of true or false is added in the
+// a booleean value of true or false is added in the
 // array called 'answerStaus'. In the end, the sum
 // of all the elements in the array is calcualted.
 // The result can be either 0 or 1 as the array
@@ -599,31 +596,57 @@ function arrowButtonListeners() {
     let keyPressed = evt.key;
 
     if (keyPressed == 'ArrowLeft') {
-		clearForm();
-		hideResults();
-		index--;
-		if (index >= 0) {
-			questWord();
-		} else {
-			index = -1;
-			levelStart();
-		}
+    	previousQuestion();
+		// clearForm();
+		// hideResults();
+		// index--;
+		// if (index >= 0) {
+		// 	questWord();
+		// } else {
+		// 	index = -1;
+		// 	levelStart();
+		// }
     }
 
     if (keyPressed == 'ArrowRight') {
-		clearForm();
-		hideResults();
-		index++;
-		if (index < randomWordQuiz.length) {
-			questWord();
-		} else {
-			index = randomWordQuiz.length;
-			levelComplete();
-		}
+    	nextQuestion();
+		// clearForm();
+		// hideResults();
+		// index++;
+		// if (index < randomWordQuiz.length) {
+		// 	questWord();
+		// } else {
+		// 	index = randomWordQuiz.length;
+		// 	levelComplete();
+		// }
     }
 
 });
 
+}
+
+function previousQuestion() {
+	clearForm();
+	hideResults();
+	index--;
+	if (index >= 0) {
+		questWord();
+	} else {
+		index = -1;
+		levelStart();
+	}
+}
+
+function nextQuestion() {
+	clearForm();
+	hideResults();
+	index++;
+	if (index < randomWordQuiz.length) {
+		questWord();
+	} else {
+		index = randomWordQuiz.length;
+		levelComplete();
+	}
 }
 
 </script>
