@@ -15,7 +15,7 @@
 
 // English words to Greek words
 	
-const myWordsSet01 = [
+const myWords01 = [
 
 ['kitchen', 'κουζίνα'],
 ['under', 'κάτω'],
@@ -37,7 +37,7 @@ const myWordsSet01 = [
 
 ];
 
-const myWordsSet02 = [
+const myWords02 = [
 	['s2word00', 'meaning00a'],
 	['s2word01', 'meaning01a', 'meaning01b'],
 	['s2word02', 'meaning02a', 'meaning02b', 'meaning02c'],
@@ -50,7 +50,7 @@ const myWordsSet02 = [
 	['s2word09', 'meaning09a', 'meaning09b', 'meaning09c', 'meaning09d', 'meaning09e']
 ];
 
-const myWordsSet03 = [
+const myWords03 = [
 	['s3word00', 'meaning00a'],
 	['s3word01', 'meaning01a', 'meaning01b'],
 	['s3word02', 'meaning02a', 'meaning02b', 'meaning02c'],
@@ -63,7 +63,7 @@ const myWordsSet03 = [
 	['s3word09', 'meaning09a', 'meaning09b', 'meaning09c', 'meaning09d', 'meaning09e']
 ];
 
-const myWordsSet04 = [
+const myWords04 = [
 	['s4word00', 'meaning00a'],
 	['s4word01', 'meaning01a', 'meaning01b'],
 	['s4word02', 'meaning02a', 'meaning02b', 'meaning02c'],
@@ -76,7 +76,7 @@ const myWordsSet04 = [
 	['s4word09', 'meaning09a', 'meaning09b', 'meaning09c', 'meaning09d', 'meaning09e']
 ];
 
-const myWordsSet05 = [
+const myWords05 = [
 	['s5word00', 'meaning00a'],
 	['s5word01', 'meaning01a', 'meaning01b'],
 	['s5word02', 'meaning02a', 'meaning02b', 'meaning02c'],
@@ -351,36 +351,28 @@ function enableListeners() {
 
 function activateButtons(evt) {
 	if (evt.target.classList.contains('button-1')) {
-		wordQuiz = myWordsSet01;
+		wordQuiz = myWords01;
 		initializeGame();
 	}
 	if (evt.target.classList.contains('button-2')) {
-		wordQuiz = myWordsSet02;
+		wordQuiz = myWords02;
 		initializeGame();
 	}
 	if (evt.target.classList.contains('button-3')) {
-		wordQuiz = myWordsSet03;
+		wordQuiz = myWords03;
 		initializeGame();	
 	}
 	if (evt.target.classList.contains('button-4')) {
-		wordQuiz = myWordsSet04;
+		wordQuiz = myWords04;
 		initializeGame();
 	}
 	if (evt.target.classList.contains('button-5')) {
-		wordQuiz = myWordsSet05;
+		wordQuiz = myWords05;
 		initializeGame();
 	}
 	if (evt.target.classList.contains('button-6')) {
 		previousQuestion();
-		// clearForm();
-		// hideResults();
-		// index--;
-		// if (index >= 0) {
-		// 	questWord();
-		// } else {
-		// 	index = -1;
-		// 	levelStart();
-		// }
+
 	}
 	if (evt.target.classList.contains('button-7')) {
 		if (index >= 0 && index < randomWordQuiz.length) {
@@ -391,15 +383,6 @@ function activateButtons(evt) {
 	}
 	if (evt.target.classList.contains('button-8')) {
 		nextQuestion();
-		// clearForm();
-		// hideResults();
-		// index++;
-		// if (index < randomWordQuiz.length) {
-		// 	questWord();
-		// } else {
-		// 	index = randomWordQuiz.length;
-		// 	levelComplete();
-		// }
 	}
 }
 
@@ -436,29 +419,6 @@ function randomNaturalNumber(max) {
 	let randNatNum = Math.ceil(Math.random()*max);
 	return randNatNum;
 }
-
-		// function displayCompleteWords() {
-		// 	let randomWords = randomizeArray(myWords);
-		// 	for (i = 0; i < 10; i++) {
-		// 		console.log(randomWords[i]);
-		// 	}
-		// }
-
-		// function displayMainWords() {
-		// 	let randomWords = randomizeArray(myWords);
-		// 	for (i = 0; i < randomWords.length; i++) {
-		// 		console.log(randomWords[i][0]);
-		// 	}
-		// }
-
-		// function displayWordsMeanings() {
-		// 	let randomWords = randomizeArray(myWords);
-		// 	for (i = 0; i < randomWords.length; i++) {
-		// 		for (j=1; j<randomWords[i].length; j++) {
-		// 			console.log(randomWords[i][j]);
-		// 		}
-		// 	}
-		// }
 
 function startQuiz() {
 	const displayStatus = document.querySelector('.display-option');
@@ -597,28 +557,10 @@ function arrowButtonListeners() {
 
     if (keyPressed == 'ArrowLeft') {
     	previousQuestion();
-		// clearForm();
-		// hideResults();
-		// index--;
-		// if (index >= 0) {
-		// 	questWord();
-		// } else {
-		// 	index = -1;
-		// 	levelStart();
-		// }
     }
 
     if (keyPressed == 'ArrowRight') {
     	nextQuestion();
-		// clearForm();
-		// hideResults();
-		// index++;
-		// if (index < randomWordQuiz.length) {
-		// 	questWord();
-		// } else {
-		// 	index = randomWordQuiz.length;
-		// 	levelComplete();
-		// }
     }
 
 });
