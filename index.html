@@ -341,9 +341,63 @@ function englishWords() {
 
 function enableListeners() {
 	const buttonListUpper = document.querySelector('.button-group-upper');
-	buttonListUpper.addEventListener('click', activateButtons);
+	buttonListUpper.addEventListener('click', activateUpperButtons);
 	const buttonListLower = document.querySelector('.button-group-lower');
-	buttonListLower.addEventListener('click', activateButtons);	
+	buttonListLower.addEventListener('click', activateLowerButtons);	
+}
+
+
+// function enableListeners() {
+// 	const buttonListUpper = document.querySelector('.button-group-upper');
+// 	buttonListUpper.addEventListener('click', activateButtons);
+// 	const buttonListLower = document.querySelector('.button-group-lower');
+// 	buttonListLower.addEventListener('click', activateButtons);	
+// }
+
+function activateUpperButtons(evt) {
+	
+	if (evt.target.classList.contains('button-1')) {
+		wordQuiz = myWords01;
+		initializeGame();
+	}
+	
+	if (evt.target.classList.contains('button-2')) {
+		wordQuiz = myWords02;
+		initializeGame();
+	}
+	
+	if (evt.target.classList.contains('button-3')) {
+		wordQuiz = myWords03;
+		initializeGame();	
+	}
+	
+	if (evt.target.classList.contains('button-4')) {
+		wordQuiz = myWords04;
+		initializeGame();
+	}
+	
+	if (evt.target.classList.contains('button-5')) {
+		wordQuiz = myWords05;
+		initializeGame();
+	}
+}
+
+function activateLowerButtons(evt) {
+	
+	if (evt.target.classList.contains('button-6')) {
+		previousQuestion();
+	}
+	
+	if (evt.target.classList.contains('button-7')) {
+		if (index >= 0 && index < randomWordQuiz.length) {
+			checkAnswer();
+			showResults();
+		}
+	}
+	
+	if (evt.target.classList.contains('button-8')) {
+		nextQuestion();
+	}
 }
 
 function activateButtons(evt) {
