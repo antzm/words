@@ -276,12 +276,14 @@ body {
 	
 	</div>
 
-<!-- 	<form action='javascript:handleForm()' class='answer-form'>
-		<label for='writeAnswer'>Answer:</label>
-		<input type='text' name='write-answer' id='writeAnswer' autocomplete='off'>
-		<input type='submit' value='Submit answer'>
-		<input type="reset" value="Reset">
-	</form> -->
+<!-- 	
+<form action='javascript:handleForm()' class='answer-form'>
+<label for='writeAnswer'>Answer:</label>
+<input type='text' name='write-answer' id='writeAnswer' autocomplete='off'>
+<input type='submit' value='Submit answer'>
+<input type="reset" value="Reset">
+</form> 
+-->
 
 	<form class='answer-form' action='javascript:handleForm()'>
 		<label for='writeAnswer'>Answer:</label>
@@ -290,10 +292,10 @@ body {
 	</form>
 
 <!-- 
-	Displays either "Correct answer!" or "The correct answer is:".
-	The text is hidden and appears as soon as we subit an answer.
-	Classes "status-show-result" and "status-hide-result" allow to show or hide this text.
-	The functions "correctAnswer()" and "notCorrectAnswer()" control this behavior.
+Displays either "Correct answer!" or "The correct answer is:".
+The text is hidden and appears as soon as we subit an answer.
+Classes "status-show-result" and "status-hide-result" allow to show or hide this text.
+The functions "correctAnswer()" and "notCorrectAnswer()" control this behavior.
 -->
 
 <section class='display-results show-results'>
@@ -302,12 +304,12 @@ body {
 		<p class='answer-result'>Display answer correct or not correct</p>
 	</div>
 
-	<!--
-		If the answer is not correct, it displays the correct word or the correct words.
-		This text is hidden and appears only whenever an answer is not correct.
-	 	Classes "status-show-answer" and "status-hide-answer" allow to show or hide this text.
-	 	The functions ... control this behavior.
-	-->
+<!--
+If the answer is not correct, it displays the correct word or the correct words.
+This text is hidden and appears only whenever an answer is not correct.
+Classes "status-show-answer" and "status-hide-answer" allow to show or hide this text.
+The functions ... control this behavior.
+-->
 	<div class='display-complete-answer'>
 		<p class='complete-answer'>After check, always display the complete answer</p>
 	</div>
@@ -400,42 +402,42 @@ function activateLowerButtons(evt) {
 	}
 }
 
-function activateButtons(evt) {
-	if (evt.target.classList.contains('button-1')) {
-		wordQuiz = myWords01;
-		initializeGame();
-	}
-	if (evt.target.classList.contains('button-2')) {
-		wordQuiz = myWords02;
-		initializeGame();
-	}
-	if (evt.target.classList.contains('button-3')) {
-		wordQuiz = myWords03;
-		initializeGame();	
-	}
-	if (evt.target.classList.contains('button-4')) {
-		wordQuiz = myWords04;
-		initializeGame();
-	}
-	if (evt.target.classList.contains('button-5')) {
-		wordQuiz = myWords05;
-		initializeGame();
-	}
-	if (evt.target.classList.contains('button-6')) {
-		previousQuestion();
+// function activateButtons(evt) {
+// 	if (evt.target.classList.contains('button-1')) {
+// 		wordQuiz = myWords01;
+// 		initializeGame();
+// 	}
+// 	if (evt.target.classList.contains('button-2')) {
+// 		wordQuiz = myWords02;
+// 		initializeGame();
+// 	}
+// 	if (evt.target.classList.contains('button-3')) {
+// 		wordQuiz = myWords03;
+// 		initializeGame();	
+// 	}
+// 	if (evt.target.classList.contains('button-4')) {
+// 		wordQuiz = myWords04;
+// 		initializeGame();
+// 	}
+// 	if (evt.target.classList.contains('button-5')) {
+// 		wordQuiz = myWords05;
+// 		initializeGame();
+// 	}
+// 	if (evt.target.classList.contains('button-6')) {
+// 		previousQuestion();
 
-	}
-	if (evt.target.classList.contains('button-7')) {
-		if (index >= 0 && index < randomWordQuiz.length) {
-			checkAnswer();
-			showResults();
-		}
+// 	}
+// 	if (evt.target.classList.contains('button-7')) {
+// 		if (index >= 0 && index < randomWordQuiz.length) {
+// 			checkAnswer();
+// 			showResults();
+// 		}
 		
-	}
-	if (evt.target.classList.contains('button-8')) {
-		nextQuestion();
-	}
-}
+// 	}
+// 	if (evt.target.classList.contains('button-8')) {
+// 		nextQuestion();
+// 	}
+// }
 
 function initializeGame() {
 	index = 0;
@@ -449,6 +451,7 @@ function initializeGame() {
 // placing it back at a random position
 // inside the array. This process is repeated
 // for every element of the array.
+//
 function randomizeArray(randArray) {
 	for (let i = 0; i < randArray.length; i++) {
 		let firstElement = randArray.shift();
@@ -459,6 +462,7 @@ function randomizeArray(randArray) {
 
 // randomNumber(max) returns a random integer
 // between 0 and max (including 0 and max)
+//
 function randomNumber(max) {
 	let randNum = Math.floor(Math.random()*(max+1));
 	return randNum;
@@ -466,6 +470,7 @@ function randomNumber(max) {
 
 // randomNaturalNumber(max) returns a random integer
 // between 1 and max (including 1 and max)
+//
 function randomNaturalNumber(max) {
 	let randNatNum = Math.ceil(Math.random()*max);
 	return randNatNum;
@@ -520,6 +525,7 @@ function levelComplete() {
 // For simplicity, the exact same logic is used when 
 // comparing an Engish answer to a Greek word, although
 // only one English answer can be correct in this case.
+//
 function checkAnswer() {
 
 	let inputAnswer = document.getElementById('writeAnswer').value;
