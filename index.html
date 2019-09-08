@@ -16,25 +16,23 @@
 // English words to Greek words
 	
 const myWords01 = [
-
-['kitchen', 'κουζίνα'],
-['under', 'κάτω'],
-['snow', 'χιόνι'],
-['cake', 'κέικ'],
-['water', 'νερό'],
-['bathroom', 'μπάνιο'],
-['living room', 'σαλόνι', 'καθιστικό'],
-['eye', 'μάτι'],
-['hair', 'μαλλιά'],
-['head', 'κεφάλι'],
-['leg', 'πόδι'],
-['foot', 'πατούσα'],
-['arm', 'βραχίονας'],
-['hand', 'χέρι'],
-['book', 'βιβλίο'],
-['look', 'κοιτάω', 'κοιτάζω', 'κοιτώ'],
-['watch', 'παρατηρώ', 'ρολόι']
-
+	['kitchen', 'κουζίνα'],
+	['under', 'κάτω'],
+	['snow', 'χιόνι'],
+	['cake', 'κέικ'],
+	['water', 'νερό'],
+	['bathroom', 'μπάνιο'],
+	['living room', 'σαλόνι', 'καθιστικό'],
+	['eye', 'μάτι'],
+	['hair', 'μαλλιά'],
+	['head', 'κεφάλι'],
+	['leg', 'πόδι'],
+	['foot', 'πατούσα'],
+	['arm', 'βραχίονας'],
+	['hand', 'χέρι'],
+	['book', 'βιβλίο'],
+	['look', 'κοιτάω', 'κοιτάζω', 'κοιτώ'],
+	['watch', 'παρατηρώ', 'ρολόι']
 ];
 
 const myWords02 = [
@@ -148,6 +146,7 @@ body {
 
 .button-group-upper,
 .button-group-lower {
+	text-align: center;
 	list-style-type: none;
 	margin: auto;
 	display: flex;
@@ -156,37 +155,32 @@ body {
 	flex-wrap: wrap;
 }
 
-.button-group-lower {
-	text-align: center;
-}
-
 
 /* display the quest word */
 
 .display-option {
-
-}
-
-.display-no {
-	display: none;
+	margin: 3px;
 }
 
 .display-yes {
 	display: block;
 }
 
+.display-no {
+	display: none;
+}
 
 .display-words {
 	text-align: center;
 }
 
 .message-word {
-	font-size: 17px;
+	font-size: 16px;
 	font-style: italic;
 }
 
 .question-word {
-	font-size: 18px;
+	font-size: 21px;
 	font-weight: bold;
 }
 
@@ -233,13 +227,13 @@ body {
 	margin-bottom: 8px;
 }
 .correct-answer {
-	font-size: 20px;
+	font-size: 21px;
 	margin-top: 3px;
 	margin-bottom: 28px;
 	color: #00f;
 }
 .not-correct-answer {
-	font-size: 20px;
+	font-size: 21px;
 	margin-top: 3px;
 	margin-bottom: 28px;
 	color: #f00;
