@@ -353,27 +353,22 @@ function enableListeners() {
 }
 
 function activateUpperButtons(evt) {
-	
 	if (evt.target.classList.contains('button-1')) {
 		wordQuiz = myWords01;
 		initializeGame();
 	}
-	
 	if (evt.target.classList.contains('button-2')) {
 		wordQuiz = myWords02;
 		initializeGame();
 	}
-	
 	if (evt.target.classList.contains('button-3')) {
 		wordQuiz = myWords03;
 		initializeGame();	
 	}
-	
 	if (evt.target.classList.contains('button-4')) {
 		wordQuiz = myWords04;
 		initializeGame();
 	}
-	
 	if (evt.target.classList.contains('button-5')) {
 		wordQuiz = myWords05;
 		initializeGame();
@@ -381,18 +376,15 @@ function activateUpperButtons(evt) {
 }
 
 function activateLowerButtons(evt) {
-	
 	if (evt.target.classList.contains('button-6')) {
 		previousQuestion();
 	}
-	
 	if (evt.target.classList.contains('button-7')) {
 		if (index >= 0 && index < randomWordQuiz.length) {
 			checkAnswer();
 			showResults();
 		}
 	}
-	
 	if (evt.target.classList.contains('button-8')) {
 		nextQuestion();
 	}
@@ -440,7 +432,6 @@ function startQuiz() {
 	if (displayStatus.className === 'display-option display-no') {
 		displayStatus.className = 'display-option display-yes';
 	}
-
 	randomWordQuiz = randomizeArray(wordQuiz);
 	arrowButtonListeners();
 	hideResults();
@@ -486,11 +477,8 @@ function levelComplete() {
 // only one English answer can be correct in this case.
 //
 function checkAnswer() {
-
 	let inputAnswer = document.getElementById('writeAnswer').value;
-
 	let answerStatus = [];	
-
 	if (englishWords()) {
 		for (i = 1; i < randomWordQuiz[index].length; i++) {
 			if (inputAnswer === randomWordQuiz[index][i]) {
@@ -506,13 +494,10 @@ function checkAnswer() {
 			answerStatus.push(false);
 		}
 	}
-
 	let answerSum = 0;
-
 	for (i = 0;  i < answerStatus.length; i++) {
 		answerSum += answerStatus[i];
 	}
-
 	if (answerSum === 1) {
 		correctAnswer();
 	} else {
@@ -567,20 +552,15 @@ function handleForm() {
 }
 
 function arrowButtonListeners() {
-
 	document.addEventListener('keyup', function(evt) {
 	let keyPressed = evt.key;
-
 	if (keyPressed == 'ArrowLeft') {
 		previousQuestion();
 	}
-
 	if (keyPressed == 'ArrowRight') {
 		nextQuestion();
 	}
-
 });
-
 }
 
 function previousQuestion() {
