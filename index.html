@@ -6,8 +6,13 @@
 
 <script>
 
-// the array myWords contains multiple arrays.
-// Each one of those arrays, contains an english word, 
+// The arrays myWords01, myWords02, myWords03,
+// myWords04 and myWords05 contain english
+// words and their translations.
+// Each word and its meanings are inside
+// an array and a whole group of words
+// are included inside the mywords.. arrays.
+// Each one of those smaller arrays, contains an english word, 
 // as the first element of the array,
 // and the meaning or meanings of the english word.
 // There can be only one engish word in each array,
@@ -97,7 +102,6 @@ body {
 
 
 /* introductory text */
-
 .intro {
 	text-align: center;
 }
@@ -114,7 +118,6 @@ body {
 
 
 /* language selection */
-
 .language-select {
 	text-align: center;
 	font-size: 14px;
@@ -123,7 +126,6 @@ body {
 
 
 /* upper and lower buttons */
-
 .buttons {
 	text-align: center;
 	display: inline-block;
@@ -157,7 +159,6 @@ body {
 
 
 /* display the quest word */
-
 .display-option {
 	margin: 3px;
 }
@@ -186,7 +187,6 @@ body {
 
 
 /* answer form */
-
 .answer-form {
 	text-align: center;
 	font-size: 18px;
@@ -202,7 +202,6 @@ body {
 
 
 /* display if the answer is correct */
-
 .display-results {
 	text-align: center;
 }
@@ -240,7 +239,6 @@ body {
 }
 
 /* display the comlete answer */
-
 .display-complete-answer {
 	text-align: center;
 }
@@ -540,10 +538,20 @@ function displayAllMeanings() {
 	displayText.innerHTML = joinedWords;
 }
 
+// This function clears the form
+// by assigning the value null and thus
+// replacing the existing value of the form
+//
 function clearForm() {
 	document.getElementById('writeAnswer').value = null;
 }
 
+// This function is calles whenever the enter button
+// is pressed while inside the form window.
+// If the index corrsponds to a word,
+// then, it checks the answer and  it displays either the
+// correct or then not correct resluts.
+//
 function handleForm() {
 	if (index >= 0 && index < randomWordQuiz.length) {
 		checkAnswer();
@@ -551,6 +559,13 @@ function handleForm() {
 	}
 }
 
+// This function adds event listeners
+// to the left and right arrow buttons
+// on the keyboard. 
+// To avoid pressing the keys continiously,
+// the keys will function only when 
+// they are released and not when pressed.
+//
 function arrowButtonListeners() {
 	document.addEventListener('keyup', function(evt) {
 	let keyPressed = evt.key;
