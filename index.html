@@ -343,6 +343,10 @@ function englishWords() {
 	return englishWordsCheck;
 }
 
+// This function adds the event listeners to the buutons.
+// There is one event listener for the upper buttons
+// and one event listener for the lower buttons.
+//
 function enableListeners() {
 	const buttonListUpper = document.querySelector('.button-group-upper');
 	buttonListUpper.addEventListener('click', activateUpperButtons);
@@ -350,6 +354,13 @@ function enableListeners() {
 	buttonListLower.addEventListener('click', activateLowerButtons);	
 }
 
+// This function uses the evt parameter,
+// which is automatically transmited whenever 
+// an upper button is clicked,
+// and depending on its value
+// the code for the correct key
+// is executed.
+//
 function activateUpperButtons(evt) {
 	if (evt.target.classList.contains('button-1')) {
 		wordQuiz = myWords01;
@@ -373,6 +384,13 @@ function activateUpperButtons(evt) {
 	}
 }
 
+// This function also uses the evt parameter,
+// which is automatically transmited whenever 
+// a lowe button is clicked,
+// and depending on its value
+// the code for the correct key
+// is executed.
+//
 function activateLowerButtons(evt) {
 	if (evt.target.classList.contains('button-6')) {
 		previousQuestion();
@@ -578,6 +596,12 @@ function arrowButtonListeners() {
 });
 }
 
+// This function shows the previous 
+// quest word either by clicking
+// the previous question button
+// or by clicking the left
+// arrow button on the keyboard.
+//
 function previousQuestion() {
 	clearForm();
 	hideResults();
@@ -590,6 +614,11 @@ function previousQuestion() {
 	}
 }
 
+// This function shows the next
+// quest word either by clicking
+// the next question button
+// or by clicking the right
+// arrow button on the keyboard.
 function nextQuestion() {
 	clearForm();
 	hideResults();
