@@ -260,6 +260,9 @@ body {
 
 <diV class='language-select'>
 
+<!--
+Radio buttons for selecting English or Greek words
+-->
 <form>
 	<input type="radio" name="select-language" id="lang-en" value="en-words" checked="checked">
 	<label for="lang-en">English words</label>
@@ -453,6 +456,13 @@ function startQuiz() {
 	hideResults();
 }
 
+// This function selects a ranodm eEglsh word,
+// or a random Greek word and displays it.
+// If englishWords() function returns true,
+// then an English word is selected, otherwise
+// if it returns false, then a Greek word
+// is selected and siplayed.
+//
 function questWord() {
 	const newWord = document.querySelector('.question-word');
 	if (englishWords()) {
@@ -465,11 +475,19 @@ function questWord() {
 	}
 }
 
+// When using the previous question and next questions buttons,
+// or the left and right keyboard arrows to move from one word to another,
+// this function displays a message at the beggining of the words array.
+//
 function levelStart() {
 	const displayMessage = document.querySelector('.question-word');
 	displayMessage.innerHTML = 'Level Start!';
 }
 
+// When using the previous question and next questions buttons,
+// or the left and right keyboard arrows to move from one word to another,
+// this function displays a message at the end of the words array.
+//
 function levelComplete() {
 	const displayMessage = document.querySelector('.question-word');
 	displayMessage.innerHTML = 'Level Completed!';
