@@ -289,6 +289,14 @@ Radio buttons for selecting English or Greek words
 	</div>
 
 
+<!--
+This is the form where a small input box appears
+so that the answer could be written.
+Pressing enter, calls the function handleForm().
+Also, instead of pressing enter, 
+the button Check answer could be clicked
+-->
+
 	<form class='answer-form' action='javascript:handleForm()'>
 		<label for='writeAnswer'>Answer:</label>
 		<input type='text' name='write-answer' id='writeAnswer' autocomplete='off'>
@@ -337,6 +345,13 @@ let index;
 
 enableListeners();
 
+// This function checks the two radio buttons at the top of the page,
+// and depending if english words is checked, then it returns true.
+// otherwise, if greek words is checked, it returns false.
+// In a case of an error, if for whatever reason, no button is checked
+// then this function returns a default value of true, i.e. assuming
+// that english words had been selected.
+//
 function englishWords() {
 	let englishWordsCheck = document.getElementById('lang-en').checked;
 	let greekWordsCheck = document.getElementById('lang-gr').checked;
