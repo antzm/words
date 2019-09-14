@@ -272,6 +272,10 @@ Radio buttons for selecting English or Greek words
 
 </diV>
 
+<!--
+Here are the five buttons that appear on the upper side of the page
+and they are used to selevt one of the five available levels.
+-->
 	<ul class='button-group-upper'>
 		<li><button class='buttons button-1' type='button'>Level 1</button></li>
 		<li><button class='buttons button-2' type='button'>Level 2</button></li>
@@ -280,6 +284,10 @@ Radio buttons for selecting English or Greek words
 		<li><button class='buttons button-5' type='button'>Level 5</button></li>
 	</ul>
 
+<!--
+Initially, this part of the page is hidden and appears as soon as 
+a button has been clicked in order to select one of the five available levels.
+-->
 <div class='display-option display-no'>
 
 	<div class="display-words">
@@ -296,7 +304,6 @@ Pressing enter, calls the function handleForm().
 Also, instead of pressing enter, 
 the button Check answer could be clicked
 -->
-
 	<form class='answer-form' action='javascript:handleForm()'>
 		<label for='writeAnswer'>Answer:</label>
 		<input type='text' name='write-answer' id='writeAnswer' autocomplete='off'>
@@ -554,16 +561,25 @@ function checkAnswer() {
 	}
 }
 
+// This function enables the results to be displayed
+// i.e. when the check answer button has been clicked
+//
 function showResults() {
 	const displayOptions = document.querySelector('.display-results');
 	displayOptions.className = 'display-results show-results';
 }
 
+// This function hides the results
+// i.e. when a new word has been selected
+//
 function hideResults() {
 	const displayOptions = document.querySelector('.display-results');
 	displayOptions.className = 'display-results hide-results';
 }
 
+// This functions displays the results when the correct
+// answer has been given.
+//
 function correctAnswer() {
 	const displayText = document.querySelector('.answer-result');
 	displayText.className = 'answer-result correct-answer';
@@ -573,6 +589,9 @@ function correctAnswer() {
 	displayAllMeanings();
 }
 
+// This functions displays the results when the
+// answer that was given was not correct.
+//
 function notCorrectAnswer() {
 	const displayText = document.querySelector('.answer-result');
 	displayText.className = 'answer-result not-correct-answer';
@@ -582,6 +601,9 @@ function notCorrectAnswer() {
 	displayAllMeanings();
 }
 
+// This function loops through all the meanings of a word
+// and displays them, together with the word.
+//
 function displayAllMeanings() {
 	const displayText = document.querySelector('.complete-answer');
 	let translationsArray = randomWordQuiz[index];
