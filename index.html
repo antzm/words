@@ -479,6 +479,16 @@ function randomNaturalNumber(max) {
 	return randNatNum;
 }
 
+// This function starts the quiz.
+// Firstly it displays the complete page
+// and then it randomizes the array that corresponds
+// to the selected level.
+// It adds the listeners to the arrow keyboard buttons
+// for selcting previous and next word,
+// and it hides the appearance of the results
+// i.e. if the answer was correct or not,
+// as well as the correct mening of the word
+//
 function startQuiz() {
 	const displayStatus = document.querySelector('.display-option');
 	if (displayStatus.className === 'display-option display-no') {
