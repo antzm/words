@@ -205,7 +205,7 @@ body {
 }
 
 
-/* display if the answer is correct */
+/* display message whether the answer is correct or not */
 .display-results {
 	text-align: center;
 }
@@ -442,6 +442,11 @@ function activateLowerButtons(evt) {
 	}
 }
 
+// When a level is selected,
+// this function intializes the game
+// by clearing the form,
+// and then starting the quiz
+//
 function initializeGame() {
 	index = 0;
 	clearForm();
