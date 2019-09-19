@@ -377,6 +377,7 @@ the answer that have been written in the answer form.
 let wordQuiz;
 let randomWordQuiz;
 let index;
+let answerStatus = [];	
 
 enableListeners();
 
@@ -575,31 +576,75 @@ function levelComplete() {
 // comparing an Engish answer to a Greek word, although
 // only one English answer can be correct in this case.
 //
+// function checkAnswer() {
+// 	let inputAnswer = document.getElementById('writeAnswer').value;
+// 	let answerStatus = [];	
+// 	if (englishWords()) {
+// 		for (i = 1; i < randomWordQuiz[index].length; i++) {
+// 			if (inputAnswer === randomWordQuiz[index][i]) {
+// 				answerStatus.push(true);
+// 			} else {
+// 				answerStatus.push(false);
+// 			}	
+// 		}
+// 	} else {
+// 		if (inputAnswer === randomWordQuiz[index][0]) {
+// 			answerStatus.push(true);
+// 		} else {
+// 			answerStatus.push(false);
+// 		}
+// 	}
+// 	let answerSum = 0;
+// 	for (i = 0;  i < answerStatus.length; i++) {
+// 		answerSum += answerStatus[i];
+// 	}
+// 	if (answerSum === 1) {
+// 		correctAnswer();
+// 	} else {
+// 		notCorrectAnswer();
+// 	}
+// }
+
 function checkAnswer() {
-	let inputAnswer = document.getElementById('writeAnswer').value;
-	let answerStatus = [];	
 	if (englishWords()) {
-		for (i = 1; i < randomWordQuiz[index].length; i++) {
-			if (inputAnswer === randomWordQuiz[index][i]) {
-				answerStatus.push(true);
-			} else {
-				answerStatus.push(false);
-			}	
-		}
+		checkEnglishAnswer();
 	} else {
-		if (inputAnswer === randomWordQuiz[index][0]) {
+		checkGreekAnswer();
+	}
+}
+
+function checkEnglishAnswer() {
+	let inputAnswer = document.getElementById('writeAnswer').value;
+	for (i = 1; i < randomWordQuiz[index].length; i++) {
+		if (inputAnswer === randomWordQuiz[index][i]) {
 			answerStatus.push(true);
 		} else {
 			answerStatus.push(false);
-		}
+		}	
 	}
+	verifyAnswer();
+}
+
+function checkGreekAnswer() {
+	let inputAnswer = document.getElementById('writeAnswer').value;
+	if (inputAnswer === randomWordQuiz[index][0]) {
+		answerStatus.push(true);
+	} else {
+		answerStatus.push(false);
+	}
+	verifyAnswer();
+}
+
+function verifyAnswer() {
 	let answerSum = 0;
 	for (i = 0;  i < answerStatus.length; i++) {
 		answerSum += answerStatus[i];
 	}
 	if (answerSum === 1) {
+		answerStatus = [];
 		correctAnswer();
 	} else {
+		answerStatus = [];
 		notCorrectAnswer();
 	}
 }
