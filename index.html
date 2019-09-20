@@ -100,7 +100,7 @@ const myWords04 = [
 // Each word inside these arrays, must be in quotes, either "double" or 'single' quotes.
 // Single quotes though, are prefared as they make the code easier to read.
 //
-const myWords05 = [
+const myWords05a = [
 	['word-00', 'meaning-00-a'],
 	['word-01', 'meaning-01-a', 'meaning-01-b'],
 	['word-02', 'meaning-02-a', 'meaning-02-b', 'meaning-02-c'],
@@ -112,6 +112,20 @@ const myWords05 = [
 	['word-08', 'meaning-08-a', 'meaning-08-b', 'meaning-08-c', 'meaning-08-d'],
 	['word-09', 'meaning-09-a', 'meaning-09-b', 'meaning-09-c', 'meaning-09-d', 'meaning-09-e']
 ];
+
+const myWords05 = [
+	['word-00', 'meaning'],
+	['word-01', 'meaning-01-a', 'meaning-01-b'],
+	['word-02', 'meaning-02-a', 'meaning-02-b', 'meaning-02-c'],
+	['word-03', 'meaning-03-a', 'meaning-03-b', 'meaning-03-c', 'meaning-03-d'],
+	['word-04', 'meaning-04-a', 'meaning-04-b', 'meaning-04-c', 'meaning-04-d', 'meaning-04-e'],
+	['word-05', 'meaning'],
+	['word-06', 'meaning-06-a', 'meaning-06-b'],
+	['word-07', 'meaning-07-a', 'meaning-07-b', 'meaning'],
+	['word-08', 'meaning-08-a', 'meaning-08-b', 'meaning-08-c', 'meaning-08-d'],
+	['word-09', 'meaning-09-a', 'meaning-09-b', 'meaning-09-c', 'meaning-09-d', 'meaning-09-e']
+];
+
 
 </script>
 
@@ -528,6 +542,8 @@ function startQuiz() {
 // then an English word is selected, otherwise
 // if it returns false, then a Greek word
 // is selected and siplayed.
+
+let greekWord;
 //
 function questWord() {
 	const newWord = document.querySelector('.question-word');
@@ -536,7 +552,8 @@ function questWord() {
 	} else {
 		let wordsLength = randomWordQuiz[index].length;
 		let position = randomNaturalNumber(wordsLength-1);
-		let greekWord = randomWordQuiz[index][position];
+		//let greekWord = randomWordQuiz[index][position];
+		greekWord = randomWordQuiz[index][position];
 		newWord.innerHTML = greekWord;
 	}
 }
@@ -625,15 +642,65 @@ function checkEnglishAnswer() {
 	verifyAnswer();
 }
 
+// function checkGreekAnswer() {
+// 	let inputAnswer = document.getElementById('writeAnswer').value;
+// 	if (inputAnswer === randomWordQuiz[index][0]) {
+// 		answerStatus.push(true);
+// 	} else {
+// 		answerStatus.push(false);
+// 	}
+// 	verifyAnswer();
+// }
+
+let multipleAnswers = [];
+
 function checkGreekAnswer() {
+
 	let inputAnswer = document.getElementById('writeAnswer').value;
-	if (inputAnswer === randomWordQuiz[index][0]) {
-		answerStatus.push(true);
-	} else {
-		answerStatus.push(false);
+
+	for (i = 0; i < randomWordQuiz.length; i++) {
+		for (j = 1; j < randomWordQuiz[i].length; j++) {
+			if (greekWord === randomWordQuiz[i][j]) {
+				// console.log(randomWordQuiz[i][j]);
+				multipleAnswers.push(i);
+			}
+		}
 	}
+
+	console.log('Multiple Answers Array Length:', multipleAnswers.length);
+	console.log('Input Answer:', inputAnswer);
+	console.log('Greek Word: ', greekWord);
+
+	if (multipleAnswers.length === 1 && inputAnswer === randomWordQuiz[index][0]) {
+		console.log('correct');
+		answerStatus.push(true);
+	}
+
+	if (multipleAnswers.length === 1 && inputAnswer !== randomWordQuiz[index][0]) {
+		console.log('not correct');
+		answerStatus.push(false);
+	}	
+
+	if (multipleAnswers.length > 1) {
+		answerStatus.push(true);
+		console.log("Multiple Words!!!");
+		// multiAnswer();
+	}
+
+	console.log(answerStatus);
+
+	multipleAnswers = [];
 	verifyAnswer();
+
 }
+
+
+function multiAnswer() {
+	console.log(multiAnswer);
+	// multipleAnswers = [];
+}
+
+
 
 function verifyAnswer() {
 	let answerSum = 0;
