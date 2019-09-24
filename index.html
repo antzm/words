@@ -113,19 +113,6 @@ const myWords05a = [
 	['word-09', 'meaning-09-a', 'meaning-09-b', 'meaning-09-c', 'meaning-09-d', 'meaning-09-e']
 ];
 
-const myWords05b = [
-	['word-00', 'meaning'],
-	['word-01', 'meaning-01-a', 'meaning-01-b'],
-	['word-02', 'meaning-02-a', 'meaning-02-b', 'meaning-02-c'],
-	['word-03', 'meaning-03-a', 'meaning-03-b', 'meaning-03-c', 'meaning-03-d'],
-	['word-04', 'meaning-04-a', 'meaning-04-b', 'meaning-04-c', 'meaning-04-d', 'meaning-04-e'],
-	['word-05', 'meaning'],
-	['word-06', 'meaning-06-a', 'meaning-06-b'],
-	['word-07', 'meaning-07-a', 'meaning-07-b', 'meaning'],
-	['word-08', 'meaning-08-a', 'meaning-08-b', 'meaning-08-c', 'meaning-08-d'],
-	['word-09', 'meaning-09-a', 'meaning-09-b', 'meaning-09-c', 'meaning-09-d', 'meaning-09-e']
-];
-
 const myWords05 = [
 	['hello', 'γεια'],
 	['hi', 'γεια'],
@@ -134,7 +121,7 @@ const myWords05 = [
 	['candy', 'γλυκό'],
 	['sweet', 'γλυκό'],
 	['cat', 'γάτα'],
-	['kitty', 'γατούλα'],
+	['kitty', 'γατούλα', 'γατάκι'],
 	['dog', 'σκύλος'],
 	['puppy', 'κουτάβι']
 ];
@@ -670,6 +657,8 @@ let multipleAnswers = [];
 
 function checkGreekAnswer() {
 
+	// answerStatus = [];
+
 	let inputAnswer = document.getElementById('writeAnswer').value;
 
 	for (i = 0; i < randomWordQuiz.length; i++) {
@@ -692,8 +681,11 @@ function checkGreekAnswer() {
 
 		for (i = 0; i < multipleAnswers.length; i++) {
 			if (inputAnswer === randomWordQuiz[multipleAnswers[i]][0]); {
-				console.log(randomWordQuiz[multipleAnswers[i]][0]);
+				console.log('word: ', randomWordQuiz[multipleAnswers[i]][0]);
+				console.log('multiAnswers: ', multipleAnswers[i]);
 				answerStatus.push(true);
+				console.log('answerStatus: ', answerStatus);
+				console.log('input-answer: ', inputAnswer);
 			}
 		}
 	}
