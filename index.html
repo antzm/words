@@ -657,8 +657,6 @@ let multipleAnswers = [];
 
 function checkGreekAnswer() {
 
-	// answerStatus = [];
-
 	let inputAnswer = document.getElementById('writeAnswer').value;
 
 	for (i = 0; i < randomWordQuiz.length; i++) {
@@ -669,23 +667,31 @@ function checkGreekAnswer() {
 		}
 	}
 
-	if (multipleAnswers.length === 1 && inputAnswer === randomWordQuiz[index][0]) {
-		answerStatus.push(true);
-	}
+	// if (multipleAnswers.length === 1 && inputAnswer === randomWordQuiz[index][0]) {
+	// 	answerStatus.push(true);
+	// }
 
-	if (multipleAnswers.length === 1 && inputAnswer !== randomWordQuiz[index][0]) {
-		answerStatus.push(false);
-	}	
+	// if (multipleAnswers.length === 1 && inputAnswer !== randomWordQuiz[index][0]) {
+	// 	answerStatus.push(false);
+	// }	
+
+	if (multipleAnswers.length === 1) {
+
+		if (inputAnswer === randomWordQuiz[index][0]) {
+			answerStatus.push(true);
+		} else {
+			answerStatus.push(false);
+		}
+		
+	}
 
 	if (multipleAnswers.length > 1) {
 
 		for (i = 0; i < multipleAnswers.length; i++) {
-			if (inputAnswer === randomWordQuiz[multipleAnswers[i]][0]); {
-				console.log('word: ', randomWordQuiz[multipleAnswers[i]][0]);
-				console.log('multiAnswers: ', multipleAnswers[i]);
-				answerStatus.push(true);
-				console.log('answerStatus: ', answerStatus);
-				console.log('input-answer: ', inputAnswer);
+			if (inputAnswer === randomWordQuiz[multipleAnswers[i]][0]) {
+				answerStatus.push(true); 
+			} else {
+				answerStatus.push(false);
 			}
 		}
 	}
