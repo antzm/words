@@ -543,20 +543,24 @@ function startQuiz() {
 // if it returns false, then a Greek word
 // is selected and siplayed.
 
-let wordEn;
 let wordGr;
-//
+
 function questWord() {
+
 	const newWord = document.querySelector('.question-word');
+
 	if (englishWords()) {
-			wordEn = randomWordQuiz[index][0];
+			let wordEn = randomWordQuiz[index][0];
 			newWord.innerHTML = wordEn;
-	} else {
+	} 
+
+	if (!englishWords()) {
 		let wordsLength = randomWordQuiz[index].length;
 		let position = randomNaturalNumber(wordsLength-1);
 		wordGr = randomWordQuiz[index][position];
 		newWord.innerHTML = wordGr;
 	}
+
 }
 
 // When using the previous question and next questions buttons,
@@ -666,14 +670,6 @@ function checkGreekAnswer() {
 			}
 		}
 	}
-
-	// if (multipleAnswers.length === 1 && inputAnswer === randomWordQuiz[index][0]) {
-	// 	answerStatus.push(true);
-	// }
-
-	// if (multipleAnswers.length === 1 && inputAnswer !== randomWordQuiz[index][0]) {
-	// 	answerStatus.push(false);
-	// }	
 
 	if (multipleAnswers.length === 1) {
 
