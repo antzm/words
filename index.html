@@ -636,7 +636,9 @@ function checkAnswer() {
 }
 
 function checkEnglishAnswer() {
+
 	let inputAnswer = document.getElementById('writeAnswer').value;
+
 	for (i = 1; i < randomWordQuiz[index].length; i++) {
 		if (inputAnswer === randomWordQuiz[index][i]) {
 			answerStatus.push(true);
@@ -644,18 +646,10 @@ function checkEnglishAnswer() {
 			answerStatus.push(false);
 		}	
 	}
+
 	verifyAnswer();
 }
 
-// function checkGreekAnswer() {
-// 	let inputAnswer = document.getElementById('writeAnswer').value;
-// 	if (inputAnswer === randomWordQuiz[index][0]) {
-// 		answerStatus.push(true);
-// 	} else {
-// 		answerStatus.push(false);
-// 	}
-// 	verifyAnswer();
-// }
 
 let multipleAnswers = [];
 
@@ -780,7 +774,8 @@ function displayAllMeanings() {
 // replacing the existing value of the form
 //
 function clearForm() {
-	document.getElementById('writeAnswer').value = null;
+	// document.getElementById('writeAnswer').value = null;
+	document.getElementById('writeAnswer').value = '';	
 }
 
 // This function is calles whenever the enter button
