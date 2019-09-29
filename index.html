@@ -650,7 +650,22 @@ function checkEnglishAnswer() {
 	verifyAnswer();
 }
 
-
+// This function checks the answer given to the Greek words.
+// As one English word could have the same meaning in the Greek language
+// as another English word, this function first searches to see if indide
+// the array which is at use at that time, there are more than one instances
+// of the same Greek word. i.e. if there are two exact Greek words 
+// which correspond to different English word.
+// In such a case, both English words could be considered as correct,
+// and thus, this has to be taken into conideration.
+// The array "multipleAnswers" contains only one item if there
+// is only instance of a certain Greek word.
+// Otherwise it includes all the instances of the Greek word.
+// So, depending on the length of thus array,
+// the procees to test the correct answer is different. 
+// If the array lenght is 1, then there is only correct english answer to the question.
+// Othewise, there are so many answers to the array, as the length of the array.
+//
 let multipleAnswers = [];
 
 function checkGreekAnswer() {
