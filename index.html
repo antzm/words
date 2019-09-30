@@ -814,12 +814,16 @@ function handleForm() {
 // they are released and not when pressed.
 //
 function arrowButtonListeners() {
-	document.addEventListener('keyup', function(evt) {
+	document.addEventListener('keydown', function(evt) {
 	let keyPressed = evt.key;
+	// note: 'keyup' vs 'keydown'
+	console.log(evt.key);
 	if (keyPressed == 'ArrowLeft') {
+		// console.log('going west');
 		previousQuestion();
 	}
 	if (keyPressed == 'ArrowRight') {
+		// console.log('going east');
 		nextQuestion();
 	}
 });
