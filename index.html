@@ -394,6 +394,16 @@ let index;
 let answerStatus = [];	
 
 enableListeners();
+defaultAnswer()
+
+function defaultAnswer() {
+	let currentAnswer = document.getElementById('writeAnswer').value;
+	if (currentAnswer === null) {
+		console.log('answr1', currentAnswer);
+		document.getElementById('writeAnswer').value = '';
+	}
+}
+
 
 // This function checks the two radio buttons at the top of the page,
 // and depending if english words is checked, then it returns true.
