@@ -462,6 +462,7 @@ function activateUpperButtons(evt) {
 function activateLowerButtons(evt) {
 	if (evt.target.classList.contains('button-6')) {
 		previousQuestion();
+		totalWordsNumber();
 	}
 	if (evt.target.classList.contains('button-7')) {
 		if (index >= 0 && index < randomWordQuiz.length) {
@@ -471,6 +472,7 @@ function activateLowerButtons(evt) {
 	}
 	if (evt.target.classList.contains('button-8')) {
 		nextQuestion();
+		totalWordsNumber();
 	}
 }
 
@@ -560,6 +562,8 @@ function questWord() {
 		wordGr = randomWordQuiz[index][position];
 		newWord.innerHTML = wordGr;
 	}
+
+	// totalWordsNumber();
 
 }
 
@@ -843,6 +847,23 @@ function nextQuestion() {
 		index = randomWordQuiz.length;
 		levelComplete();
 	}
+}
+
+function totalWordsNumber() {
+
+	let wordIndex;
+	let totalWords;
+
+	if (index >= 0 && index < randomWordQuiz.length) {
+		wordIndex = index + 1;
+		totalWords = randomWordQuiz.length;
+
+	} else {
+		wordIndex = '---';
+		totalWords = randomWordQuiz.length;
+	}
+	
+	console.log(wordIndex + " out of " + totalWords);
 }
 
 </script>
