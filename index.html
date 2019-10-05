@@ -689,7 +689,7 @@ function checkGreekAnswer() {
 		}
 	}
 
-	multipleAnswers = [];
+	// multipleAnswers = [];
 	verifyAnswer();
 
 }
@@ -763,10 +763,20 @@ function notCorrectAnswer() {
 // and displays them, together with the word.
 //
 function displayAllMeanings() {
+
 	const displayText = document.querySelector('.complete-answer');
 	let translationsArray = randomWordQuiz[index];
 	let joinedWords = translationsArray.join(' / ');
-	displayText.innerHTML = joinedWords;
+
+	if (multipleAnswers.length > 1) {
+		displayMeanings = '*** ' + joinedWords + ' ***';
+	} else {
+		displayMeanings = joinedWords;
+	}
+
+	displayText.innerHTML = displayMeanings;
+
+	multipleAnswers = [];
 }
 
 // This function clears the form
