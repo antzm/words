@@ -213,6 +213,11 @@ body {
 .message-word {
 	font-size: 16px;
 	font-style: italic;
+	margin-bottom: 3px;
+}
+
+.word-counter {
+	margin-top: 5px;
 }
 
 .question-word {
@@ -330,7 +335,8 @@ a button has been clicked in order to select one of the five available levels.
 
 	<div class="display-words">
 		<p class="message-word">...and now, please, write the meaning of the word:</p>
-		<p class="question-word">English or Greek Word</p>
+		<p class="word-counter">(displays the word number out of the total words)</p>
+		<p class="question-word">(Displays the English or the Greek Word)</p>
 	
 	</div>
 
@@ -547,6 +553,8 @@ function startQuiz() {
 
 let wordGr;
 
+// totalWordsNumber();
+
 function questWord() {
 
 	const newWord = document.querySelector('.question-word');
@@ -563,7 +571,7 @@ function questWord() {
 		newWord.innerHTML = wordGr;
 	}
 
-	// totalWordsNumber();
+	totalWordsNumber();
 
 }
 
@@ -861,6 +869,8 @@ function nextQuestion() {
 
 function totalWordsNumber() {
 
+	const displayCounter = document.querySelector('.word-counter');
+
 	let wordIndex;
 	let totalWords;
 
@@ -873,7 +883,11 @@ function totalWordsNumber() {
 		totalWords = randomWordQuiz.length;
 	}
 	
-	console.log(wordIndex + " out of " + totalWords);
+	const counterMessage = wordIndex + " out of " + totalWords;
+
+	displayCounter.innerHTML = counterMessage;
+
+	console.log(counterMessage);
 }
 
 </script>
