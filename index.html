@@ -217,6 +217,8 @@ body {
 }
 
 .word-counter {
+	font-family: Courier;
+	font-style: italic;
 	margin-top: 5px;
 }
 
@@ -409,11 +411,14 @@ enableListeners();
 // that english words had been selected.
 //
 function englishWords() {
+
 	let englishWordsCheck = document.getElementById('lang-en').checked;
 	let greekWordsCheck = document.getElementById('lang-gr').checked;
+
 	if (!englishWordsCheck && !greekWordsCheck) {
 		englishWordsCheck = true;
 	}
+
 	return englishWordsCheck;
 }
 
@@ -436,22 +441,27 @@ function enableListeners() {
 // is executed.
 //
 function activateUpperButtons(evt) {
+
 	if (evt.target.classList.contains('button-1')) {
 		wordQuiz = myWords01;
 		initializeGame();
 	}
+
 	if (evt.target.classList.contains('button-2')) {
 		wordQuiz = myWords02;
 		initializeGame();
 	}
+
 	if (evt.target.classList.contains('button-3')) {
 		wordQuiz = myWords03;
 		initializeGame();	
 	}
+
 	if (evt.target.classList.contains('button-4')) {
 		wordQuiz = myWords04;
 		initializeGame();
 	}
+
 	if (evt.target.classList.contains('button-5')) {
 		wordQuiz = myWords05;
 		initializeGame();
@@ -466,16 +476,19 @@ function activateUpperButtons(evt) {
 // is executed.
 //
 function activateLowerButtons(evt) {
+
 	if (evt.target.classList.contains('button-6')) {
 		previousQuestion();
 		totalWordsNumber();
 	}
+
 	if (evt.target.classList.contains('button-7')) {
 		if (index >= 0 && index < randomWordQuiz.length) {
 			checkAnswer();
 			showResults();
 		}
 	}
+
 	if (evt.target.classList.contains('button-8')) {
 		nextQuestion();
 		totalWordsNumber();
@@ -553,8 +566,6 @@ function startQuiz() {
 
 let wordGr;
 
-// totalWordsNumber();
-
 function questWord() {
 
 	const newWord = document.querySelector('.question-word');
@@ -611,7 +622,6 @@ function levelComplete() {
 // only one English answer can be correct in this case.
 
 
-
 function checkAnswer() {
 
 	defaultAnswer();
@@ -630,6 +640,7 @@ function defaultAnswer() {
 		document.getElementById('writeAnswer').value = '';
 	}
 }
+
 
 function checkEnglishAnswer() {
 
@@ -697,7 +708,6 @@ function checkGreekAnswer() {
 		}
 	}
 
-	// multipleAnswers = [];
 	verifyAnswer();
 
 }
@@ -713,7 +723,9 @@ function checkGreekAnswer() {
 // }
 
 function verifyAnswer() {
+
 	let answerSum = 0;
+
 	for (i = 0;  i < answerStatus.length; i++) {
 		answerSum += answerStatus[i];
 	}
@@ -817,7 +829,9 @@ function handleForm() {
 // they are released and not when pressed.
 //
 function arrowButtonListeners() {
+
 	document.addEventListener('keydown', function(evt) {
+
 	let keyPressed = evt.key;
 	// note: 'keyup' vs 'keydown'
 	console.log(evt.key);
@@ -839,9 +853,12 @@ function arrowButtonListeners() {
 // arrow button on the keyboard.
 //
 function previousQuestion() {
+
 	clearForm();
 	hideResults();
+
 	index--;
+
 	if (index >= 0) {
 		questWord();
 	} else {
@@ -854,11 +871,15 @@ function previousQuestion() {
 // quest word either by clicking
 // the next question button
 // or by clicking the right
-// arrow button on the keyboard.
+// arrow button on the keyboard
+//
 function nextQuestion() {
+
 	clearForm();
 	hideResults();
+
 	index++;
+
 	if (index < randomWordQuiz.length) {
 		questWord();
 	} else {
@@ -867,6 +888,9 @@ function nextQuestion() {
 	}
 }
 
+// This function displays the number of each question
+// and the total number of the words included in the current level
+//
 function totalWordsNumber() {
 
 	const displayCounter = document.querySelector('.word-counter');
