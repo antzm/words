@@ -427,8 +427,10 @@ function englishWords() {
 // and one event listener for the lower buttons.
 //
 function enableListeners() {
+
 	const buttonListUpper = document.querySelector('.button-group-upper');
 	buttonListUpper.addEventListener('click', activateUpperButtons);
+	
 	const buttonListLower = document.querySelector('.button-group-lower');
 	buttonListLower.addEventListener('click', activateLowerButtons);	
 }
@@ -514,10 +516,12 @@ function initializeGame() {
 // for every element of the array.
 //
 function randomizeArray(randArray) {
+
 	for (let i = 0; i < randArray.length; i++) {
 		let firstElement = randArray.shift();
 		randArray.splice(randomNumber(randArray.length), 0, firstElement);
 	}
+
 	return randArray;
 }
 
@@ -548,10 +552,13 @@ function randomNaturalNumber(max) {
 // as well as the correct mening of the word
 //
 function startQuiz() {
+
 	const displayStatus = document.querySelector('.display-option');
+
 	if (displayStatus.className === 'display-option display-no') {
 		displayStatus.className = 'display-option display-yes';
 	}
+
 	randomWordQuiz = randomizeArray(wordQuiz);
 	arrowButtonListeners();
 	hideResults();
@@ -634,9 +641,10 @@ function checkAnswer() {
 }
 
 function defaultAnswer() {
+
 	let currentAnswer = document.getElementById('writeAnswer').value;
+
 	if (currentAnswer === null) {
-		console.log('answr1', currentAnswer);
 		document.getElementById('writeAnswer').value = '';
 	}
 }
@@ -759,11 +767,14 @@ function hideResults() {
 // answer has been given.
 //
 function correctAnswer() {
+
 	const displayText = document.querySelector('.answer-result');
 	displayText.className = 'answer-result correct-answer';
 	displayText.innerHTML = 'Congratulations! Correct answer!';
+
 	const displayWords = document.querySelector('.complete-answer');
 	displayWords.className = 'complete-answer correct-answer';
+
 	displayAllMeanings();
 }
 
@@ -771,11 +782,14 @@ function correctAnswer() {
 // answer that was given was not correct.
 //
 function notCorrectAnswer() {
+
 	const displayText = document.querySelector('.answer-result');
 	displayText.className = 'answer-result not-correct-answer';
 	displayText.innerHTML = 'The correct answer is:';
+
 	const displayWords = document.querySelector('.complete-answer');
 	displayWords.className = 'complete-answer not-correct-answer';
+
 	displayAllMeanings();
 }
 
@@ -815,6 +829,7 @@ function clearForm() {
 // correct or then not correct resluts.
 //
 function handleForm() {
+
 	if (index >= 0 && index < randomWordQuiz.length) {
 		checkAnswer();
 		showResults();
@@ -834,13 +849,13 @@ function arrowButtonListeners() {
 
 	let keyPressed = evt.key;
 	// note: 'keyup' vs 'keydown'
-	console.log(evt.key);
+	// console.log(evt.key);
+
 	if (keyPressed == 'ArrowLeft') {
-		// console.log('going west');
 		previousQuestion();
 	}
+
 	if (keyPressed == 'ArrowRight') {
-		// console.log('going east');
 		nextQuestion();
 	}
 });
@@ -911,7 +926,7 @@ function totalWordsNumber() {
 
 	displayCounter.innerHTML = counterMessage;
 
-	console.log(counterMessage);
+	// console.log(counterMessage);
 }
 
 </script>
