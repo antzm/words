@@ -843,13 +843,36 @@ function handleForm() {
 // the keys will function only when 
 // they are released and not when pressed.
 //
+// function arrowButtonListeners() {
+
+// 	document.addEventListener('keydown', function(evt) {
+
+// 	let keyPressed = evt.key;
+// 	// note: 'keyup' vs 'keydown'
+// 	// console.log(evt.key);
+
+// 	if (keyPressed == 'ArrowLeft') {
+// 		previousQuestion();
+// 	}
+
+// 	if (keyPressed == 'ArrowRight') {
+// 		nextQuestion();
+// 	}
+// });
+// }
+
+
 function arrowButtonListeners() {
 
-	document.addEventListener('keydown', function(evt) {
+	document.addEventListener('keydown', activateArrowButtons);
+
+}
+
+
+function activateArrowButtons(evt) {
 
 	let keyPressed = evt.key;
-	// note: 'keyup' vs 'keydown'
-	// console.log(evt.key);
+	console.log(keyPressed);
 
 	if (keyPressed == 'ArrowLeft') {
 		previousQuestion();
@@ -858,8 +881,9 @@ function arrowButtonListeners() {
 	if (keyPressed == 'ArrowRight') {
 		nextQuestion();
 	}
-});
+
 }
+
 
 // This function shows the previous 
 // quest word either by clicking
