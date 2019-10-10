@@ -118,8 +118,8 @@ const myWords05 = [
 	['hi', 'γεια'],
 	['automobile', 'αυτοκίνητο'],
 	['car', 'αυτοκίνητο'],
-	['candy', 'γλυκό'],
-	['sweet', 'γλυκό'],
+	['candy', 'γλυκό', 'λειχουδιά'],
+	['sweet', 'γλυκό', 'γλύκισμα'],
 	['cat', 'γάτα'],
 	['kitty', 'γατούλα', 'γατάκι'],
 	['dog', 'σκύλος'],
@@ -503,7 +503,9 @@ function activateLowerButtons(evt) {
 // and then starting the quiz
 //
 function initializeGame() {
+
 	index = 0;
+
 	clearForm();
 	startQuiz();
 	questWord();
@@ -529,6 +531,7 @@ function randomizeArray(randArray) {
 // between 0 and max (including 0 and max)
 //
 function randomNumber(max) {
+
 	let randNum = Math.floor(Math.random()*(max+1));
 	return randNum;
 }
@@ -537,6 +540,7 @@ function randomNumber(max) {
 // between 1 and max (including 1 and max)
 //
 function randomNaturalNumber(max) {
+
 	let randNatNum = Math.ceil(Math.random()*max);
 	return randNatNum;
 }
@@ -598,6 +602,7 @@ function questWord() {
 // this function displays a message at the beggining of the words array.
 //
 function levelStart() {
+
 	const displayMessage = document.querySelector('.question-word');
 	displayMessage.innerHTML = 'Level Start!';
 }
@@ -607,6 +612,7 @@ function levelStart() {
 // this function displays a message at the end of the words array.
 //
 function levelComplete() {
+
 	const displayMessage = document.querySelector('.question-word');
 	displayMessage.innerHTML = 'Level Completed!';
 }
@@ -751,6 +757,7 @@ function verifyAnswer() {
 // i.e. when the check answer button has been clicked
 //
 function showResults() {
+
 	const displayOptions = document.querySelector('.display-results');
 	displayOptions.className = 'display-results show-results';
 }
@@ -759,6 +766,7 @@ function showResults() {
 // i.e. when a new word has been selected
 //
 function hideResults() {
+
 	const displayOptions = document.querySelector('.display-results');
 	displayOptions.className = 'display-results hide-results';
 }
@@ -864,7 +872,8 @@ function handleForm() {
 
 function arrowButtonListeners() {
 
-	document.addEventListener('keydown', activateArrowButtons);
+	// document.addEventListener('keydown', activateArrowButtons);
+	document.addEventListener('keyup', activateArrowButtons);
 
 }
 
@@ -950,7 +959,6 @@ function totalWordsNumber() {
 
 	displayCounter.innerHTML = counterMessage;
 
-	// console.log(counterMessage);
 }
 
 </script>
