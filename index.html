@@ -881,7 +881,7 @@ function arrowButtonListeners() {
 function activateArrowButtons(evt) {
 
 	let keyPressed = evt.key;
-	console.log(keyPressed);
+	// console.log(keyPressed);
 
 	if (keyPressed == 'ArrowLeft') {
 		previousQuestion();
@@ -907,10 +907,13 @@ function previousQuestion() {
 
 	index--;
 
+	console.log('index_left', index);
+
 	if (index >= 0) {
 		questWord();
 	} else {
-		index = -1;
+		index = 0;
+		// index = -1;
 		levelStart();
 	}
 }
@@ -928,10 +931,13 @@ function nextQuestion() {
 
 	index++;
 
+	console.log('index_right', index);
+
 	if (index < randomWordQuiz.length) {
 		questWord();
 	} else {
-		index = randomWordQuiz.length;
+		index = randomWordQuiz.length-1;
+		// index = randomWordQuiz.length-1;
 		levelComplete();
 	}
 }
