@@ -222,6 +222,14 @@ body {
 	margin-top: 5px;
 }
 
+.show-word-counter {
+	visibility: show;
+}
+
+.hide-word-counter {
+	visibility: hidden;
+}
+
 .question-word {
 	font-size: 21px;
 	font-weight: bold;
@@ -941,6 +949,21 @@ function nextQuestion() {
 		levelComplete();
 	}
 }
+
+
+function showWordCounter() {
+
+	const counterStatus = document.querySelector('.word-counter');
+	counterStatus.className = 'word-counter show-word-counter';
+}
+
+
+function hideWordCounter() {
+
+	const counterStatus = document.querySelector('.word-counter');
+	counterStatus.className = 'word-counter hide-word-counter';	
+}
+
 
 // This function displays the number of each question
 // and the total number of the words included in the current level
