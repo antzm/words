@@ -517,6 +517,7 @@ function initializeGame() {
 	clearForm();
 	startQuiz();
 	questWord();
+	showWordCounter();
 }
 
 // randomizeArray(randArray) randomizes an array
@@ -611,6 +612,7 @@ function questWord() {
 //
 function levelStart() {
 
+	hideWordCounter()
 	const displayMessage = document.querySelector('.question-word');
 	displayMessage.innerHTML = 'Level Start!';
 }
@@ -621,6 +623,7 @@ function levelStart() {
 //
 function levelComplete() {
 
+	hideWordCounter()
 	const displayMessage = document.querySelector('.question-word');
 	displayMessage.innerHTML = 'Level Completed!';
 }
@@ -912,6 +915,7 @@ function previousQuestion() {
 
 	clearForm();
 	hideResults();
+	showWordCounter();
 
 	index--;
 
@@ -920,8 +924,7 @@ function previousQuestion() {
 	if (index >= 0) {
 		questWord();
 	} else {
-		index = 0;
-		// index = -1;
+		index = -1;
 		levelStart();
 	}
 }
@@ -936,6 +939,7 @@ function nextQuestion() {
 
 	clearForm();
 	hideResults();
+	showWordCounter();
 
 	index++;
 
@@ -944,8 +948,7 @@ function nextQuestion() {
 	if (index < randomWordQuiz.length) {
 		questWord();
 	} else {
-		index = randomWordQuiz.length-1;
-		// index = randomWordQuiz.length-1;
+		index = randomWordQuiz.length;
 		levelComplete();
 	}
 }
@@ -975,14 +978,18 @@ function totalWordsNumber() {
 	let wordIndex;
 	let totalWords;
 
-	if (index >= 0 && index < randomWordQuiz.length) {
-		wordIndex = index + 1;
-		totalWords = randomWordQuiz.length;
+	wordIndex = index + 1;
+	totalWords = randomWordQuiz.length;
 
-	} else {
-		wordIndex = '---';
-		totalWords = randomWordQuiz.length;
-	}
+
+	// if (index >= 0 && index < randomWordQuiz.length) {
+	// 	wordIndex = index + 1;
+	// 	totalWords = randomWordQuiz.length;
+
+	// } else {
+	// 	wordIndex = '---';
+	// 	totalWords = randomWordQuiz.length;
+	// }
 	
 	const counterMessage = wordIndex + " out of " + totalWords;
 
