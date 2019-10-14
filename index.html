@@ -704,6 +704,11 @@ function checkGreekAnswer() {
 
 	let inputAnswer = document.getElementById('writeAnswer').value;
 
+	// Check to see if the Greek word corresponds to only 1 English word,
+	// or if it corresponds to more than 1 English words.
+	// Store the indexes of the English word ot the English words
+	// into the array "multipleAnswers".
+	//
 	for (i = 0; i < randomWordQuiz.length; i++) {
 		for (j = 1; j < randomWordQuiz[i].length; j++) {
 			if (wordGr === randomWordQuiz[i][j]) {
@@ -712,6 +717,10 @@ function checkGreekAnswer() {
 		}
 	}
 
+	// If the Greek word corresponds only to 1 English word,
+	// i.e. "multipleAnswers" array contains only 1 item,
+	// then check if the answer is equal to the English word.
+	// 
 	if (multipleAnswers.length === 1) {
 
 		if (inputAnswer === randomWordQuiz[index][0]) {
@@ -722,6 +731,10 @@ function checkGreekAnswer() {
 		
 	}
 
+	// If the Greek word corresponds to more than 1 English words,
+	// i.e. "multipleAnswers" array contains only more than 1 item,
+	// then check if the answer equals one of those English words.
+	//
 	if (multipleAnswers.length > 1) {
 
 		for (i = 0; i < multipleAnswers.length; i++) {
@@ -833,13 +846,14 @@ function displayAllMeanings() {
 }
 
 // This function clears the form
-// by assigning the value null and thus
+// by assigning the value '' and thus
 // replacing the existing value of the form
 //
 function clearForm() {
-	// document.getElementById('writeAnswer').value = null;
+
 	document.getElementById('writeAnswer').value = '';	
 }
+
 
 // This function is calles whenever the enter button
 // is pressed while inside the form window.
@@ -855,44 +869,30 @@ function handleForm() {
 	}
 }
 
-// This function adds event listeners
+
+// This function adds the event listeners
 // to the left and right arrow buttons
-// on the keyboard. 
+// of the keyboard.
 // To avoid pressing the keys continiously,
 // the keys will function only when 
-// they are released and not when pressed.
+// they are released and not when they are pressed.
+// This is because the 'keyup' is used, instead of the 'keydown'
 //
-// function arrowButtonListeners() {
-
-// 	document.addEventListener('keydown', function(evt) {
-
-// 	let keyPressed = evt.key;
-// 	// note: 'keyup' vs 'keydown'
-// 	// console.log(evt.key);
-
-// 	if (keyPressed == 'ArrowLeft') {
-// 		previousQuestion();
-// 	}
-
-// 	if (keyPressed == 'ArrowRight') {
-// 		nextQuestion();
-// 	}
-// });
-// }
-
-
 function arrowButtonListeners() {
 
-	// document.addEventListener('keydown', activateArrowButtons);
 	document.addEventListener('keyup', activateArrowButtons);
 
 }
 
 
+// This is the function that is added to the event listeners
+// on the left right arrow buttons,
+// so that every time one of those buttons is presses,
+// the next or the previous word will appear.
+//
 function activateArrowButtons(evt) {
 
 	let keyPressed = evt.key;
-	// console.log(keyPressed);
 
 	if (keyPressed == 'ArrowLeft') {
 		previousQuestion();
@@ -919,8 +919,6 @@ function previousQuestion() {
 
 	index--;
 
-	console.log('index_left', index);
-
 	if (index >= 0) {
 		questWord();
 	} else {
@@ -928,6 +926,7 @@ function previousQuestion() {
 		levelStart();
 	}
 }
+
 
 // This function shows the next
 // quest word either by clicking
@@ -943,8 +942,6 @@ function nextQuestion() {
 
 	index++;
 
-	console.log('index_right', index);
-
 	if (index < randomWordQuiz.length) {
 		questWord();
 	} else {
@@ -954,6 +951,9 @@ function nextQuestion() {
 }
 
 
+// This function makes the Word Counter visible
+// i.e. "8 out of 10"
+//
 function showWordCounter() {
 
 	const counterStatus = document.querySelector('.word-counter');
@@ -961,6 +961,9 @@ function showWordCounter() {
 }
 
 
+// This function hides the Word Counter
+// i.e. "8 out of 10" is not visible
+//
 function hideWordCounter() {
 
 	const counterStatus = document.querySelector('.word-counter');
@@ -970,6 +973,7 @@ function hideWordCounter() {
 
 // This function displays the number of each question
 // and the total number of the words included in the current level
+// i.e. "8 out of 10"
 //
 function totalWordsNumber() {
 
@@ -980,16 +984,6 @@ function totalWordsNumber() {
 
 	wordIndex = index + 1;
 	totalWords = randomWordQuiz.length;
-
-
-	// if (index >= 0 && index < randomWordQuiz.length) {
-	// 	wordIndex = index + 1;
-	// 	totalWords = randomWordQuiz.length;
-
-	// } else {
-	// 	wordIndex = '---';
-	// 	totalWords = randomWordQuiz.length;
-	// }
 	
 	const counterMessage = wordIndex + " out of " + totalWords;
 
