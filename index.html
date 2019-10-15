@@ -407,7 +407,9 @@ the answer that have been written in the answer form.
 let wordQuiz;
 let randomWordQuiz;
 let index;
-let answerStatus = [];	
+let wordGr;
+let answerStatus = [];
+let multipleAnswers = [];
 
 enableListeners();
 
@@ -583,9 +585,7 @@ function startQuiz() {
 // then an English word is selected, otherwise
 // if it returns false, then a Greek word
 // is selected and siplayed.
-
-let wordGr;
-
+//
 function questWord() {
 
 	const newWord = document.querySelector('.question-word');
@@ -698,8 +698,6 @@ function checkEnglishAnswer() {
 // If the array lenght is 1, then there is only correct english answer to the question.
 // Othewise, there are so many answers to the array, as the length of the array.
 //
-let multipleAnswers = [];
-
 function checkGreekAnswer() {
 
 	let inputAnswer = document.getElementById('writeAnswer').value;
@@ -835,7 +833,7 @@ function displayAllMeanings() {
 	let joinedWords = translationsArray.join(' / ');
 
 	if (multipleAnswers.length > 1) {
-		displayMeanings = '*** ' + joinedWords + ' ***';
+		displayMeanings = '**** ' + joinedWords + ' ****';
 	} else {
 		displayMeanings = joinedWords;
 	}
