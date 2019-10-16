@@ -628,23 +628,9 @@ function levelComplete() {
 	displayMessage.innerHTML = 'Level Completed!';
 }
 
-// checkAnswer() checks if the answer is correct or not.
-// It checks every meaning of the english word and if the
-// answer matches at least one of the meanings, then
-// the answer is correct. For every meaning checked,
-// a booleean value of true or false is added in the
-// array called 'answerStaus'. In the end, the sum
-// of all the elements in the array is calcualted.
-// The result can be either 0 or 1 as the array
-// contains only boolean values of true(1) and false(0).
-// Each time, only one true can be included in the array
-// and thus, the sum of the array can only be 1 or 0.
-// If the sum is 1, then the answer was correct,
-// otherwise, if the sum is 0, then the answer was not correct.
-// For simplicity, the exact same logic is used when 
-// comparing an Engish answer to a Greek word, although
-// only one English answer can be correct in this case.
 
+// The exact same logic is used when 
+// comparing an Engish answer to a Greek word.
 
 function checkAnswer() {
 
@@ -667,6 +653,20 @@ function defaultAnswer() {
 }
 
 
+// checkEnglishAnswer() checks if the answer is correct or not.
+// It checks every Greek meaning of the English word and if the
+// answer matches one of the meanings, then
+// the answer is correct. For every meaning checked,
+// a booleean value of true or false is added in the
+// array called 'answerStaus'. In the end, the sum
+// of all the elements in the array is calcualted.
+// The result can be either 0 or 1 as the array
+// contains only boolean values of true(1) and false(0).
+// Each time, only one true value can be included in the array
+// and thus, the sum of the array can only be 1 or 0.
+// If the sum is 1, then the answer was correct,
+// otherwise, if the sum is 0, then the answer was not correct.
+//
 function checkEnglishAnswer() {
 
 	let inputAnswer = document.getElementById('writeAnswer').value;
@@ -758,6 +758,14 @@ function checkGreekAnswer() {
 // 	}
 // }
 
+// verifyAnswer() checks the array "answerStatus"
+// and depending on its contents, calls a function
+// which will dispay if the answer was correct or not.
+// To check if the answer was correct or not,
+// the sume of the "answerStatus" array is calculated.
+// If the sum is 0, then the answer was not correct (i.e. contains only false values). 
+// If the sum is 1, then the answer is correct (i.e. contains one true value).
+//
 function verifyAnswer() {
 
 	let answerSum = 0;
