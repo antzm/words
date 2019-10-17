@@ -100,17 +100,17 @@ const myWords04 = [
 // Each word inside these arrays, must be in quotes, either "double" or 'single' quotes.
 // Single quotes though, are prefared as they make the code easier to read.
 //
-const myWords05a = [
-	['word-00', 'meaning-00-a'],
-	['word-01', 'meaning-01-a', 'meaning-01-b'],
-	['word-02', 'meaning-02-a', 'meaning-02-b', 'meaning-02-c'],
-	['word-03', 'meaning-03-a', 'meaning-03-b', 'meaning-03-c', 'meaning-03-d'],
-	['word-04', 'meaning-04-a', 'meaning-04-b', 'meaning-04-c', 'meaning-04-d', 'meaning-04-e'],
-	['word-05', 'meaning-05-a'],
-	['word-06', 'meaning-06-a', 'meaning-06-b'],
-	['word-07', 'meaning-07-a', 'meaning-07-b', 'meaning-07-c'],
-	['word-08', 'meaning-08-a', 'meaning-08-b', 'meaning-08-c', 'meaning-08-d'],
-	['word-09', 'meaning-09-a', 'meaning-09-b', 'meaning-09-c', 'meaning-09-d', 'meaning-09-e']
+const sampleWordsa = [
+	['sample-word-0', 'sample-meaning-0a'],
+	['sample-word-1', 'sample-meaning-1a', 'sample-meaning-1b'],
+	['sample-word-2', 'sample-meaning-2a', 'sample-meaning-2b', 'sample-meaning-2c'],
+	['sample-word-3', 'sample-meaning-3a', 'sample-meaning-3b', 'sample-meaning-3c', 'sample-meaning-3d'],
+	['sample-word-4', 'sample-meaning-4a', 'sample-meaning-4b', 'sample-meaning-4c'],
+	['sample-word-5', 'sample-meaning-5a'],
+	['sample-word-6', 'sample-meaning-6a', 'sample-meaning-6b'],
+	['sample-word-7', 'sample-meaning-7a', 'sample-meaning-7b', 'sample-meaning-7c'],
+	['sample-word-8', 'sample-meaning-8a', 'sample-meaning-8b', 'sample-meaning-8c', 'sample-meaning-8c'],
+	['sample-word-9', 'sample-meaning-9a', 'sample-meaning-9b', 'sample-meaning-9c']
 ];
 
 const myWords05 = [
@@ -628,10 +628,13 @@ function levelComplete() {
 	displayMessage.innerHTML = 'Level Completed!';
 }
 
-
-// The exact same logic is used when 
-// comparing an Engish answer to a Greek word.
-
+// checkAnswer() checks if the answer is correct.
+// Firstly, it checks whether the option for
+// Enflish words or the option for Greek Words is used,
+// and then it calls the corrsponding function
+// to check if the Greek word that was given as answer,
+// or the English word that was as an answer is correct or not.
+//
 function checkAnswer() {
 
 	defaultAnswer();
@@ -643,6 +646,9 @@ function checkAnswer() {
 	}
 }
 
+// defaultAnswer() ensures that when the answer box is empty
+// and enter is pressed, then the answer takes the value '' instead of null.
+//
 function defaultAnswer() {
 
 	let currentAnswer = document.getElementById('writeAnswer').value;
