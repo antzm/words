@@ -57,7 +57,22 @@ const myWords02 = [
 	['s2word09', 'meaning09a', 'meaning09b', 'meaning09c', 'meaning09d', 'meaning09e']
 ];
 
+
 const myWords03 = [
+	['sample-word-0', 'sample-meaning-0a'],
+	['sample-word-1', 'sample-meaning-1a', 'sample-meaning-1b'],
+	['sample-word-2', 'sample-meaning-2a', 'sample-meaning-2b', 'sample-meaning-2c'],
+	['sample-word-3', 'sample-meaning-3a', 'sample-meaning-3b', 'sample-meaning-3c', 'sample-meaning-3d'],
+	['sample-word-4', 'sample-meaning-4a', 'sample-meaning-4b', 'sample-meaning-4c'],
+	['sample-word-5', 'sample-meaning-5a'],
+	['sample-word-6', 'sample-meaning-6a', 'sample-meaning-6b'],
+	['sample-word-7', 'sample-meaning-7a', 'sample-meaning-7b', 'sample-meaning-7c'],
+	['sample-word-8', 'sample-meaning-8a', 'sample-meaning-8b', 'sample-meaning-8c', 'sample-meaning-8c'],
+	['sample-word-9', 'sample-meaning-9a', 'sample-meaning-9b', 'sample-meaning-9c']
+];
+
+
+const myWords03Previous = [
 	['s3word00', 'meaning00a'],
 	['s3word01', 'meaning01a', 'meaning01b'],
 	['s3word02', 'meaning02a', 'meaning02b', 'meaning02c'],
@@ -85,10 +100,10 @@ const myWords04 = [
 
 // If you are not familiriar with JavaScript arrays,
 // here's how to change the arrays with your own words.
-// This way, you will update the app to ask your customized word set.
+// This way, you will update the app with your customized word set.
 // The first line: 
 // const myWords05 = [
-// should remain exactly as it is, as it declarew the array and uses the symbol: [
+// should remain exactly as it is, as it declares the array and uses the symbol: [
 // to mark the befgining of the array. The end of the array, is maked with the symbol: ];
 // which appears at the laste line of the array and which you shpuld not change.
 // Then beteween the frst and the last line of the array, you can add as many arrays as you wish.
@@ -100,18 +115,6 @@ const myWords04 = [
 // Each word inside these arrays, must be in quotes, either "double" or 'single' quotes.
 // Single quotes though, are prefared as they make the code easier to read.
 //
-const sampleWords = [
-	['sample-word-0', 'sample-meaning-0a'],
-	['sample-word-1', 'sample-meaning-1a', 'sample-meaning-1b'],
-	['sample-word-2', 'sample-meaning-2a', 'sample-meaning-2b', 'sample-meaning-2c'],
-	['sample-word-3', 'sample-meaning-3a', 'sample-meaning-3b', 'sample-meaning-3c', 'sample-meaning-3d'],
-	['sample-word-4', 'sample-meaning-4a', 'sample-meaning-4b', 'sample-meaning-4c'],
-	['sample-word-5', 'sample-meaning-5a'],
-	['sample-word-6', 'sample-meaning-6a', 'sample-meaning-6b'],
-	['sample-word-7', 'sample-meaning-7a', 'sample-meaning-7b', 'sample-meaning-7c'],
-	['sample-word-8', 'sample-meaning-8a', 'sample-meaning-8b', 'sample-meaning-8c', 'sample-meaning-8c'],
-	['sample-word-9', 'sample-meaning-9a', 'sample-meaning-9b', 'sample-meaning-9c']
-];
 
 const myWords05 = [
 	['hello', 'γεια'],
@@ -137,6 +140,7 @@ body {
 
 
 /* introductory text */
+
 .intro {
 	text-align: center;
 }
@@ -153,6 +157,7 @@ body {
 
 
 /* language selection */
+
 .language-select {
 	text-align: center;
 	font-size: 14px;
@@ -161,6 +166,7 @@ body {
 
 
 /* upper and lower buttons */
+
 .buttons {
 	text-align: center;
 	display: inline-block;
@@ -194,6 +200,7 @@ body {
 
 
 /* display the quest word */
+
 .display-option {
 	margin: 3px;
 }
@@ -237,6 +244,7 @@ body {
 
 
 /* answer form */
+
 .answer-form {
 	text-align: center;
 	font-size: 18px;
@@ -252,6 +260,7 @@ body {
 
 
 /* display message whether the answer is correct or not */
+
 .display-results {
 	text-align: center;
 }
@@ -288,7 +297,9 @@ body {
 	color: #f00;
 }
 
-/* display the comlete answer */
+
+/* display the complete answer */
+
 .display-complete-answer {
 	text-align: center;
 }
