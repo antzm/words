@@ -7,22 +7,22 @@
 <script>
 
 // The arrays myWords01, myWords02, myWords03,
-// myWords04 and myWords05 contain english
-// words and their translations.
+// myWords04 and myWords05 contain English
+// words and their Greek translations.
 // Each word and its meanings are inside
-// an array and a whole group of words
-// are included inside the mywords.. arrays.
-// Each one of those smaller arrays, contains an english word, 
+// an array and then, a whole group of words
+// are included inside each one of the mywords arrays.
+// Each one of those smaller arrays, contains an English word, 
 // as the first element of the array,
-// and the meaning or meanings of the english word.
-// There can be only one engish word in each array,
-// but there is no limit on how many meaning can be included.
+// and the meaning or the meanings of that english word.
+// There can be only one Engish word in each one of those arrays,
+// but there is no limit on how many meanings can be included.
 // This code uses arrays with English words
-// and their corrsponding words in Greek.
+// and their corresponding words in Greek.
 // The same code though, could be used with any
 // combination of any two languages.
 // The first word though in every sub-array
-// has to be unique while it could have many meanings.
+// has to be unique while it could have multiple meanings.
 
 const myWords01 = [
 	['kitchen', 'κουζίνα'],
@@ -98,22 +98,22 @@ const myWords04 = [
 	['s4word09', 'meaning09a', 'meaning09b', 'meaning09c', 'meaning09d', 'meaning09e']
 ];
 
-// If you are not familiriar with JavaScript arrays,
+// If you are not familiar with JavaScript arrays,
 // here's how to change the arrays with your own words.
 // This way, you will update the app with your customized word set.
 // The first line: 
 // const myWords05 = [
 // should remain exactly as it is, as it declares the array and uses the symbol: [
-// to mark the befgining of the array. The end of the array, is maked with the symbol: ];
-// which appears at the laste line of the array and which you shpuld not change.
-// Then beteween the frst and the last line of the array, you can add as many arrays as you wish.
-// Each line represent a different array which holds only one english words and 
-// the menanings (one ore more) of that word, either in Greek on in another language of your choise.
-// Each of those lines, starts always with the symbol: [ and ends with the symbols ],
+// to mark the beggining of the array. The end of the array, is marked with the symbol: ];
+// which appears at the last line of the array and which you should not change.
+// Then, between the first and the last line of the array, you can add as many sub-arrays as you wish.
+// Each line represent a different array which holds only one english word and 
+// the menanings (one ore more) of that word, either in Greek on in another language of your choice.
+// Each one of those lines, starts always with the symbol: [ and ends with the symbols ],
 // The comma at the end of each line, is to mark the end of an array and the beggining of a new array.
-// The coomma at the end of the last array, could be ommited as it's not neccesary.
+// The comma at the end of the last array, could be omitted as it's not neccesary.
 // Each word inside these arrays, must be in quotes, either "double" or 'single' quotes.
-// Single quotes though, are prefared as they make the code easier to read.
+// Single quotes though, are preferred as they make the code easier to read.
 //
 
 const myWords05 = [
@@ -338,7 +338,7 @@ Radio buttons for selecting English or Greek words
 
 <!--
 Here are the five buttons that appear on the upper side of the page
-and they are used to selevt one of the five available levels.
+and they are used to select one of the five available levels.
 -->
 	<ul class='button-group-upper'>
 		<li><button class='buttons button-1' type='button'>Level 1</button></li>
@@ -378,7 +378,7 @@ the button Check answer could be clicked
 
 <!-- 
 Displays either "Correct answer!" or "The correct answer is:".
-The text is hidden and appears as soon as we subit an answer.
+The text is hidden and appears as soon as we submit an answer.
 Classes "status-show-result" and "status-hide-result" allow to show or hide this text.
 The functions "correctAnswer()" and "notCorrectAnswer()" control this behavior.
 -->
@@ -402,7 +402,7 @@ The functions ... control this behavior.
 
 <!--
 Here are the three buttons that appear on the lower side of the page
-and they are used to move to the next or previous word anf to check
+and they are used to move to the next or previous word and to check
 the answer that have been written in the answer form.
 -->
 	<ul class='button-group-lower'>
@@ -425,11 +425,11 @@ let multipleAnswers = [];
 enableListeners();
 
 // This function checks the two radio buttons at the top of the page,
-// and depending if english words is checked, then it returns true.
-// otherwise, if greek words is checked, it returns false.
+// and depending if English words is checked, then it returns true.
+// otherwise, if Greek words is checked, it returns false.
 // In a case of an error, if for whatever reason, no button is checked
 // then this function returns a default value of true, i.e. assuming
-// that english words had been selected.
+// that English words had been selected.
 //
 function englishWords() {
 
@@ -443,7 +443,7 @@ function englishWords() {
 	return englishWordsCheck;
 }
 
-// This function adds the event listeners to the buutons.
+// This function adds the event listeners to the buttons.
 // There is one event listener for the upper buttons
 // and one event listener for the lower buttons.
 //
@@ -457,7 +457,7 @@ function enableListeners() {
 }
 
 // This function uses the evt parameter,
-// which is automatically transmited whenever 
+// which is automatically transmitted whenever 
 // an upper button is clicked,
 // and depending on its value
 // the code for the correct key
@@ -492,8 +492,8 @@ function activateUpperButtons(evt) {
 }
 
 // This function also uses the evt parameter,
-// which is automatically transmited whenever 
-// a lowe button is clicked,
+// which is automatically transmitted whenever 
+// a lower button is clicked,
 // and depending on its value
 // the code for the correct key
 // is executed.
@@ -519,7 +519,7 @@ function activateLowerButtons(evt) {
 }
 
 // When a level is selected,
-// this function intializes the game
+// this function initializes the game
 // by clearing the form,
 // and then starting the quiz
 //
@@ -568,14 +568,14 @@ function randomNaturalNumber(max) {
 }
 
 // This function starts the quiz.
-// Firstly it displays the complete page
+// Firstly, it displays the complete page
 // and then it randomizes the array that corresponds
 // to the selected level.
 // It adds the listeners to the arrow keyboard buttons
-// for selcting previous and next word,
+// for selecting previous and next word,
 // and it hides the appearance of the results
 // i.e. if the answer was correct or not,
-// as well as the correct mening of the word
+// as well as the correct meaning of the word
 //
 function startQuiz() {
 
@@ -590,12 +590,12 @@ function startQuiz() {
 	hideResults();
 }
 
-// This function selects a ranodm eEglsh word,
+// This function selects a random English word,
 // or a random Greek word and displays it.
 // If englishWords() function returns true,
 // then an English word is selected, otherwise
 // if it returns false, then a Greek word
-// is selected and siplayed.
+// is selected and diplayed.
 //
 function questWord() {
 
@@ -619,7 +619,7 @@ function questWord() {
 
 // When using the previous question and next questions buttons,
 // or the left and right keyboard arrows to move from one word to another,
-// this function displays a message at the beggining of the words array.
+// this function displays a message at the beginning of the words array.
 //
 function levelStart() {
 
@@ -641,8 +641,8 @@ function levelComplete() {
 
 // checkAnswer() checks if the answer is correct.
 // Firstly, it checks whether the option for
-// Enflish words or the option for Greek Words is used,
-// and then it calls the corrsponding function
+// English words or the option for Greek Words is used,
+// and then it calls the corresponding function
 // to check if the Greek word that was given as answer,
 // or the English word that was as an answer is correct or not.
 //
@@ -674,11 +674,11 @@ function defaultAnswer() {
 // It checks every Greek meaning of the English word and if the
 // answer matches one of the meanings, then
 // the answer is correct. For every meaning checked,
-// a booleean value of true or false is added in the
+// a Boolean value of true or false is added in the
 // array called 'answerStaus'. In the end, the sum
-// of all the elements in the array is calcualted.
+// of all the elements in the array is calculated.
 // The result can be either 0 or 1 as the array
-// contains only boolean values of true(1) and false(0).
+// contains only Boolean values of true(1) and false(0).
 // Each time, only one true value can be included in the array
 // and thus, the sum of the array can only be 1 or 0.
 // If the sum is 1, then the answer was correct,
@@ -701,19 +701,19 @@ function checkEnglishAnswer() {
 
 // This function checks the answer given to the Greek words.
 // As one English word could have the same meaning in the Greek language
-// as another English word, this function first searches to see if indide
-// the array which is at use at that time, there are more than one instances
+// as another English word, this function first searches to see if inside
+// the array, which is at use at that time, there are more than one instances
 // of the same Greek word. i.e. if there are two exact Greek words 
 // which correspond to different English word.
 // In such a case, both English words could be considered as correct,
-// and thus, this has to be taken into conideration.
+// and thus, this has to be taken into consideration.
 // The array "multipleAnswers" contains only one item if there
 // is only instance of a certain Greek word.
 // Otherwise it includes all the instances of the Greek word.
 // So, depending on the length of thus array,
-// the procees to test the correct answer is different. 
-// If the array lenght is 1, then there is only correct english answer to the question.
-// Othewise, there are so many answers to the array, as the length of the array.
+// the process to test the correct answer is different. 
+// If the array length is 1, then there is only correct English answer to the question.
+// Otherwise, there are so many answers to the array, as the length of the array.
 //
 function checkGreekAnswer() {
 
@@ -768,9 +768,9 @@ function checkGreekAnswer() {
 
 // verifyAnswer() checks the array "answerStatus"
 // and depending on its contents, calls a function
-// which will dispay if the answer was correct or not.
+// which will display if the answer was correct or not.
 // To check if the answer was correct or not,
-// the sume of the "answerStatus" array is calculated.
+// the sum of the "answerStatus" array is calculated.
 // If the sum is 0, then the answer was not correct (i.e. contains only false values). 
 // If the sum is 1, then the answer is correct (i.e. contains one true value).
 //
@@ -809,7 +809,7 @@ function hideResults() {
 	displayOptions.className = 'display-results hide-results';
 }
 
-// This functions displays the results when the correct
+// This function displays the results when the correct
 // answer has been given.
 //
 function correctAnswer() {
@@ -824,7 +824,7 @@ function correctAnswer() {
 	displayAllMeanings();
 }
 
-// This functions displays the results when the
+// This function displays the results when the
 // answer that was given was not correct.
 //
 function notCorrectAnswer() {
@@ -869,11 +869,11 @@ function clearForm() {
 }
 
 
-// This function is calles whenever the enter button
+// This function is called whenever the enter button
 // is pressed while inside the form window.
-// If the index corrsponds to a word,
-// then, it checks the answer and  it displays either the
-// correct or then not correct resluts.
+// If the index corresponds to a word,
+// then, it checks the answer and it displays either the
+// correct or then not correct results.
 //
 function handleForm() {
 
@@ -887,7 +887,7 @@ function handleForm() {
 // This function adds the event listeners
 // to the left and right arrow buttons
 // of the keyboard.
-// To avoid pressing the keys continiously,
+// To avoid pressing the keys continuously,
 // the keys will function only when 
 // they are released and not when they are pressed.
 // This is because the 'keyup' is used, instead of the 'keydown'
@@ -921,7 +921,7 @@ function activateArrowButtons(evt) {
 
 // This function shows the previous 
 // quest word either by clicking
-// the previous question button
+// the previous question button,
 // or by clicking the left
 // arrow button on the keyboard.
 //
@@ -944,7 +944,7 @@ function previousQuestion() {
 
 // This function shows the next
 // quest word either by clicking
-// the next question button
+// the next question button,
 // or by clicking the right
 // arrow button on the keyboard
 //
