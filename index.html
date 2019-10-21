@@ -415,10 +415,22 @@ the answer that have been written in the answer form.
 
 <script>
 
-let wordQuiz;
-let randomWordQuiz;
-let index;
-let wordGr;
+// The variable "index" is used as the index of the current word array.
+// The variable "wordGr" stores the Greek word when 
+// the option "Greek Words" has been selected.
+// The variable "wordQuiz" stores one of the available word arrays,
+// While the variable "randomWordQuiz" stores the same array
+// which is randomized, so the words will appear in a random order.
+// The variable "answerStatus" stores information about the correct answer,
+// while the variable "multipleAnswers" stores information about different
+// Greek words which have the same English meaning and is used only 
+// when the option "Greek Words" has been selected.
+
+let index = 0;
+let wordGr = '';
+
+let wordQuiz = [];
+let randomWordQuiz = [];
 let answerStatus = [];
 let multipleAnswers = [];
 
