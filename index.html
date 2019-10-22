@@ -6,6 +6,15 @@
 
 <script>
 
+// This is an HTML file but the part of the code
+// which is included between the "script" tags, is
+// JavaScript code.
+// Usually, the JavaScript code is included in
+// a separate file, but here, in order to 
+// simplify things and to be easier to update
+// the word arrays, the JavaScript code
+// is included inside the HTML file.
+
 // The arrays myWords01, myWords02, myWords03,
 // myWords04 and myWords05 contain English
 // words and their Greek translations.
@@ -114,7 +123,7 @@ const myWords04 = [
 // The comma at the end of the last array, could be omitted as it's not neccesary.
 // Each word inside these arrays, must be in quotes, either "double" or 'single' quotes.
 // Single quotes though, are preferred as they make the code easier to read.
-//
+
 
 const myWords05 = [
 	['hello', 'γεια'],
@@ -133,6 +142,27 @@ const myWords05 = [
 </script>
 
 <style>
+
+/*
+This is an HTML file but the part of the code
+which is included between the "style" tags,
+is CSS code.
+Usually, the CSS code is included in a separate file,
+but here, for simplicity, the CSS code is included
+inside the HTML code.
+This way, the complete HTML, CSS and JavaScript
+code, is included in a single file.
+The HTML code is used for the main structure of the page,
+the CSS code is used for styling the page, while the
+JavaScript code is used for the interactivity of the page.
+Between the code, there are various comments that
+explain certain part of the code.
+When writing comments, special characters are used
+to denote that this is a comment and not part of the code.
+Depending if the comment is written inside the HTML code,
+the CSS code or the JavaScript code, the special 
+characters used, are different in each case.
+*/
 
 body {
 	font-family: Arial;
@@ -315,6 +345,7 @@ body {
 </head>
 <body>
 
+
 <!--
 Introductory text on the top of the page and some clarifications
 -->
@@ -323,6 +354,7 @@ Introductory text on the top of the page and some clarifications
 	<p class='main-content main-content-info'>to start, choose a language and a level...</p>
 
 <diV class='language-select'>
+
 
 <!--
 Radio buttons for selecting English or Greek words
@@ -336,6 +368,7 @@ Radio buttons for selecting English or Greek words
 
 </diV>
 
+
 <!--
 Here are the five buttons that appear on the upper side of the page
 and they are used to select one of the five available levels.
@@ -347,6 +380,7 @@ and they are used to select one of the five available levels.
 		<li><button class='buttons button-4' type='button'>Level 4</button></li>
 		<li><button class='buttons button-5' type='button'>Level 5</button></li>
 	</ul>
+
 
 <!--
 Initially, this part of the page is hidden and appears as soon as 
@@ -376,6 +410,7 @@ the button Check answer could be clicked
 		<input type="reset" value="Reset">
 	</form>
 
+
 <!-- 
 Displays either "Correct answer!" or "The correct answer is:".
 The text is hidden and appears as soon as we submit an answer.
@@ -388,6 +423,7 @@ The functions "correctAnswer()" and "notCorrectAnswer()" control this behavior.
 		<p class='answer-result'>Display answer correct or not correct</p>
 	</div>
 
+
 <!--
 If the answer is not correct, it displays the correct word or the correct words.
 This text is hidden and appears only whenever an answer is not correct.
@@ -399,6 +435,7 @@ The functions ... control this behavior.
 	</div>
 
 </section>
+
 
 <!--
 Here are the three buttons that appear on the lower side of the page
@@ -425,7 +462,7 @@ the answer that have been written in the answer form.
 // while the variable "multipleAnswers" stores information about different
 // Greek words which have the same English meaning and is used only 
 // when the option "Greek Words" has been selected.
-
+//
 let index = 0;
 let wordGr = '';
 
@@ -435,6 +472,7 @@ let answerStatus = [];
 let multipleAnswers = [];
 
 enableListeners();
+
 
 // This function checks the two radio buttons at the top of the page,
 // and depending if English words is checked, then it returns true.
@@ -455,6 +493,7 @@ function englishWords() {
 	return englishWordsCheck;
 }
 
+
 // This function adds the event listeners to the buttons.
 // There is one event listener for the upper buttons
 // and one event listener for the lower buttons.
@@ -467,6 +506,7 @@ function enableListeners() {
 	const buttonListLower = document.querySelector('.button-group-lower');
 	buttonListLower.addEventListener('click', activateLowerButtons);	
 }
+
 
 // This function uses the evt parameter,
 // which is automatically transmitted whenever 
@@ -503,6 +543,7 @@ function activateUpperButtons(evt) {
 	}
 }
 
+
 // This function also uses the evt parameter,
 // which is automatically transmitted whenever 
 // a lower button is clicked,
@@ -530,6 +571,7 @@ function activateLowerButtons(evt) {
 	}
 }
 
+
 // When a level is selected,
 // this function initializes the game
 // by clearing the form,
@@ -544,6 +586,7 @@ function initializeGame() {
 	questWord();
 	showWordCounter();
 }
+
 
 // randomizeArray(randArray) randomizes an array
 // by taking out the first element and then
@@ -561,6 +604,7 @@ function randomizeArray(randArray) {
 	return randArray;
 }
 
+
 // randomNumber(max) returns a random integer
 // between 0 and max (including 0 and max)
 //
@@ -570,6 +614,7 @@ function randomNumber(max) {
 	return randNum;
 }
 
+
 // randomNaturalNumber(max) returns a random integer
 // between 1 and max (including 1 and max)
 //
@@ -578,6 +623,7 @@ function randomNaturalNumber(max) {
 	let randNatNum = Math.ceil(Math.random()*max);
 	return randNatNum;
 }
+
 
 // This function starts the quiz.
 // Firstly, it displays the complete page
@@ -601,6 +647,7 @@ function startQuiz() {
 	arrowButtonListeners();
 	hideResults();
 }
+
 
 // This function selects a random English word,
 // or a random Greek word and displays it.
@@ -629,6 +676,7 @@ function questWord() {
 
 }
 
+
 // When using the previous question and next questions buttons,
 // or the left and right keyboard arrows to move from one word to another,
 // this function displays a message at the beginning of the words array.
@@ -640,6 +688,7 @@ function levelStart() {
 	displayMessage.innerHTML = 'Level Start!';
 }
 
+
 // When using the previous question and next questions buttons,
 // or the left and right keyboard arrows to move from one word to another,
 // this function displays a message at the end of the words array.
@@ -650,6 +699,7 @@ function levelComplete() {
 	const displayMessage = document.querySelector('.question-word');
 	displayMessage.innerHTML = 'Level Completed!';
 }
+
 
 // checkAnswer() checks if the answer is correct.
 // Firstly, it checks whether the option for
@@ -668,6 +718,7 @@ function checkAnswer() {
 		checkGreekAnswer();
 	}
 }
+
 
 // defaultAnswer() ensures that when the answer box is empty
 // and enter is pressed, then the answer takes the value '' instead of null.
@@ -710,6 +761,7 @@ function checkEnglishAnswer() {
 
 	verifyAnswer();
 }
+
 
 // This function checks the answer given to the Greek words.
 // As one English word could have the same meaning in the Greek language
@@ -803,6 +855,7 @@ function verifyAnswer() {
 	}
 }
 
+
 // This function enables the results to be displayed
 // i.e. when the check answer button has been clicked
 //
@@ -812,6 +865,7 @@ function showResults() {
 	displayOptions.className = 'display-results show-results';
 }
 
+
 // This function hides the results
 // i.e. when a new word has been selected
 //
@@ -820,6 +874,7 @@ function hideResults() {
 	const displayOptions = document.querySelector('.display-results');
 	displayOptions.className = 'display-results hide-results';
 }
+
 
 // This function displays the results when the correct
 // answer has been given.
@@ -836,6 +891,7 @@ function correctAnswer() {
 	displayAllMeanings();
 }
 
+
 // This function displays the results when the
 // answer that was given was not correct.
 //
@@ -850,6 +906,7 @@ function notCorrectAnswer() {
 
 	displayAllMeanings();
 }
+
 
 // This function loops through all the meanings of a word
 // and displays them, together with the word.
@@ -870,6 +927,7 @@ function displayAllMeanings() {
 
 	multipleAnswers = [];
 }
+
 
 // This function clears the form
 // by assigning the value '' and thus
