@@ -6,6 +6,7 @@
 
 <script>
 
+
 // This is an HTML file but the part of the code
 // which is included between the "script" tags, is
 // JavaScript code.
@@ -14,6 +15,7 @@
 // simplify things and to be easier to update
 // the word arrays, the JavaScript code
 // is included inside the HTML file.
+
 
 // The arrays myWords01, myWords02, myWords03,
 // myWords04 and myWords05 contain English
@@ -32,6 +34,25 @@
 // combination of any two languages.
 // The first word though in every sub-array
 // has to be unique while it could have multiple meanings.
+
+
+// If you are not familiar with JavaScript arrays,
+// here's how to change the arrays with your own words.
+// This way, you will update the app with your customized word set.
+// The first line: 
+// const myWords05 = [
+// should remain exactly as it is, as it declares the array and uses the symbol: [
+// to mark the beggining of the array. The end of the array, is marked with the symbol: ];
+// which appears at the last line of the array and which you should not change.
+// Then, between the first and the last line of the array, you can add as many sub-arrays as you wish.
+// Each line represent a different array which holds only one english word and 
+// the menanings (one ore more) of that word, either in Greek on in another language of your choice.
+// Each one of those lines, starts always with the symbol: [ and ends with the symbols ],
+// The comma at the end of each line, is to mark the end of an array and the beggining of a new array.
+// The comma at the end of the last array, could be omitted as it's not neccesary.
+// Each word inside these arrays, must be in quotes, either "double" or 'single' quotes.
+// Single quotes though, are preferred as they make the code easier to read.
+
 
 const myWords01 = [
 	['kitchen', 'κουζίνα'],
@@ -53,6 +74,7 @@ const myWords01 = [
 	['watch', 'παρατηρώ', 'ρολόι']
 ];
 
+
 const myWords02 = [
 	['s2word00', 'meaning00a'],
 	['s2word01', 'meaning01a', 'meaning01b'],
@@ -68,31 +90,18 @@ const myWords02 = [
 
 
 const myWords03 = [
-	['sample-word-0', 'sample-meaning-0a'],
-	['sample-word-1', 'sample-meaning-1a', 'sample-meaning-1b'],
-	['sample-word-2', 'sample-meaning-2a', 'sample-meaning-2b', 'sample-meaning-2c'],
-	['sample-word-3', 'sample-meaning-3a', 'sample-meaning-3b', 'sample-meaning-3c', 'sample-meaning-3d'],
-	['sample-word-4', 'sample-meaning-4a', 'sample-meaning-4b', 'sample-meaning-4c'],
-	['sample-word-5', 'sample-meaning-5a'],
-	['sample-word-6', 'sample-meaning-6a', 'sample-meaning-6b'],
-	['sample-word-7', 'sample-meaning-7a', 'sample-meaning-7b', 'sample-meaning-7c'],
-	['sample-word-8', 'sample-meaning-8a', 'sample-meaning-8b', 'sample-meaning-8c', 'sample-meaning-8c'],
-	['sample-word-9', 'sample-meaning-9a', 'sample-meaning-9b', 'sample-meaning-9c']
+	['english-word-0', 'greek-meaning-0a'],
+	['english-word-1', 'greek-meaning-1a', 'greek-meaning-1b'],
+	['english-word-2', 'greek-meaning-2a', 'greek-meaning-2b', 'greek-meaning-2c'],
+	['english-word-3', 'greek-meaning-3a', 'greek-meaning-3b', 'greek-meaning-3c', 'greek-meaning-3d'],
+	['english-word-4', 'greek-meaning-4a', 'greek-meaning-4b', 'greek-meaning-4c'],
+	['english-word-5', 'greek-meaning-5a'],
+	['english-word-6', 'greek-meaning-6a', 'greek-meaning-6b'],
+	['english-word-7', 'greek-meaning-7a', 'greek-meaning-7b', 'greek-meaning-7c'],
+	['english-word-8', 'greek-meaning-8a', 'greek-meaning-8b', 'greek-meaning-8c', 'greek-meaning-8c'],
+	['english-word-9', 'greek-meaning-9a', 'greek-meaning-9b', 'greek-meaning-9c']
 ];
 
-
-const myWords03Previous = [
-	['s3word00', 'meaning00a'],
-	['s3word01', 'meaning01a', 'meaning01b'],
-	['s3word02', 'meaning02a', 'meaning02b', 'meaning02c'],
-	['s3word03', 'meaning03a', 'meaning03b', 'meaning03c', 'meaning03d'],
-	['s3word04', 'meaning04a', 'meaning04b', 'meaning04c', 'meaning04d', 'meaning04e'],
-	['s3word05', 'meaning05a'],
-	['s3word06', 'meaning06a', 'meaning06b'],
-	['s3word07', 'meaning07a', 'meaning07b', 'meaning07c'],
-	['s3word08', 'meaning08a', 'meaning08b', 'meaning08c', 'meaning08d'],
-	['s3word09', 'meaning09a', 'meaning09b', 'meaning09c', 'meaning09d', 'meaning09e']
-];
 
 const myWords04 = [
 	['s4word00', 'meaning00a'],
@@ -106,23 +115,6 @@ const myWords04 = [
 	['s4word08', 'meaning08a', 'meaning08b', 'meaning08c', 'meaning08d'],
 	['s4word09', 'meaning09a', 'meaning09b', 'meaning09c', 'meaning09d', 'meaning09e']
 ];
-
-// If you are not familiar with JavaScript arrays,
-// here's how to change the arrays with your own words.
-// This way, you will update the app with your customized word set.
-// The first line: 
-// const myWords05 = [
-// should remain exactly as it is, as it declares the array and uses the symbol: [
-// to mark the beggining of the array. The end of the array, is marked with the symbol: ];
-// which appears at the last line of the array and which you should not change.
-// Then, between the first and the last line of the array, you can add as many sub-arrays as you wish.
-// Each line represent a different array which holds only one english word and 
-// the menanings (one ore more) of that word, either in Greek on in another language of your choice.
-// Each one of those lines, starts always with the symbol: [ and ends with the symbols ],
-// The comma at the end of each line, is to mark the end of an array and the beggining of a new array.
-// The comma at the end of the last array, could be omitted as it's not neccesary.
-// Each word inside these arrays, must be in quotes, either "double" or 'single' quotes.
-// Single quotes though, are preferred as they make the code easier to read.
 
 
 const myWords05 = [
