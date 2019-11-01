@@ -50,3 +50,18 @@ const myArray = [
 	[13, 14, 14]
 ];
 
+Arrays could also contain strings. In such a case, the strings have to be included inside quotes. Either double "double quotes" or single 'single quotes'. Single quotes are usually prefered, as they make the array easier to be read by people.
+
+Here's an example:
+
+const myArray = ['one', 'two', 'three', 'four', 'five'];
+
+or 
+
+const myArray = ["one", "two", "three", "four", "five"];  
+
+
+Arrays could also contain a combination of numbers and strings:
+
+const myArray = ['one', 2, 'three', 4, 'five'];
+
