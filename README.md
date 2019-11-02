@@ -65,3 +65,26 @@ Arrays could also contain a combination of numbers and strings:
 
 const myArray = ['one', 2, 'three', 4, 'five'];
 
+## Words Arrays
+
+This web-app uses arrays to store the foreign words and their meanings.
+
+For simplicity and readability, each line holds only one foreign word and next to it, the meaning or the menaings of that word.
+
+e.g. in the following array we can see a few French words and their translation to English with one or more words:
+
+const myWords = [
+	['bateau', 'boat', 'ship'],
+	['soleil', 'sun', 'sunlight'],
+	['voyage', 'trip', 'journey'],
+	['merci', 'thanks', 'thank you'],
+	['bon', 'good', 'right', 'kind'],
+	['salut', 'hi', 'hello', 'bye'],
+	['nouveau', 'new', 'fresh'],
+	['école', 'school'],
+	['gentil', 'kind', 'good', 'nice'],
+	['professeur', 'teacher', 'professor']
+];
+
+So, followin this conversion, it's rally easy to create new arrays with words.
+
