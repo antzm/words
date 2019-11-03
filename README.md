@@ -88,3 +88,9 @@ const myWords = [
 
 So, followin this conversion, it's rally easy to create new arrays with words.
 
+## Customizing the web-app's interface
+
+The simple interface is in English and if you are comfotable with coding, you could easiy change it to your own language. Even though if you have no experience at all with coding, you can easily change the selection on the top, for either "English words" or "Greek Words" to your own preferences.
+
+To do that, simply go to th place of the HTML code where those phrases appear, and replace the text with the languafes of your choise.
+
