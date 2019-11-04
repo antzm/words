@@ -92,5 +92,9 @@ So, followin this conversion, it's rally easy to create new arrays with words.
 
 The simple interface is in English and if you are comfotable with coding, you could easiy change it to your own language. Even though if you have no experience at all with coding, you can easily change the selection on the top, for either "English words" or "Greek Words" to your own preferences.
 
-To do that, simply go to th place of the HTML code where those phrases appear, and replace the text with the languafes of your choise.
+To do that, simply go to teh place of the HTML code where those phrases appear, and replace the text with the languages of your choise.
+
+![screenshot with the code for the radio buttons for selecting English or Greek words](radio-buttons.PNG)
+
+As you can see in the above image, you only need to replace the white thext (English words, Greek words) with the text of own choise.
 
