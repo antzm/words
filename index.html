@@ -785,7 +785,7 @@ function checkEnglishAnswer() {
 	let inputAnswer = document.getElementById('writeAnswer').value;
 
 	for (i = 1; i < randomWordQuiz[index].length; i++) {
-		if (inputAnswer === randomWordQuiz[index][i]) {
+		if (inputAnswer.toLowerCase() === randomWordQuiz[index][i].toLowerCase()) {
 			answerStatus.push(true);
 		} else {
 			answerStatus.push(false);
@@ -823,7 +823,7 @@ function checkGreekAnswer() {
 	//
 	for (i = 0; i < randomWordQuiz.length; i++) {
 		for (j = 1; j < randomWordQuiz[i].length; j++) {
-			if (wordGr === randomWordQuiz[i][j]) {
+			if (wordGr.toLowerCase() === randomWordQuiz[i][j].toLowerCase()) {
 				multipleAnswers.push(i);
 			}
 		}
@@ -835,7 +835,7 @@ function checkGreekAnswer() {
 	// 
 	if (multipleAnswers.length === 1) {
 
-		if (inputAnswer === randomWordQuiz[index][0]) {
+		if (inputAnswer.toLowerCase() === randomWordQuiz[index][0].toLowerCase()) {
 			answerStatus.push(true);
 		} else {
 			answerStatus.push(false);
@@ -850,7 +850,7 @@ function checkGreekAnswer() {
 	if (multipleAnswers.length > 1) {
 
 		for (i = 0; i < multipleAnswers.length; i++) {
-			if (inputAnswer === randomWordQuiz[multipleAnswers[i]][0]) {
+			if (inputAnswer.toLowerCase() === randomWordQuiz[multipleAnswers[i]][0].toLowerCase()) {
 				answerStatus.push(true); 
 			} else {
 				answerStatus.push(false);
