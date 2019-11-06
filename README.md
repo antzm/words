@@ -12,6 +12,22 @@ The app was initially build in order to help Greek students to learn English wor
 
 Also, included is a sample array to demonstrate the proper syntax in order to create an array of words in the languages of your choice.
 
+## How to use the web-app
+
+Below you can see the interface of the app when it starts.
+
+![screenshot of an app that helps to learn new words](imgs/screen01.PNG)
+
+After selecting a language and a level, the rest of the options appear and the app asks for the meaning of a word.
+
+![screenshot of an app that helps to learn new words while a new word is currently asked](imgs/screen02.PNG)
+
+If a correct answer is given, a message with the complete answer appears in blue.
+
+![screenshot of an app that helps to learn new words while showing the results for a correct answer](imgs/screen03.PNG)
+
+If the answer is not correct, then a message appears in red color and the complete answer is shown on the screen.
+
 ## Background information
 
 This web-app is built using HTML, CSS and JavaScript. Usually, the code is separated in different files but for simplicity, the complete code has been included in a single HTML file, where there are sections for the CSS and the JavaScript code.
