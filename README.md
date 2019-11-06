@@ -113,3 +113,10 @@ To do that, simply go to the place of the HTML code where those phrases appear, 
 ![screenshot with the code for the radio buttons for selecting English or Greek words](imgs/radio-buttons.PNG)
 
 As you can see in the above image, you only need to replace the white text (English words, Greek words) with the text of own choice.
+
+## Saving the changes
+
+If you make any changes to this app, make sure that you always save this file with utf-8 encoding, otherwise the characters will not appear correctly.
+
+You can use any text editor to eidt the file, while the simplest way is to use the notepad whuch is included in Windows or something similar for other operating systems.
+
