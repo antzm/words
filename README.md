@@ -42,13 +42,13 @@ const myArray = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 14]];
 
 which could also be written (for better readability) as:
 
-const myArray = [
-	[1, 2, 3], 
-	[4, 5, 6], 
-	[7, 8, 9], 
-	[10, 11, 12], 
-	[13, 14, 14]
-];
+const myArray = [  
+	[1, 2, 3],   
+	[4, 5, 6],   
+	[7, 8, 9],   
+	[10, 11, 12],   
+	[13, 14, 14]  
+];  
 
 Arrays could also contain strings. In such a case, the strings have to be included inside quotes. Either double "double quotes" or single 'single quotes'. Single quotes are usually prefered, as they make the array easier to be read by people.
 
@@ -56,7 +56,7 @@ Here's an example:
 
 const myArray = ['one', 'two', 'three', 'four', 'five'];
 
-or 
+or
 
 const myArray = ["one", "two", "three", "four", "five"];  
 
@@ -73,18 +73,18 @@ For simplicity and readability, each line holds only one foreign word and next t
 
 e.g. in the following array we can see a few French words and their translation to English with one or more words:
 
-const myWords = [
-	['bateau', 'boat', 'ship'],
-	['soleil', 'sun', 'sunlight'],
-	['voyage', 'trip', 'journey'],
-	['merci', 'thanks', 'thank you'],
-	['bon', 'good', 'right', 'kind'],
-	['salut', 'hi', 'hello', 'bye'],
-	['nouveau', 'new', 'fresh'],
-	['école', 'school'],
-	['gentil', 'kind', 'good', 'nice'],
-	['professeur', 'teacher', 'professor']
-];
+const myWords = [  
+	['bateau', 'boat', 'ship'],  
+	['soleil', 'sun', 'sunlight'],  
+	['voyage', 'trip', 'journey'],  
+	['merci', 'thanks', 'thank you'],  
+	['bon', 'good', 'right', 'kind'],  
+	['salut', 'hi', 'hello', 'bye'],  
+	['nouveau', 'new', 'fresh'],  
+	['école', 'school'],  
+	['gentil', 'kind', 'good', 'nice'],  
+	['professeur', 'teacher', 'professor']  
+];  
 
 So, followin this conversion, it's rally easy to create new arrays with words.
 
@@ -94,7 +94,6 @@ The simple interface is in English and if you are comfotable with coding, you co
 
 To do that, simply go to teh place of the HTML code where those phrases appear, and replace the text with the languages of your choise.
 
-![screenshot with the code for the radio buttons for selecting English or Greek words](radio-buttons.PNG)
+![screenshot with the code for the radio buttons for selecting English or Greek words](imgs/radio-buttons.PNG)
 
 As you can see in the above image, you only need to replace the white thext (English words, Greek words) with the text of own choise.
-
