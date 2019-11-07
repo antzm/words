@@ -4,7 +4,7 @@
 
 ### Learning new words from English to another language and vice versa.
 
-This app helps you to learn new words in any language you would like to.  
+This web-app helps you to learn new words in any language you would like to.  
 
 The app contains only a few sample words, but it can be easily expanded to include the words of your choice, in the languages of your choice.  
 
@@ -27,6 +27,10 @@ If a correct answer is given, a message with the complete answer appears in blue
 ![screenshot of an app that helps to learn new words while showing the results for a correct answer](imgs/screen03.PNG)
 
 If the answer is not correct, then a message appears in red color and the complete answer is shown on the screen.
+
+After you type an answer, you could hit enter or click the "Check Answer" button to see if the answer is correct or not.
+
+Keep in mind also that every time you click one of the "Levels", the words inside that level are randomized so that every time you select that level will appear in a different order.
 
 ## Background information
 
@@ -118,5 +122,4 @@ As you can see in the above image, you only need to replace the white text (Engl
 
 If you make any changes to this app, make sure that you always save this file with utf-8 encoding, otherwise the characters will not appear correctly.
 
-You can use any text editor to eidt the file, while the simplest way is to use the notepad whuch is included in Windows or something similar for other operating systems.
-
+You can use any text editor to edit the file, while the simplest way is to use the notepad which is included in Windows or something similar for other operating systems.
