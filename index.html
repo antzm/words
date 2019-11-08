@@ -261,6 +261,11 @@ body {
 	flex-wrap: wrap;
 }
 
+.button-selected {
+	background-color: #00ffff;
+	color: #0000ff;
+}
+
 
 /* display the quest word */
 
@@ -551,26 +556,36 @@ function enableListeners() {
 function activateUpperButtons(evt) {
 
 	if (evt.target.classList.contains('button-1')) {
+		unselectAllButtons();
+		selectButton('.button-1');
 		wordQuiz = myWords01;
 		initializeGame();
 	}
 
 	if (evt.target.classList.contains('button-2')) {
+		unselectAllButtons();
+		selectButton('.button-2');
 		wordQuiz = myWords02;
 		initializeGame();
 	}
 
 	if (evt.target.classList.contains('button-3')) {
+		unselectAllButtons();
+		selectButton('.button-3');
 		wordQuiz = myWords03;
 		initializeGame();	
 	}
 
 	if (evt.target.classList.contains('button-4')) {
+		unselectAllButtons();
+		selectButton('.button-4');
 		wordQuiz = myWords04;
 		initializeGame();
 	}
 
 	if (evt.target.classList.contains('button-5')) {
+		unselectAllButtons();
+		selectButton('.button-5');
 		wordQuiz = myWords05;
 		initializeGame();
 	}
@@ -601,6 +616,24 @@ function activateLowerButtons(evt) {
 	if (evt.target.classList.contains('button-8')) {
 		nextQuestion();
 		totalWordsNumber();
+	}
+}
+
+
+
+function selectButton(button) {
+
+	const buttonPressed = document.querySelector(button);
+	buttonPressed.classList.add('button-selected');
+}
+
+
+function unselectAllButtons() {
+
+	const buttonsPressed = document.querySelectorAll('.buttons');
+
+	for (i = 0; i < buttonsPressed.length; i++) {
+		buttonsPressed[i].classList.remove('button-selected');
 	}
 }
 
