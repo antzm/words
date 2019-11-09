@@ -123,3 +123,22 @@ As you can see in the above image, you only need to replace the white text (Engl
 If you make any changes to this app, make sure that you always save this file with utf-8 encoding, otherwise the characters will not appear correctly.
 
 You can use any text editor to edit the file, while the simplest way is to use the notepad which is included in Windows or something similar for other operating systems.
+
+Alternatively, in case you would like to use a better text editor to edit this file, or any other HTML file, here are some suggestions:  
+
+
+Notepad++  
+Atom  
+Visual Code  
+
+which are free, and
+
+Sublime text  
+
+which has a trial period to use it.
+
+Those text editors could be used for any kind of program i.e. a program written in any programming language.
+
+The advantage of using one of the above editors, is that your code gets automatically highlighted for the language you are programming, which makes your programming experience a lot better compared to a simple text editoer that doesn't highlight the labuage you are using.
+
+
