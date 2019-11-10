@@ -54,6 +54,12 @@
 // Each word inside these arrays, must be in quotes, either "double" or 'single' quotes.
 // Single quotes though, are preferred as they make the code easier to read.
 
+const myWords01Title = 'Simple Engish words:';
+const myWords02Title = 'French to English words:';
+const myWords03Title = 'Sample Array words:';
+const myWords04Title = 'French to Greek words:';
+const myWords05Title = 'Basic English words:';
+
 
 const myWords01Sample = [
 	['set1word00', 'meaning00a'],
@@ -505,6 +511,7 @@ the answer that have been written in the answer form.
 //
 let index = 0;
 let wordGr = '';
+let wordsTitle = '';
 
 let wordQuiz = [];
 let randomWordQuiz = [];
@@ -561,6 +568,7 @@ function activateUpperButtons(evt) {
 		unselectAllButtons();
 		selectButton('.button-1');
 		wordQuiz = myWords01;
+		wordsTitle = myWords01Title;
 		initializeGame();
 	}
 
@@ -568,6 +576,7 @@ function activateUpperButtons(evt) {
 		unselectAllButtons();
 		selectButton('.button-2');
 		wordQuiz = myWords02;
+		wordsTitle = myWords02Title;
 		initializeGame();
 	}
 
@@ -575,6 +584,7 @@ function activateUpperButtons(evt) {
 		unselectAllButtons();
 		selectButton('.button-3');
 		wordQuiz = myWords03;
+		wordsTitle = myWords03Title;
 		initializeGame();	
 	}
 
@@ -582,6 +592,7 @@ function activateUpperButtons(evt) {
 		unselectAllButtons();
 		selectButton('.button-4');
 		wordQuiz = myWords04;
+		wordsTitle = myWords04Title;
 		initializeGame();
 	}
 
@@ -589,6 +600,7 @@ function activateUpperButtons(evt) {
 		unselectAllButtons();
 		selectButton('.button-5');
 		wordQuiz = myWords05;
+		wordsTitle = myWords05Title;
 		initializeGame();
 	}
 }
@@ -753,7 +765,8 @@ function levelStart() {
 
 	hideWordCounter()
 	const displayMessage = document.querySelector('.question-word');
-	displayMessage.innerHTML = 'Level Start!';
+	// displayMessage.innerHTML = 'Level Start!';
+	displayMessage.innerHTML = wordsTitle;
 }
 
 
