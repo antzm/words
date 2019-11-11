@@ -139,6 +139,63 @@ which has a trial period to use it.
 
 Those text editors could be used for any kind of program i.e. a program written in any programming language.
 
-The advantage of using one of the above editors, is that your code gets automatically highlighted for the language you are programming, which makes your programming experience a lot better compared to a simple text editoer that doesn't highlight the labuage you are using.
+The advantage of using one of the above editors, is that your code gets automatically highlighted for the language you are programming, which makes your programming experience a lot better compared to a simple text editor that doesn't highlight the language you are using.
 
 
+## Preparing an array with words
+
+Preparing an array with english words and their translations takes time, and thus, here's an aproach to speed things up.
+
+The easiest approach is to write the words in an Excel sheet, one column with the english words and the next column with their corresponding greek word.
+
+After that, we can use the concatenate operator in Excel, and combine the data to produce an array with the words, which will be ready to be inserted in this app.
+
+So, let's assume that the following table corresponds to an Excel sheet and that we would like to combine the English word "creation", which means "δημιουργία" in Greek, to an array, together with the rest of the words.
+
+
+English words | Greek words
+--------------|------------
+creation | δημιουργία
+pencil | μολύβι
+book | βιβλίο
+
+The array would be like this:  
+
+const myArray = [  
+	["creation", "δημιουργία"],  
+	["pencil", "μολύβι"],  
+	["book", "βιβλίο"]  
+];  
+
+So, we add some extra coulumns in the Excel sheet with the symbols needed to create the array. i.e.  
+
+
+A | B | c | D | E
+--|---|---|---|---
+[" | creation | ", " | δημιουργία | "],
+[" | pencil | ", " | μολύβι | "],
+[" | book | ", " | βιβλίο | "],
+
+And then, in the column, we use the "&" operator to add all those string to one.  
+
+A | B | c | D | E | F
+--|---|---|---|---|---
+[" | creation | ", " | δημιουργία | "], | = A1 & B1 & C1 & D1 & E1
+[" | pencil | ", " | μολύβι | "], | = A2 & B2 & C2 & D2 & E2
+[" | book | ", " | βιβλίο | "], | = A3 & B3 & C3 & D3 & E3
+
+Using the abovr formula in column F, we will these resuls:
+
+A | B | c | D | E | F
+--|---|---|---|---|---
+[" | creation | ", " | δημιουργία | "], | ["creation", "δημιουργία"],
+[" | pencil | ", " | μολύβι | "], | ["pencil", "μολύβι"],
+[" | book | ", " | βιβλίο | "], | ["book", "βιβλίο"],
+
+Which can be easily transormed to an array like this:
+
+const myArray = [  
+	["creation", "δημιουργία"],  
+	["pencil", "μολύβι"],  
+	["book", "βιβλίο"]  
+];  
