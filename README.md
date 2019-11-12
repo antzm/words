@@ -127,13 +127,21 @@ You can use any text editor to edit the file, while the simplest way is to use t
 Alternatively, in case you would like to use a better text editor to edit this file, or any other HTML file, here are some suggestions:  
 
 
-Notepad++  
-Atom  
-Visual Code  
+
+[Notepad++ (Windows only)](https://notepad-plus-plus.org)  
+
+
+[Atom](https://atom.io)  
+
+
+[Visual Code](https://code.visualstudio.com)  
+
 
 which are free, and
 
-Sublime text  
+
+[Sublime text ](https://www.sublimetext.com)   
+
 
 which has a trial period to use it.
 
@@ -144,9 +152,9 @@ The advantage of using one of the above editors, is that your code gets automati
 
 ## Preparing an array with words
 
-Preparing an array with english words and their translations takes time, and thus, here's an aproach to speed things up.
+Preparing an array with English words and their translations takes time, and thus, here's an approach to speed things up.
 
-The easiest approach is to write the words in an Excel sheet, one column with the english words and the next column with their corresponding greek word.
+The easiest approach is to write the words in an Excel sheet, one column with the English words and the next column with their corresponding Greek word.
 
 After that, we can use the concatenate operator in Excel, and combine the data to produce an array with the words, which will be ready to be inserted in this app.
 
@@ -167,7 +175,7 @@ const myArray = [
 	["book", "βιβλίο"]  
 ];  
 
-So, we add some extra coulumns in the Excel sheet with the symbols needed to create the array. i.e.  
+So, we add some extra columns in the Excel sheet with the symbols needed to create the array. i.e.  
 
 
 A | B | c | D | E
@@ -184,7 +192,7 @@ A | B | c | D | E | F
 [" | pencil | ", " | μολύβι | "], | = A2 & B2 & C2 & D2 & E2
 [" | book | ", " | βιβλίο | "], | = A3 & B3 & C3 & D3 & E3
 
-Using the abovr formula in column F, we will these resuls:
+Using the above formula in column F, we will these results:
 
 A | B | c | D | E | F
 --|---|---|---|---|---
@@ -192,7 +200,7 @@ A | B | c | D | E | F
 [" | pencil | ", " | μολύβι | "], | ["pencil", "μολύβι"],
 [" | book | ", " | βιβλίο | "], | ["book", "βιβλίο"],
 
-Which can be easily transormed to an array like this:
+Which can be easily transformed to an array like this:
 
 const myArray = [  
 	["creation", "δημιουργία"],  
