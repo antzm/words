@@ -207,3 +207,16 @@ const myArray = [
 	["pencil", "μολύβι"],  
 	["book", "βιβλίο"]  
 ];  
+
+## Licence
+
+You can freely use this code provided that:  
+
+### You love pets, or animals in general.   
+
+Why? Because this is the singlest most important thing that reveals the true character of a person.  
+
+If you behave nicely to animals, it's guaranteed that you would behave nicely to humans.  
+
+Only an animal can inform you if you are becoming a better human being. No person can ever tell you this.
+
