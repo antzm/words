@@ -4,7 +4,7 @@
 
 ### Learning new words from English to another language and vice versa.
 
-This web-app helps you to learn new words in any language you would like to.  
+This web-app will help you to learn new words in any language you would like to.  
 
 The app contains only a few sample words, but it can be easily expanded to include the words of your choice, in the languages of your choice.  
 
@@ -127,23 +127,22 @@ You can use any text editor to edit the file, while the simplest way is to use t
 Alternatively, in case you would like to use a better text editor to edit this file, or any other HTML file, here are some suggestions:  
 
 
-
-[Notepad++ (Windows only)](https://notepad-plus-plus.org)  
-
-
-[Atom](https://atom.io)  
+[*Notepad++ (Windows only)*](https://notepad-plus-plus.org)  
 
 
-[Visual Code](https://code.visualstudio.com)  
+[*Atom*](https://atom.io)  
+
+
+[*Visual Code*](https://code.visualstudio.com)  
 
 
 which are free, and
 
 
-[Sublime text ](https://www.sublimetext.com)   
+[*Sublime text*](https://www.sublimetext.com)   
 
 
-which has a trial period to use it.
+which has an (extented) trial period to use it.
 
 Those text editors could be used for any kind of program i.e. a program written in any programming language.
 
@@ -214,7 +213,7 @@ You can freely use this code provided that:
 
 ### You love pets, or animals in general.   
 
-Why? Because this is the singlest most important thing that reveals the true character of a person.  
+Why? Because this is the singlest, most important thing, that reveals the true character of a person.  
 
 If you behave nicely to animals, it's guaranteed that you would behave nicely to humans.  
 
