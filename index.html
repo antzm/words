@@ -54,25 +54,12 @@
 // Each word inside these arrays, must be in quotes, either "double" or 'single' quotes.
 // Single quotes though, are preferred as they make the code easier to read.
 
+
 const myWords01Title = 'Simple Engish words:';
 const myWords02Title = 'French to English words:';
 const myWords03Title = 'Sample Array words:';
 const myWords04Title = 'French to Greek words:';
 const myWords05Title = 'Basic English words:';
-
-
-const myWords01Sample = [
-	['set1word00', 'meaning00a'],
-	['set1word01', 'meaning01a', 'meaning01b'],
-	['set1word02', 'meaning02a', 'meaning02b', 'meaning02c'],
-	['set1word03', 'meaning03a', 'meaning03b', 'meaning03c', 'meaning03d'],
-	['set1word04', 'meaning04a', 'meaning04b', 'meaning04c', 'meaning04d', 'meaning04e'],
-	['set1word05', 'meaning05a'],
-	['set1word06', 'meaning06a', 'meaning06b'],
-	['set1word07', 'meaning07a', 'meaning07b', 'meaning07c'],
-	['set1word08', 'meaning08a', 'meaning08b', 'meaning08c', 'meaning08d'],
-	['set1word09', 'meaning09a', 'meaning09b', 'meaning09c', 'meaning09d', 'meaning09e']
-];
 
 
 const myWords01 = [
@@ -162,20 +149,6 @@ const myWords05 = [
 	['kitten', 'γατάκι'],
 	['dog', 'σκύλος'],
 	['puppy', 'κουτάβι']
-];
-
-
-const myWords05Sample = [
-	['set5word00', 'meaning00a'],
-	['set5word01', 'meaning01a', 'meaning01b'],
-	['set5word02', 'meaning02a', 'meaning02b', 'meaning02c'],
-	['set5word03', 'meaning03a', 'meaning03b', 'meaning03c', 'meaning03d'],
-	['set5word04', 'meaning04a', 'meaning04b', 'meaning04c', 'meaning04d', 'meaning04e'],
-	['set5word05', 'meaning05a'],
-	['set5word06', 'meaning06a', 'meaning06b'],
-	['set5word07', 'meaning07a', 'meaning07b', 'meaning07c'],
-	['set5word08', 'meaning08a', 'meaning08b', 'meaning08c', 'meaning08d'],
-	['set5word09', 'meaning09a', 'meaning09b', 'meaning09c', 'meaning09d', 'meaning09e']
 ];
 
 
@@ -634,14 +607,18 @@ function activateLowerButtons(evt) {
 }
 
 
-
+// Whenever an upper button is pressed (Leve 1 to Level 5) 
+// this function highlights that button by adding
+// a new class to it.
+//
 function selectButton(button) {
 
 	const buttonPressed = document.querySelector(button);
 	buttonPressed.classList.add('button-selected');
 }
 
-
+// This function removes the highlighting from all buutons.
+//
 function unselectAllButtons() {
 
 	const buttonsPressed = document.querySelectorAll('.buttons');
