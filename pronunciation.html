@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='UTF-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Learning Words</title>
+
+<script>
+
+
+// Note on the pronunciation.html file:
+// This file is based on the index.html file,
+// where the 5 arrays have been expanded
+// to include the pronuciation of the
+// english words.
+// This pronunciation only appears next to each english word,
+// but it doesn't affect in any other way the existing
+// functionality of the web-app.
+// If you are not interest to include the pronunciation
+// of the words, then it would be better to use 
+// the index.html file instead of this one.
+
+
+// This is an HTML file but the part of the code
+// which is included between the "script" tags, is
+// JavaScript code.
+// Usually, the JavaScript code is included in
+// a separate file, but here, in order to 
+// simplify things and to be easier to update
+// the word arrays, the JavaScript code
+// is included inside the HTML file.
+
+
+// The arrays myWords01, myWords02, myWords03,
+// myWords04 and myWords05 contain English
+// words and their Greek translations.
+// Each word and its meanings are inside
+// an array and then, a whole group of words
+// are included inside each one of the mywords arrays.
+// Each one of those smaller arrays, contains an English word, 
+// as the first element of the array,
+// and the meaning or the meanings of that english word.
+// There can be only one Engish word in each one of those arrays,
+// but there is no limit on how many meanings can be included.
+// This code uses arrays with English words
+// and their corresponding words in Greek.
+// The same code though, could be used with any
+// combination of any two languages.
+// The first word though in every sub-array
+// has to be unique while it could have multiple meanings.
+
+
+// If you are not familiar with JavaScript arrays,
+// here's how to change the arrays with your own words.
+// This way, you will update the app with your customized word set.
+// The first line: 
+// const myWords05 = [
+// should remain exactly as it is, as it declares the array and uses the symbol: [
+// to mark the beggining of the array. The end of the array, is marked with the symbol: ];
+// which appears at the last line of the array and which you should not change.
+// Then, between the first and the last line of the array, you can add as many sub-arrays as you wish.
+// Each line represent a different array which holds only one english word and 
+// the menanings (one ore more) of that word, either in Greek on in another language of your choice.
+// Each one of those lines, starts always with the symbol: [ and ends with the symbols ],
+// The comma at the end of each line, is to mark the end of an array and the beggining of a new array.
+// The comma at the end of the last array, could be omitted as it's not neccesary.
+// Each word inside these arrays, must be in quotes, either "double" or 'single' quotes.
+// Single quotes though, are preferred as they make the code easier to read.
+
+
+const myWords01Title = 'Simple Engish words:';
+const myWords02Title = 'French to English words:';
+const myWords03Title = 'Sample Array words:';
+const myWords04Title = 'French to Greek words:';
+const myWords05Title = 'Basic English words:';
+
+
+const myWords01 = [
+	['kitchen', 'κουζίνα', 'κίτσεν'],
+	['under', 'κάτω', 'άντερ'],
+	['snow', 'χιόνι', 'σνόου'],
+	['cake', 'κέικ', 'κέικ'],
+	['water', 'νερό', 'γουότερ'],
+	['bathroom', 'μπάνιο', 'μπάθρουμ'],
+	['living room', 'σαλόνι', 'καθιστικό', 'λίβινγκ ρουμ'],
+	['eye', 'μάτι', 'άι'],
+	['hair', 'μαλλιά', 'χέαρ'],
+	['head', 'κεφάλι', 'χέντ'],
+	['leg', 'πόδι', 'λεγκ'],
+	['foot', 'πατούσα', 'φουτ'],
+	['arm', 'βραχίονας', 'αρμ'],
+	['hand', 'χέρι', 'χέν-ντ'],
+	['book', 'βιβλίο', 'μπουκ'],
+	['look', 'κοιτάω', 'κοιτάζω', 'κοιτώ', 'λουκ'],
+	['watch', 'παρατηρώ', 'παρακολουθώ', 'ρολόι', 'γουότς']
+];
+
+
+const myWords02 = [
+	['bateau', 'boat', 'ship'],
+	['soleil', 'sun', 'sunlight'],
+	['voyage', 'trip', 'journey'],
+	['merci', 'thanks', 'thank you'],
+	['bon', 'good', 'right', 'kind'],
+	['salut', 'hi', 'hello', 'bye'],
+	['nouveau', 'new', 'fresh'],
+	['école', 'school'],
+	['gentil', 'kind', 'good', 'nice'],
+	['professeur', 'teacher', 'professor']
+];
+
+
+const myWords03 = [
+	['EnglishWord0', 'GreekMeaning0a'],
+	['EnglishWord1', 'GreekMeaning1a', 'GreekMeaning1b'],
+	['EnglishWord2', 'GreekMeaning2a', 'GreekMeaning2b', 'GreekMeaning2c'],
+	['EnglishWord3', 'GreekMeaning3a', 'GreekMeaning3b', 'GreekMeaning3c', 'GreekMeaning3d'],
+	['EnglishWord4', 'GreekMeaning4a', 'GreekMeaning4b', 'GreekMeaning4c'],
+	['EnglishWord5', 'GreekMeaning5a'],
+	['EnglishWord6', 'GreekMeaning6a', 'GreekMeaning6b'],
+	['EnglishWord7', 'GreekMeaning7a', 'GreekMeaning7b', 'GreekMeaning7c'],
+	['EnglishWord8', 'GreekMeaning8a', 'GreekMeaning8b', 'GreekMeaning8c', 'GreekMeaning8c'],
+	['EnglishWord9', 'GreekMeaning9a', 'GreekMeaning9b', 'GreekMeaning9c']
+];
+
+
+const myWords04 = [
+	["le garçon", "αγόρι"],
+	["le chat", "γάτα"],
+	["la mer", "θάλασσα"],
+	["la table", "τραπέζι"],
+	["la télévision", "τηλεόραση"],
+	["merci", "ευχαριστώ"],
+	["le souvenir", "ανάμνηση", "αναμνηστικό", "ενθύμιο", "σουβενίρ" ],
+	["le cinéma", "κινηματογράφος", "σινεμά"],
+	["le chantilly", "σαντιγί"],
+	["le tailleur", "ταγέρ"],
+	["le séchoir", "σεσουάρ", "πιστολάκι μαλλιών"],
+	["la télé", "τηλεόραση"],
+	["la bonté", "καλοσύνη"],
+	["la haute couture", "υψηλή ραπτική"],
+	["les faux bijoux", "φο μπιζού"],
+	["le foulard", "φουλάρι "],
+	["le papillon", "παπιγιόν"],
+	["le paravent", "παραβάν"],
+	["bonsoir", "καλησπέρα"],
+	["bonne nuit", "καληνύχτα"],
+	["salut", "γεια"],
+	["au revoir", "στο επανιδείν"]
+];
+
+
+const myWords05 = [
+	['hello', 'γεια'],
+	['hi', 'γεια'],
+	['automobile', 'αυτοκίνητο'],
+	['car', 'αυτοκίνητο'],
+	['candy', 'γλυκό', 'γλύκισμα', 'καραμέλα'],
+	['sweet', 'γλυκό', 'γλύκισμα'],
+	['cat', 'γάτα'],
+	['kitty', 'γατούλα'],
+	['kitten', 'γατάκι'],
+	['dog', 'σκύλος'],
+	['puppy', 'κουτάβι']
+];
+
+
+</script>
+
+<style>
+
+/*
+This is an HTML file but the part of the code
+which is included between the "style" tags,
+is CSS code.
+Usually, the CSS code is included in a separate file,
+but here, for simplicity, the CSS code is included
+inside the HTML code.
+This way, the complete HTML, CSS and JavaScript
+code, is included in a single file.
+The HTML code is used for the main structure of the page,
+the CSS code is used for styling the page, while the
+JavaScript code is used for the interactivity of the page.
+Between the code, there are various comments that
+explain certain part of the code.
+When writing comments, special characters are used
+to denote that this is a comment and not part of the code.
+Depending if the comment is written inside the HTML code,
+the CSS code or the JavaScript code, the special 
+characters used, are different in each case.
+*/
+
+body {
+	font-family: Arial;
+}
+
+
+/* introductory text */
+
+.intro {
+	text-align: center;
+}
+
+.main-content {
+	font-size: 18px;
+	text-align: center;
+}
+
+.main-content-info {
+	font-size: 16px;
+	font-style: italic;
+}
+
+
+/* language selection */
+
+.language-select {
+	text-align: center;
+	font-size: 14px;
+	margin-bottom: 15px;
+}
+
+
+/* upper and lower buttons */
+
+.buttons {
+	text-align: center;
+	display: inline-block;
+	background-color: #3d94f6;
+	border: 1px solid #337fed;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 6px 24px;
+	margin: 3px;
+	text-decoration:none;
+	text-shadow: 0px 1px 0px #1570cd;
+	border-radius: 4px;
+}
+
+.buttons:hover {
+	background-color: #00008b;
+	color: #ffffff;
+}
+
+.button-group-upper,
+.button-group-lower {
+	text-align: center;
+	list-style-type: none;
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.button-selected {
+	background-color: #66ccff;
+	color: #000099;
+}
+
+
+/* display the quest word */
+
+.display-option {
+	margin: 3px;
+}
+
+.display-yes {
+	display: block;
+}
+
+.display-no {
+	display: none;
+}
+
+.display-words {
+	text-align: center;
+}
+
+.message-word {
+	font-size: 16px;
+	font-style: italic;
+	margin-bottom: 3px;
+}
+
+.word-counter {
+	font-family: Courier;
+	font-style: italic;
+	margin-top: 5px;
+}
+
+.show-word-counter {
+	visibility: show;
+}
+
+.hide-word-counter {
+	visibility: hidden;
+}
+
+.question-word {
+	font-size: 21px;
+	font-weight: bold;
+}
+
+
+/* answer form */
+
+.answer-form {
+	text-align: center;
+	font-size: 18px;
+	margin-top: 36px;
+	margin-bottom: 36px;
+}
+
+#writeAnswer {
+	font-size: 16px;
+	padding: 5px;
+	border: 2px solid #1e90ff;
+}
+
+
+/* display message whether the answer is correct or not */
+
+.display-results {
+	text-align: center;
+}
+
+.show-results {
+	visibility: show;
+}
+
+.hide-results {
+	visibility: hidden;
+}
+
+.display-answer-result {
+	margin-top: 36px;
+	margin-bottom: 36px;
+}
+
+.answer-result {
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 18px;
+	margin-bottom: 8px;
+}
+.correct-answer {
+	font-size: 21px;
+	margin-top: 3px;
+	margin-bottom: 28px;
+	color: #00f;
+}
+.not-correct-answer {
+	font-size: 21px;
+	margin-top: 3px;
+	margin-bottom: 28px;
+	color: #f00;
+}
+
+
+/* display the complete answer */
+
+.display-complete-answer {
+	text-align: center;
+}
+
+.complete-answer {
+	font-size: 20px;
+	margin-top: 3px;
+	margin-bottom: 28px;
+}
+
+</style>
+
+</head>
+<body>
+
+
+<!--
+Introductory text on the top of the page and some clarifications
+-->
+	<h1 class='intro'>Learning Words</h1>
+	<p class='main-content'>This page will help you to learn new words!</p>
+	<p class='main-content main-content-info'>to start, choose a language and a level...</p>
+
+<diV class='language-select'>
+
+
+<!--
+Radio buttons for selecting English or Greek words
+-->
+<form>
+	<input type="radio" name="select-language" id="lang-en" value="en-words" checked="checked">
+	<label for="lang-en">English words</label>
+	<input type="radio" name="select-language" id="lang-gr" value="gr-words">
+	<label for="lang-gr">Greek words</label>	
+</form>
+
+</diV>
+
+
+<!--
+Here are the five buttons that appear on the upper side of the page
+and they are used to select one of the five available levels.
+-->
+	<ul class='button-group-upper'>
+		<li><button class='buttons button-1' type='button'>Level 1</button></li>
+		<li><button class='buttons button-2' type='button'>Level 2</button></li>
+		<li><button class='buttons button-3' type='button'>Level 3</button></li>
+		<li><button class='buttons button-4' type='button'>Level 4</button></li>
+		<li><button class='buttons button-5' type='button'>Level 5</button></li>
+	</ul>
+
+
+<!--
+Initially, this part of the page is hidden and appears as soon as 
+a button has been clicked in order to select one of the five available levels.
+-->
+<div class='display-option display-no'>
+
+	<div class="display-words">
+		<p class="message-word">...and now, please, write the meaning of the word:</p>
+		<p class="word-counter">(displays the word number out of the total words)</p>
+		<p class="question-word">(Displays the English or the Greek Word)</p>
+	
+	</div>
+
+
+<!--
+This is the form where a small input box appears
+so that the answer could be written.
+Pressing enter, calls the function handleForm().
+Also, instead of pressing enter, 
+the button Check answer could be clicked
+-->
+	<form class='answer-form' action='javascript:handleForm()'>
+		<label for='writeAnswer'>Answer:</label>
+		<input type='text' name='write-answer' id='writeAnswer' autocomplete='off'>
+		<!-- <input type='submit' value='Submit answer'> -->
+		<input type="reset" value="Reset">
+	</form>
+
+
+<!-- 
+Displays either "Correct answer!" or "The correct answer is:".
+The text is hidden and appears as soon as we submit an answer.
+Classes "status-show-result" and "status-hide-result" allow to show or hide this text.
+The functions "correctAnswer()" and "notCorrectAnswer()" control this behavior.
+-->
+<section class='display-results show-results'>
+
+	<div class='display-answer-result'>
+		<p class='answer-result'>Display answer correct or not correct</p>
+	</div>
+
+
+<!--
+If the answer is not correct, it displays the correct word or the correct words.
+This text is hidden and appears only whenever an answer is not correct.
+Classes "status-show-answer" and "status-hide-answer" allow to show or hide this text.
+The functions ... control this behavior.
+-->
+	<div class='display-complete-answer'>
+		<p class='complete-answer'>After check, always display the complete answer</p>
+	</div>
+
+</section>
+
+
+<!--
+Here are the three buttons that appear on the lower side of the page
+and they are used to move to the next or previous word and to check
+the answer that have been written in the answer form.
+-->
+	<ul class='button-group-lower'>
+		<li><button class='buttons button-6' type='button'>Previous Question</button></li>
+		<li><button class='buttons button-7' type='button'>Check Answer</button></li>
+		<li><button class='buttons button-8' type='button'>Next Question </button></li>
+	</ul>
+
+</div>
+
+<script>
+
+// The variable "index" is used as the index of the current word array.
+// The variable "wordGr" stores the Greek word when 
+// the option "Greek Words" has been selected.
+// The variable "wordQuiz" stores one of the available word arrays,
+// While the variable "randomWordQuiz" stores the same array
+// which is randomized, so the words will appear in a random order.
+// The variable "answerStatus" stores information about the correct answer,
+// while the variable "multipleAnswers" stores information about different
+// Greek words which have the same English meaning and is used only 
+// when the option "Greek Words" has been selected.
+//
+let index = 0;
+let wordGr = '';
+let wordsTitle = '';
+
+let wordQuiz = [];
+let randomWordQuiz = [];
+let answerStatus = [];
+let multipleAnswers = [];
+
+enableListeners();
+
+
+// This function checks the two radio buttons at the top of the page,
+// and depending if English words is checked, then it returns true.
+// otherwise, if Greek words is checked, it returns false.
+// In a case of an error, if for whatever reason, no button is checked
+// then this function returns a default value of true, i.e. assuming
+// that English words had been selected.
+//
+function englishWords() {
+
+	let englishWordsCheck = document.getElementById('lang-en').checked;
+	let greekWordsCheck = document.getElementById('lang-gr').checked;
+
+	if (!englishWordsCheck && !greekWordsCheck) {
+		englishWordsCheck = true;
+	}
+
+	return englishWordsCheck;
+}
+
+
+// This function adds the event listeners to the buttons.
+// There is one event listener for the upper buttons
+// and one event listener for the lower buttons.
+//
+function enableListeners() {
+
+	const buttonListUpper = document.querySelector('.button-group-upper');
+	buttonListUpper.addEventListener('click', activateUpperButtons);
+	
+	const buttonListLower = document.querySelector('.button-group-lower');
+	buttonListLower.addEventListener('click', activateLowerButtons);	
+}
+
+
+// This function uses the evt parameter,
+// which is automatically transmitted whenever 
+// an upper button is clicked,
+// and depending on its value
+// the code for the correct key
+// is executed.
+//
+function activateUpperButtons(evt) {
+
+	if (evt.target.classList.contains('button-1')) {
+		unselectAllButtons();
+		selectButton('.button-1');
+		wordQuiz = myWords01;
+		wordsTitle = myWords01Title;
+		initializeGame();
+	}
+
+	if (evt.target.classList.contains('button-2')) {
+		unselectAllButtons();
+		selectButton('.button-2');
+		wordQuiz = myWords02;
+		wordsTitle = myWords02Title;
+		initializeGame();
+	}
+
+	if (evt.target.classList.contains('button-3')) {
+		unselectAllButtons();
+		selectButton('.button-3');
+		wordQuiz = myWords03;
+		wordsTitle = myWords03Title;
+		initializeGame();	
+	}
+
+	if (evt.target.classList.contains('button-4')) {
+		unselectAllButtons();
+		selectButton('.button-4');
+		wordQuiz = myWords04;
+		wordsTitle = myWords04Title;
+		initializeGame();
+	}
+
+	if (evt.target.classList.contains('button-5')) {
+		unselectAllButtons();
+		selectButton('.button-5');
+		wordQuiz = myWords05;
+		wordsTitle = myWords05Title;
+		initializeGame();
+	}
+}
+
+
+// This function also uses the evt parameter,
+// which is automatically transmitted whenever 
+// a lower button is clicked,
+// and depending on its value
+// the code for the correct key
+// is executed.
+//
+function activateLowerButtons(evt) {
+
+	if (evt.target.classList.contains('button-6')) {
+		previousQuestion();
+		totalWordsNumber();
+	}
+
+	if (evt.target.classList.contains('button-7')) {
+		if (index >= 0 && index < randomWordQuiz.length) {
+			checkAnswer();
+			showResults();
+		}
+	}
+
+	if (evt.target.classList.contains('button-8')) {
+		nextQuestion();
+		totalWordsNumber();
+	}
+}
+
+
+// Whenever an upper button is pressed (Leve 1 to Level 5) 
+// this function highlights that button by adding
+// a new class to it.
+//
+function selectButton(button) {
+
+	const buttonPressed = document.querySelector(button);
+	buttonPressed.classList.add('button-selected');
+}
+
+// This function removes the highlighting from all buutons.
+//
+function unselectAllButtons() {
+
+	const buttonsPressed = document.querySelectorAll('.buttons');
+
+	for (i = 0; i < buttonsPressed.length; i++) {
+		buttonsPressed[i].classList.remove('button-selected');
+	}
+}
+
+
+// When a level is selected,
+// this function initializes the game
+// by clearing the form,
+// and then starting the quiz
+//
+function initializeGame() {
+
+	index = 0;
+
+	clearForm();
+	startQuiz();
+	questWord();
+	showWordCounter();
+}
+
+
+// randomizeArray(randArray) randomizes an array
+// by taking out the first element and then
+// placing it back at a random position
+// inside the array. This process is repeated
+// for every element of the array.
+//
+function randomizeArray(randArray) {
+
+	for (let i = 0; i < randArray.length; i++) {
+		let firstElement = randArray.shift();
+		randArray.splice(randomNumber(randArray.length), 0, firstElement);
+	}
+
+	return randArray;
+}
+
+
+// randomNumber(max) returns a random integer
+// between 0 and max (including 0 and max)
+//
+function randomNumber(max) {
+
+	let randNum = Math.floor(Math.random()*(max+1));
+	return randNum;
+}
+
+
+// randomNaturalNumber(max) returns a random integer
+// between 1 and max (including 1 and max)
+//
+function randomNaturalNumber(max) {
+
+	let randNatNum = Math.ceil(Math.random()*max);
+	return randNatNum;
+}
+
+
+// This function starts the quiz.
+// Firstly, it displays the complete page
+// and then it randomizes the array that corresponds
+// to the selected level.
+// It adds the listeners to the arrow keyboard buttons
+// for selecting previous and next word,
+// and it hides the appearance of the results
+// i.e. if the answer was correct or not,
+// as well as the correct meaning of the word
+//
+function startQuiz() {
+
+	const displayStatus = document.querySelector('.display-option');
+
+	if (displayStatus.className === 'display-option display-no') {
+		displayStatus.className = 'display-option display-yes';
+	}
+
+	randomWordQuiz = randomizeArray(wordQuiz);
+	arrowButtonListeners();
+	hideResults();
+}
+
+
+// This function selects a random English word,
+// or a random Greek word and displays it.
+// If englishWords() function returns true,
+// then an English word is selected, otherwise
+// if it returns false, then a Greek word
+// is selected and diplayed.
+//
+function questWord() {
+
+	const newWord = document.querySelector('.question-word');
+
+	if (englishWords()) {
+			let wordEn = randomWordQuiz[index][0];
+			newWord.innerHTML = wordEn;
+	} 
+
+	if (!englishWords()) {
+		let wordsLength = randomWordQuiz[index].length;
+		let position = randomNaturalNumber(wordsLength-1);
+		wordGr = randomWordQuiz[index][position];
+		newWord.innerHTML = wordGr;
+	}
+
+	totalWordsNumber();
+
+}
+
+
+// When using the previous question and next questions buttons,
+// or the left and right keyboard arrows to move from one word to another,
+// this function displays a message at the beginning of the words array.
+//
+function levelStart() {
+
+	hideWordCounter()
+	const displayMessage = document.querySelector('.question-word');
+	// displayMessage.innerHTML = 'Level Start!';
+	displayMessage.innerHTML = wordsTitle;
+}
+
+
+// When using the previous question and next questions buttons,
+// or the left and right keyboard arrows to move from one word to another,
+// this function displays a message at the end of the words array.
+//
+function levelComplete() {
+
+	hideWordCounter()
+	const displayMessage = document.querySelector('.question-word');
+	displayMessage.innerHTML = 'Level Completed!';
+}
+
+
+// checkAnswer() checks if the answer is correct.
+// Firstly, it checks whether the option for
+// English words or the option for Greek Words is used,
+// and then it calls the corresponding function
+// to check if the Greek word that was given as answer,
+// or the English word that was as an answer is correct or not.
+//
+function checkAnswer() {
+
+	defaultAnswer();
+
+	if (englishWords()) {
+		checkEnglishAnswer();
+	} else {
+		checkGreekAnswer();
+	}
+}
+
+
+// defaultAnswer() ensures that when the answer box is empty
+// and enter is pressed, then the answer takes the value '' instead of null.
+//
+function defaultAnswer() {
+
+	let currentAnswer = document.getElementById('writeAnswer').value;
+
+	if (currentAnswer === null) {
+		document.getElementById('writeAnswer').value = '';
+	}
+}
+
+
+// checkEnglishAnswer() checks if the answer is correct or not.
+// It checks every Greek meaning of the English word and if the
+// answer matches one of the meanings, then
+// the answer is correct. For every meaning checked,
+// a Boolean value of true or false is added in the
+// array called 'answerStaus'. In the end, the sum
+// of all the elements in the array is calculated.
+// The result can be either 0 or 1 as the array
+// contains only Boolean values of true(1) and false(0).
+// Each time, only one true value can be included in the array
+// and thus, the sum of the array can only be 1 or 0.
+// If the sum is 1, then the answer was correct,
+// otherwise, if the sum is 0, then the answer was not correct.
+//
+function checkEnglishAnswer() {
+
+	let inputAnswer = document.getElementById('writeAnswer').value;
+
+	for (i = 1; i < randomWordQuiz[index].length; i++) {
+		if (inputAnswer.toLowerCase() === randomWordQuiz[index][i].toLowerCase()) {
+			answerStatus.push(true);
+		} else {
+			answerStatus.push(false);
+		}	
+	}
+
+	verifyAnswer();
+}
+
+
+// This function checks the answer given to the Greek words.
+// As one English word could have the same meaning in the Greek language
+// as another English word, this function first searches to see if inside
+// the array, which is at use at that time, there are more than one instances
+// of the same Greek word. i.e. if there are two exact Greek words 
+// which correspond to different English word.
+// In such a case, both English words could be considered as correct,
+// and thus, this has to be taken into consideration.
+// The array "multipleAnswers" contains only one item if there
+// is only instance of a certain Greek word.
+// Otherwise it includes all the instances of the Greek word.
+// So, depending on the length of thus array,
+// the process to test the correct answer is different. 
+// If the array length is 1, then there is only correct English answer to the question.
+// Otherwise, there are so many answers to the array, as the length of the array.
+//
+function checkGreekAnswer() {
+
+	let inputAnswer = document.getElementById('writeAnswer').value;
+
+	// Check to see if the Greek word corresponds to only 1 English word,
+	// or if it corresponds to more than 1 English words.
+	// Store the indexes of the English word ot the English words
+	// into the array "multipleAnswers".
+	//
+	for (i = 0; i < randomWordQuiz.length; i++) {
+		for (j = 1; j < randomWordQuiz[i].length; j++) {
+			if (wordGr.toLowerCase() === randomWordQuiz[i][j].toLowerCase()) {
+				multipleAnswers.push(i);
+			}
+		}
+	}
+
+	// If the Greek word corresponds only to 1 English word,
+	// i.e. "multipleAnswers" array contains only 1 item,
+	// then check if the answer is equal to the English word.
+	// 
+	if (multipleAnswers.length === 1) {
+
+		if (inputAnswer.toLowerCase() === randomWordQuiz[index][0].toLowerCase()) {
+			answerStatus.push(true);
+		} else {
+			answerStatus.push(false);
+		}
+		
+	}
+
+	// If the Greek word corresponds to more than 1 English words,
+	// i.e. "multipleAnswers" array contains only more than 1 item,
+	// then check if the answer equals one of those English words.
+	//
+	if (multipleAnswers.length > 1) {
+
+		for (i = 0; i < multipleAnswers.length; i++) {
+			if (inputAnswer.toLowerCase() === randomWordQuiz[multipleAnswers[i]][0].toLowerCase()) {
+				answerStatus.push(true); 
+			} else {
+				answerStatus.push(false);
+			}
+		}
+	}
+
+	verifyAnswer();
+
+}
+
+
+// verifyAnswer() checks the array "answerStatus"
+// and depending on its contents, calls a function
+// which will display if the answer was correct or not.
+// To check if the answer was correct or not,
+// the sum of the "answerStatus" array is calculated.
+// If the sum is 0, then the answer was not correct (i.e. contains only false values). 
+// If the sum is 1, then the answer is correct (i.e. contains one true value).
+//
+function verifyAnswer() {
+
+	let answerSum = 0;
+
+	for (i = 0;  i < answerStatus.length; i++) {
+		answerSum += answerStatus[i];
+	}
+
+	if (answerSum === 1) {
+		answerStatus = [];
+		correctAnswer();
+	} else {
+		answerStatus = [];
+		notCorrectAnswer();
+	}
+}
+
+
+// This function enables the results to be displayed
+// i.e. when the check answer button has been clicked
+//
+function showResults() {
+
+	const displayOptions = document.querySelector('.display-results');
+	displayOptions.className = 'display-results show-results';
+}
+
+
+// This function hides the results
+// i.e. when a new word has been selected
+//
+function hideResults() {
+
+	const displayOptions = document.querySelector('.display-results');
+	displayOptions.className = 'display-results hide-results';
+}
+
+
+// This function displays the results when the correct
+// answer has been given.
+//
+function correctAnswer() {
+
+	const displayText = document.querySelector('.answer-result');
+	displayText.className = 'answer-result correct-answer';
+	displayText.innerHTML = 'Congratulations! Correct answer!';
+
+	const displayWords = document.querySelector('.complete-answer');
+	displayWords.className = 'complete-answer correct-answer';
+
+	displayAllMeanings();
+}
+
+
+// This function displays the results when the
+// answer that was given was not correct.
+//
+function notCorrectAnswer() {
+
+	const displayText = document.querySelector('.answer-result');
+	displayText.className = 'answer-result not-correct-answer';
+	displayText.innerHTML = 'The correct answer is:';
+
+	const displayWords = document.querySelector('.complete-answer');
+	displayWords.className = 'complete-answer not-correct-answer';
+
+	displayAllMeanings();
+}
+
+
+// This function loops through all the meanings of a word
+// and displays them, together with the word.
+//
+function displayAllMeanings() {
+
+	const displayText = document.querySelector('.complete-answer');
+	let translationsArray = randomWordQuiz[index];
+	let joinedWords = translationsArray.join(' / ');
+
+	if (multipleAnswers.length > 1) {
+		displayMeanings = '**** ' + joinedWords + ' ****';
+	} else {
+		displayMeanings = joinedWords;
+	}
+
+	displayText.innerHTML = displayMeanings;
+
+	multipleAnswers = [];
+}
+
+
+// This function clears the form
+// by assigning the value '' and thus
+// replacing the existing value of the form
+//
+function clearForm() {
+
+	document.getElementById('writeAnswer').value = '';	
+}
+
+
+// This function is called whenever the enter button
+// is pressed while inside the form window.
+// If the index corresponds to a word,
+// then, it checks the answer and it displays either the
+// correct or then not correct results.
+//
+function handleForm() {
+
+	if (index >= 0 && index < randomWordQuiz.length) {
+		checkAnswer();
+		showResults();
+	}
+}
+
+
+// This function adds the event listeners
+// to the left and right arrow buttons
+// of the keyboard.
+// To avoid pressing the keys continuously,
+// the keys will function only when 
+// they are released and not when they are pressed.
+// This is because the 'keyup' is used, instead of the 'keydown'
+//
+function arrowButtonListeners() {
+
+	document.addEventListener('keyup', activateArrowButtons);
+
+}
+
+
+// This is the function that is added to the event listeners
+// on the left right arrow buttons,
+// so that every time one of those buttons is presses,
+// the next or the previous word will appear.
+//
+function activateArrowButtons(evt) {
+
+	let keyPressed = evt.key;
+
+	if (keyPressed == 'ArrowLeft') {
+		previousQuestion();
+	}
+
+	if (keyPressed == 'ArrowRight') {
+		nextQuestion();
+	}
+
+}
+
+
+// This function shows the previous 
+// quest word either by clicking
+// the previous question button,
+// or by clicking the left
+// arrow button on the keyboard.
+//
+function previousQuestion() {
+
+	clearForm();
+	hideResults();
+	showWordCounter();
+
+	index--;
+
+	if (index >= 0) {
+		questWord();
+	} else {
+		index = -1;
+		levelStart();
+	}
+}
+
+
+// This function shows the next
+// quest word either by clicking
+// the next question button,
+// or by clicking the right
+// arrow button on the keyboard
+//
+function nextQuestion() {
+
+	clearForm();
+	hideResults();
+	showWordCounter();
+
+	index++;
+
+	if (index < randomWordQuiz.length) {
+		questWord();
+	} else {
+		index = randomWordQuiz.length;
+		levelComplete();
+	}
+}
+
+
+// This function makes the Word Counter visible
+// i.e. "8 out of 10"
+//
+function showWordCounter() {
+
+	const counterStatus = document.querySelector('.word-counter');
+	counterStatus.className = 'word-counter show-word-counter';
+}
+
+
+// This function hides the Word Counter
+// i.e. "8 out of 10" is not visible
+//
+function hideWordCounter() {
+
+	const counterStatus = document.querySelector('.word-counter');
+	counterStatus.className = 'word-counter hide-word-counter';	
+}
+
+
+// This function displays the number of each question
+// and the total number of the words included in the current level
+// i.e. "8 out of 10"
+//
+function totalWordsNumber() {
+
+	const displayCounter = document.querySelector('.word-counter');
+
+	let wordIndex;
+	let totalWords;
+
+	wordIndex = index + 1;
+	totalWords = randomWordQuiz.length;
+	
+	const counterMessage = wordIndex + " out of " + totalWords;
+
+	displayCounter.innerHTML = counterMessage;
+
+}
+
+</script>
+
+</body>
+</html>
