@@ -732,7 +732,9 @@ function questWord() {
 
 	if (englishWords()) {
 			let wordEn = randomWordQuiz[index][0];
-			newWord.innerHTML = wordEn;
+			let pronounceIndex = randomWordQuiz[index].length-1;
+			let pronounceWord = randomWordQuiz[index][pronounceIndex];
+			newWord.innerHTML = wordEn + " " + pronounceWord;
 	} 
 
 	if (!englishWords()) {
