@@ -10,15 +10,60 @@
 
 // Note on the pronunciation.html file:
 // This file is based on the index.html file,
-// where the 5 arrays have been expanded
+// but the 5 arrays have been expanded
 // to include the pronuciation of the
 // english words.
-// This pronunciation only appears next to each english word,
+// The pronuciation should always appear at the very end 
+// of each array, as the last item, after all the word definitions
+// and it should be included always, so that the web-app will function
+// as intented.
+// This pronunciation appears next to each english word asked,
 // but it doesn't affect in any other way the existing
 // functionality of the web-app.
 // If you are not interest to include the pronunciation
 // of the words, then it would be better to use 
 // the index.html file instead of this one.
+//
+// Note also that the pronunciation is included
+// insided parentheses, just to distinguish it
+// easily from the English and Greek words.
+// Even if no pronunciation is included in an array,
+// the last item in every line of the array should be
+// empty prentheses, corresponding to a blank pronunciation
+// element.
+// An element which is essential 
+// for the web-app to function properly.
+//
+// In order to include the pronunciation,
+// these are the changes that have been made
+// to the original index.html file
+//
+// 1. The code below displays the pronunciation
+// at the end of each english word that
+// is being asked.
+// "function questWord()"
+// let pronounceIndex = randomWordQuiz[index].length-1;
+// let pronounceWord = randomWordQuiz[index][pronounceIndex];
+// newWord.innerHTML = wordEn + " " + pronounceWord;
+//
+// 2. This line of code subtracts 1 from the array length,
+// so that the pronunciation, which is the last word in each array,
+// will not be taken into consideration when new words are
+// being selected from the array of the words.
+// "function questWord()"
+// let wordsLength = randomWordQuiz[index].length-1;
+//
+// 3. For similar reason as above, 1 is subtracted
+// from the length of the array, so the accepted answer
+// will not take into consideration the last word 
+// which is the pronunciation.
+// "function checkEnglishAnswer()"
+// for (i = 1; i < randomWordQuiz[index].length-1; i++) {
+//
+// 4. Similarly, 1 is subtracted from the length of the array
+// so not to use the last word which is the pronunciation.
+// "function checkGreekAnswer()"
+// for (j = 1; j < randomWordQuiz[i].length-1; j++) {
 
 
 // This is an HTML file but the part of the code
