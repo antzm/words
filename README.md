@@ -207,6 +207,17 @@ const myArray = [
 	["book", "βιβλίο"]  
 ];  
 
+---
+
+## Alternative version
+
+In the same repository, there's also an alternative version of the index.html which is called pronunciation.html  
+
+The only difference is that the second file uses additional elements inside the arrays so that the pronunciation of the words will also be presented whenever a new word is asked.
+
+To be able though to diplay the pronunciation, this should be added at the end of every single word inside the arrays. The order should be, first the english word, then all the meaninigs of the word in the Greek languge and at the end the pronunciation, preferably placed inside parentheses so to distinguish it easily from the other words.
+
+
 ## Licence
 
 You can freely use this code provided that:  
